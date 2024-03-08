@@ -1,0 +1,27 @@
+.name {
+  transition: color 0.3s ease-in-out;
+}
+.greet {
+  cursor: pointer;
+}
+.greet:hover .hello {
+  animation: shakeOnHover 700ms ease-out 1;
+}
+
+.greet:hover .name {
+  transition: color 300ms;
+  color: white;
+}
+
+@keyframes shakeOnHover {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

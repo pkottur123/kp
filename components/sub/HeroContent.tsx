@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { easeIn, easeInOut, motion } from 'framer-motion';
 import {
   slideInFromLeft,
   slideInFromRight,
@@ -10,6 +10,7 @@ import {
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import StarsCanvas from '../main/StarBackground';
+import classes from './HeroContext.module.css';
 
 const HeroContent = () => {
   return (
@@ -31,14 +32,26 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className='flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto'
+          className={`flex flex-row gap-6 mt-6 text-6xl font-bold text-white max-w-max w-auto h-auto ${classes.greet}`}
         >
+          <motion.span
+            animate={{
+              rotate: [0, -15, 0], // Sequence of rotations to mimic waving
+              // y: [0, -10, 0], // Sequence of vertical movements
+              transition: { duration: 2, repeat: 1, easings: easeInOut },
+            }}
+            className={classes.hello}
+          >
+            👋
+          </motion.span>
           <span>
-            <span>👋</span>
-            <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500'>
+            <motion.span
+              className={`text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 ${classes.name}`}
+              // animate={{ transition: { duration: 2, repeat: 1, ease: easeIn } }}
+            >
               {' '}
               Hi, I'm Pooya{' '}
-            </span>
+            </motion.span>
           </span>
         </motion.div>
 
