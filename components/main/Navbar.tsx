@@ -12,14 +12,14 @@ const Navbar = () => {
           className='h-auto w-auto flex flex-row items-center'
         >
           <Image
-            src='/NavLogo.png'
+            src='/profile.jpg'
             alt='logo'
-            width={70}
-            height={70}
-            className='cursor-pointer hover:animate-slowspin'
+            width={40}
+            height={40}
+            className='rounded-full cursor-pointer hover:animate-slowspin'
           />
 
-          <span className='font-bold ml-[10px] hidden md:block text-gray-300'>
+          <span className='font-bold ml-[10px] hidden md:block text-gray-200 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 transition-colors duration-300'>
             Pooya Jafariberenji
           </span>
         </a>
