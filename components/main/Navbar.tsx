@@ -4,7 +4,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#0374ff]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <a
           href="#about-me"
@@ -13,40 +13,40 @@ const Navbar = () => {
           <Image
             src="/NavLogo.png"
             alt="logo"
-            width={70}
-            height={70}
+            width={60}
+            height={60}
             className="cursor-pointer hover:animate-slowspin"
           />
 
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
-            WebChain Dev
+          <span className="font-bold ml-[10px] hidden md:block text-blue-300">
+            Prasanna Kottur
           </span>
         </a>
 
         <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+          <div className="flex items-center justify-between w-full h-auto border border-[#0374ff] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a href="#about-me" className="cursor-pointer">
-              About me
+              Home
             </a>
             <a href="#skills" className="cursor-pointer">
               Skills
             </a>
             <a href="#projects" className="cursor-pointer">
-              Projects
+              Career
             </a>
           </div>
         </div>
 
         <div className="flex flex-row gap-5">
-          {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
-              key={social.name}
-              width={24}
-              height={24}
-            />
-          ))}
+          <a href="https://www.linkedin.com/in/prasannakottur/" target="_blank" rel="noopener noreferrer">
+            <Image src="/linkedin.png" alt="LinkedIn" width={24} height={24} />
+          </a>
+          <a href="https://github.com/kotturp" target="_blank" rel="noopener noreferrer">
+            <Image src="/gitwhite.png" alt="GitHub" width={24} height={24} />
+          </a>
+          <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer">
+            <Image src="/discord.svg" alt="Discord" width={24} height={24} />
+          </a>
         </div>
       </div>
     </div>
