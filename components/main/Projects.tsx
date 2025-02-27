@@ -7,7 +7,7 @@ const Projects = () => {
       className="flex flex-col items-center justify-center py-20"
       id="projects"
     >
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-Orange-700 to-cyan-500 py-10">
         Education
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
@@ -23,7 +23,7 @@ const Projects = () => {
         />
       </div>
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
-        Work Experience
+        Experience
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
         <ProjectCard
