@@ -11,7 +11,7 @@ const Navbar = () => {
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image
-            src="/NavLogo.png"
+            src="/NavLogo.jpeg"
             alt="logo"
             width={60}
             height={60}
@@ -39,7 +39,7 @@ const Navbar = () => {
 
         <div className="flex flex-row gap-5">
           <a href="https://www.linkedin.com/in/prasannakottur/" target="_blank" rel="noopener noreferrer">
-            <Image src="/linkedin.png" alt="LinkedIn" width={24} height={24} />
+            <Image src="/Linkedin.png" alt="LinkedIn" width={24} height={24} />
           </a>
           <a href="https://github.com/kotturp" target="_blank" rel="noopener noreferrer">
             <Image src="/gitwhite.png" alt="GitHub" width={24} height={24} />
