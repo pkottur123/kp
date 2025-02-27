@@ -7,7 +7,7 @@ const Projects = () => {
       className="flex flex-col items-center justify-center py-20"
       id="projects"
     >
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Education
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
@@ -22,7 +22,10 @@ const Projects = () => {
           description="Bachelor's in Computer Science (2016 - 2020)"
         />
       </div>
-      <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+        Work Experience
+      </h1>
+      <div className="flex justify-center items-center gap-12 flex-wrap">
         <ProjectCard
           src="/reality.png"
           title="RealityAI"
