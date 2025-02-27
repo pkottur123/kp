@@ -14,15 +14,15 @@ const ProjectCard = ({ src, title, description }: Props) => {
         <Image
           src={src}
           alt={title}
-          width={1000}
-          height={1000}
-          className="w-full object-contain"
+          layout="fill"
+          objectFit="contain"
+          className="rounded-t-lg"
        />
       </div>
 
-      <div className="relative p-4">
-        <h1 className="text-2xl font-semibold text-white">{title}</h1>
-        <p className="mt-2 text-gray-300">{description}</p>
+      <div className="w-full p-4 text-center">
+        <h1 className="text-lg font-semibold text-white">{title}</h1>
+        <p className="mt-1 text-gray-400 text-sm">{description}</p>
       </div>
     </div>
   );
