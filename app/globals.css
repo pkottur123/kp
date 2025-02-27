@@ -11,10 +11,10 @@
 .Welcome-text {
   background: linear-gradient(
       0deg,
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
+      rgba(13, 195, 255, 0.4),
+      rgba(18, 172, 255, 0.4)
     ),
-    linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
+    linear-gradient(90.01deg, #000000 0.01%, #000000 50.01%, #000000 100%);
   background-blend-mode: normal, screen;
   -webkit-background-clip: text;
   background-clip: text;
@@ -27,7 +27,7 @@
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   border-radius: 32px;
-  box-shadow: inset 0 -7px 11px #a48fff1f;
+  box-shadow: inset 0 -7px 11px #0000001f;
   display: flex;
 
   position: relative;
@@ -35,24 +35,27 @@
   width: max-content;
   transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
 }
-
+html, body {
+  background-color: black;
+  color: white; /* Ensures text is visible */
+}
 .button-primary {
   background: linear-gradient(
       180deg,
-      rgba(60, 8, 126, 0) 0%,
-      rgba(60, 8, 126, 0.32) 100%
+      rgba(8, 137, 250, 0) 0%,
+      rgba(10, 145, 255, 0.32) 100%
     ),
-    rgba(113, 47, 255, 0.12);
-  box-shadow: inset 0 0 12px #bf97ff3d;
+    rgba(0, 123, 255, 0.12);
+  box-shadow: inset 0 0 12px #00b3ff3d;
 }
 .button-primary:hover {
   background: linear-gradient(
       180deg,
-      rgba(60, 8, 126, 0) 0%,
-      rgba(60, 8, 126, 0.42) 100%
+      rgba(12, 170, 255, 0) 0%,
+      rgba(11, 153, 255, 0.42) 100%
     ),
-    rgba(113, 47, 255, 0.24);
-  box-shadow: inset 0 0 12px #bf97ff70;
+    rgba(0, 162, 255, 0.24);
+  box-shadow: inset 0 0 12px #00b3ff70;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -64,8 +67,14 @@
   display: none;
 }
 
-
+.description-class { 
+  white-space: pre-line; /* Ensures \n works */
+}
 
 html {
   scroll-behavior: smooth;
+}
+.security-section {
+  background-color: black;
+  color: white;
 }
