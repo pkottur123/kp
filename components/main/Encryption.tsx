@@ -8,6 +8,8 @@ import Image from "next/image";
 const Encryption = () => {
   return (
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full bg-black">
+      <div className="absolute w-full h-full bg-black"></div> {/* Ensures full black background */}
+
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
@@ -44,20 +46,22 @@ const Encryption = () => {
         <div className="cursive text-[20px] font-medium text-center text-gray-300"></div>
       </div>
 
-      <div className="w-full flex items-start justify-center absolute">
+      {/* REMOVE VIDEO OR SET IT TO A BLACK PLACEHOLDER */}
+      {/* <div className="w-full flex items-start justify-center absolute">
         <video
           loop
           muted
           autoPlay
           playsInline
           preload="false"
-          className="w-full h-auto"
+          className="w-full h-auto opacity-0" // Hides the video if it's causing the blue tint
           src="/encryption.webm/"
         />
-      </div>
+      </div> */}
     </div>
   );
 };
 
 export default Encryption;
+
 
