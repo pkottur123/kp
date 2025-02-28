@@ -27,6 +27,10 @@ const Footer = () => {
                         <span className="text-[15px] ml-[6px]">prasannakttur@gmail.com</span>    
                     </p>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
+                      
+                        <span className="text-[15px] ml-[6px]">(682)392-0536</span>    
+                    </p>
+                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
                   
                         <span className="text-[15px] ml-[6px]">Dallas,Texas</span>    
                     </p>
