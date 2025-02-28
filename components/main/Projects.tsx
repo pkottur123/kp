@@ -31,11 +31,6 @@ const Projects = () => {
         Experiance
       </h1>
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
-      <ProjectCard
-          src="/Reality AI.png"
-          title="Reality AI"
-          description="Gen AI Data Analyst\n(January 2025-Present."
-        />
     </div>
   );
 };
