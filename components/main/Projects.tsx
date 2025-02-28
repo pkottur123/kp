@@ -19,6 +19,22 @@ const Projects = () => {
           description="Bachelor's in Computer Science (2016 - 2020)"
         />
       </div>
+      <div className="flex flex-col items-center justify-center py-20" id="projects">
+    <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-Orange-700 to-cyan-500 py-10">
+       Education
+    </h1>
+      <div className="flex justify-center items-center gap-12 flex-wrap">
+        <ProjectCard
+          src="/uta.png"
+          title="University of Texas at Arlington"
+          description="Master's in Business Analyst (2023 - 2024)"
+        />
+        <ProjectCard
+          src="/sppu.jpg"
+          title="Pune University"
+          description="Bachelor's in Computer Science (2016 - 2020)"
+        />
+      </div>
       
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Experience
