@@ -46,7 +46,6 @@ const Encryption = () => {
         <div className="cursive text-[20px] font-medium text-center text-gray-300"></div>
       </div>
 
-      {/* REMOVE VIDEO OR SET IT TO A BLACK PLACEHOLDER */}
         <div className="w-full flex items-start justify-center absolute">
         <video
           loop
@@ -54,7 +53,7 @@ const Encryption = () => {
           autoPlay
           playsInline
           preload="false"
-          className="w-full h-auto opacity-0" // Hides the video if it's causing the blue tint
+          className="w-full h-auto opacity-10" // Hides the video if it's causing the blue tint
           src="/encryption.webm/"
         />
       </div> 
