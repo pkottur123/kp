@@ -15,7 +15,7 @@ const Encryption = () => {
           variants={slideInFromTop}
           className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-700"
         >
-          Cyber Security
+          Cyber     Security
         </motion.div>
       </div>
 
