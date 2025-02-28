@@ -23,7 +23,7 @@ const Projects = () => {
 
       {/* Section 2: Work Experience */}
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
-        Work Experience
+        Experience
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
         <ProjectCard
