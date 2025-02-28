@@ -3,10 +3,7 @@ import ProjectCard from "../sub/ProjectCard";
 
 const Projects = () => {
   return (
-    <div
-      className="flex flex-col items-center justify-center py-20"
-      id="projects"
-    >
+    <div className="flex flex-col items-center justify-center py-20" id="projects">
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-Orange-700 to-cyan-500 py-10">
         Education
       </h1>
@@ -22,6 +19,7 @@ const Projects = () => {
           description="Bachelor's in Computer Science (2016 - 2020)"
         />
       </div>
+      
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Experience
       </h1>
