@@ -21,10 +21,10 @@ const Projects = () => {
           title="Pune University"
           description="Bachelor's in Computer Science (2016 - 2020)"
       </div>
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+    </div>
+    <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Work Experience
       </h1>
-    </div>
   );
 };
 
