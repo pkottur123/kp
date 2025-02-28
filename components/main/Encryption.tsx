@@ -26,15 +26,15 @@ const Encryption = () => {
           <Image
             src="/LockTop.png"
             alt="Lock top"
-            width={50}
-            height={50}
+            width={60}
+            height={60}
             className="w-[50px] translate-y-5 transition-all duration-200 group-hover:translate-y-11"
           />
           <Image
             src="/LockMain.png"
             alt="Lock Main"
-            width={70}
-            height={70}
+            width={80}
+            height={80}
             className=" z-10"
           />
         </div>
