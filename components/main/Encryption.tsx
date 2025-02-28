@@ -13,7 +13,7 @@ const Encryption = () => {
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
-          className="text-[50px] font-medium text-center text-gray-200"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-700"
         >
           Cyber Security
         </motion.div>
@@ -47,7 +47,7 @@ const Encryption = () => {
       </div>
 
       {/* REMOVE VIDEO OR SET IT TO A BLACK PLACEHOLDER */}
-      {/* <div className="w-full flex items-start justify-center absolute">
+        <div className="w-full flex items-start justify-center absolute">
         <video
           loop
           muted
@@ -57,7 +57,7 @@ const Encryption = () => {
           className="w-full h-auto opacity-0" // Hides the video if it's causing the blue tint
           src="/encryption.webm/"
         />
-      </div> */}
+      </div> 
     </div>
   );
 };
