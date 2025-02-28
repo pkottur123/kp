@@ -17,7 +17,7 @@ const Projects = () => {
         <ProjectCard
           src="/sppu.jpg"
           title="Pune University"
-          description="Bachelor's in Computer Science (2016 - 2020)"
+          description="Bachelor's in Computer Science (2018 - 2022)"
         />
       </div>
 
@@ -29,17 +29,17 @@ const Projects = () => {
         <ProjectCard
          src="/reality.png"
          title="RealityAI"
-          description="Gen AI Data Analyst(January 2025-Present)"// ✅ New Line
+          description="Gen AI Data Analyst          (January 2025-Present)"// ✅ New Line
         />
         <ProjectCard
           src="/open.jpg"
           title="OpenQQuantify"
-          description="Business Analyst (September 2024 - December 2024)"
+          description="Business Analyst            (September 2024 - December 2024)"
         />
         <ProjectCard
           src="/tripai.jpg"
           title="TripAI"
-          description="Business Analyst (September 2024 - December 2024)"
+          description="Business Analyst            (September 2024 - December 2024)"
         />
       </div>
     </div>
