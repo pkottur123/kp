@@ -29,7 +29,7 @@ const Projects = () => {
         <ProjectCard
          src="/reality.png"
          title="RealityAI"
-          description="Gen AI Data Analyst\n(January 2025-Present)"// ✅ New Line
+          description="Gen AI Data Analyst(January 2025-Present)"// ✅ New Line
         />
         <ProjectCard
           src="/open.jpg"
