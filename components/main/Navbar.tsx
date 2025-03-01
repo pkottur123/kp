@@ -63,26 +63,7 @@ const Navbar = () => {
           {isOpen ? <IoMdClose /> : <IoMdMenu />}
         </button>
       </div>
-      {/* Mobile Navigation Menu */}
-      <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } absolute top-[65px] left-0 w-full bg-[#030014e0] backdrop-blur-md text-white flex flex-col space-y-4 py-4 px-5 md:hidden`}
-      >
-        <a href="#about-me" className="cursor-pointer" onClick={() => setIsOpen(false)}>
-          Home
-        </a>
-        <a href="#skills" className="cursor-pointer" onClick={() => setIsOpen(false)}>
-          Skills
-        </a>
-        <a href="#projects" className="cursor-pointer" onClick={() => setIsOpen(false)}>
-          Career
-        </a>
-
-
-
-
-        
+          
       </div>
     </div>
   );
