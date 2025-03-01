@@ -55,14 +55,7 @@ const Navbar = () => {
             <Image src="/discord.svg" alt="Discord" width={24} height={24} />
           </a>
         </div>
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white text-2xl"
-        >
-          {isOpen ? <IoMdClose /> : <IoMdMenu />}
-        </button>
-      </div>
+       
           
       </div>
     </div>
