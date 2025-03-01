@@ -8,6 +8,7 @@ import { IoMdMenu, IoMdClose } from "react-icons/io"; // Icons for menu toggle
 
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#0374ff]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
@@ -54,6 +55,34 @@ const Navbar = () => {
             <Image src="/discord.svg" alt="Discord" width={24} height={24} />
           </a>
         </div>
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-white text-2xl"
+        >
+          {isOpen ? <IoMdClose /> : <IoMdMenu />}
+        </button>
+      </div>
+      {/* Mobile Navigation Menu */}
+      <div
+        className={`${
+          isOpen ? "block" : "hidden"
+        } absolute top-[65px] left-0 w-full bg-[#030014e0] backdrop-blur-md text-white flex flex-col space-y-4 py-4 px-5 md:hidden`}
+      >
+        <a href="#about-me" className="cursor-pointer" onClick={() => setIsOpen(false)}>
+          Home
+        </a>
+        <a href="#skills" className="cursor-pointer" onClick={() => setIsOpen(false)}>
+          Skills
+        </a>
+        <a href="#projects" className="cursor-pointer" onClick={() => setIsOpen(false)}>
+          Career
+        </a>
+
+
+
+
+        
       </div>
     </div>
   );
