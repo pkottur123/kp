@@ -1,3 +1,4 @@
+\
 "use client";
 import React from "react";
 
@@ -15,7 +16,7 @@ const Encryption = () => {
           variants={slideInFromTop}
           className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-700"
         >
-          Cyber  Security
+         
         </motion.div>
       </div>
 
@@ -32,7 +33,7 @@ const Encryption = () => {
           autoPlay
           playsInline
           preload="false"
-          className="w-full h-auto opacity-5" // Hides the video if it's causing the blue tint
+          className="w-full h-auto opacity-2" // Hides the video if it's causing the blue tint
           src="/video1.webm/"
         />
       </div> 
