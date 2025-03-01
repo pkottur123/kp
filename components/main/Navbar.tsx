@@ -1,14 +1,10 @@
-import { useState } from "react";
 import { Socials } from "@/constants";
 import Image from "next/image";
 import React from "react";
-import { IoMdMenu, IoMdClose } from "react-icons/io"; // Icons for menu toggle
-
 
 
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#0374ff]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
@@ -55,8 +51,6 @@ const Navbar = () => {
             <Image src="/discord.svg" alt="Discord" width={24} height={24} />
           </a>
         </div>
-       
-          
       </div>
     </div>
   );
