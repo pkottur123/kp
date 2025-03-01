@@ -1,3 +1,5 @@
+"use client";  // This tells Next.js that this is a client component
+
 import { useState } from "react";
 import Image from "next/image";
 
