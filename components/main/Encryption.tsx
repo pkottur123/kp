@@ -23,7 +23,7 @@ const Encryption = () => {
       
 
       <div className="absolute z-[20] bottom-[10px] px-[5px]">
-        <div className="cursive text-[20px] font-medium text-center text-gray-300"></div>
+        <div className="cursive text-[15px] font-medium text-center text-gray-300"></div>
       </div>
 
         <div className="w-full flex items-start justify-center absolute">
