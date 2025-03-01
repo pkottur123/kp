@@ -21,7 +21,7 @@ const Navbar = () => {
           />
           
 
-          <span className="font-cursive ml-[15px] hidden md:block text-blue-300">
+          <span className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center">
             Prasanna Kottur
           </span>
         </a>
