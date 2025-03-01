@@ -55,9 +55,9 @@ const Navbar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? (
-            <Image src="/close.webp" alt="Close" width={30} height={30} />
+            <Image src="/close1.png" alt="Close" width={30} height={30} />
           ) : (
-            <Image src="/menu1.png" alt="Menu" width={30} height={30} />
+            <Image src="/menu.webp" alt="Menu" width={30} height={30} />
           )}
         </button>
       </div>
