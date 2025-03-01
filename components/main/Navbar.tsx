@@ -57,7 +57,7 @@ const Navbar = () => {
           {menuOpen ? (
             <Image src="/close1.png" alt="Close" width={30} height={30} />
           ) : (
-            <Image src="/menu.jpg" alt="Menu" width={30} height={30} />
+            <Image src="/menu4.png" alt="Menu" width={30} height={30} />
           )}
         </button>
       </div>
