@@ -18,7 +18,7 @@ const Navbar = () => {
             height={50}
             className="cursor-pointer hover:animate-slowspin"
           />
-          <span className="cursive text-[20px] hidden md:block text-gray-300">
+          <span className="cursive text-[20px] hidden  text-gray-300">
             Prasanna Kottur
           </span>
         </a>
@@ -55,9 +55,9 @@ const Navbar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? (
-            <Image src="/close.svg" alt="Close" width={30} height={30} />
+            <Image src="/close.webp" alt="Close" width={30} height={30} />
           ) : (
-            <Image src="/menu.png" alt="Menu" width={30} height={30} />
+            <Image src="/menu1.png" alt="Menu" width={30} height={30} />
           )}
         </button>
       </div>
