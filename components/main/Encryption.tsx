@@ -33,8 +33,8 @@ const Encryption = () => {
           autoPlay
           playsInline
           preload="false"
-          className="w-full h-auto opacity-10" // Hides the video if it's causing the blue tint
-          src="/image9.jpg/"
+          className="w-full h-auto opacity-15" // Hides the video if it's causing the blue tint
+          src="/video1.webm/"
         />
       </div> 
     </div>
