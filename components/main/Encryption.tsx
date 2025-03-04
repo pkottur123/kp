@@ -27,7 +27,7 @@ const Encryption = () => {
       </div>
 
         <div className="w-full flex items-start justify-center absolute">
-        <video
+        <image
           loop
           muted
           autoPlay
