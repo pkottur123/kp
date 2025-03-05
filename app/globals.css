@@ -6,6 +6,33 @@
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }
+@media screen and (max-width: 768px) {
+  .Welcome-text {
+    font-size: 1.3rem !important; /* Reduce text size */
+  }
+
+  h1 {
+    font-size: 1.8rem !important; /* Smaller heading */
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.2rem !important;
+  }
+
+  p {
+    font-size: 0.9rem !important; /* Reduce paragraph size */
+    line-height: 1.4; /* Improve readability */
+  }
+
+  .cursive {
+    font-size: 1.2rem !important; /* Reduce navbar name */
+  }
+}
+
 
 /* Responsive Font Sizes */
 @media screen and (max-width: 768px) {
