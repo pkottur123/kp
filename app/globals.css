@@ -20,19 +20,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-@media screen and (max-width: 768px) {
-    h1, h2, h3 {
-        font-size: 80%; /* Reduce font size */
-    }
-    
-    p {
-        font-size: 90%; /* Adjust paragraph text */
-    }
-
-    .your-class-name {
-        font-size: 75%; /* Adjust as needed */
-    }
-}
 
 .Welcome-box {
   isolation: isolate;
