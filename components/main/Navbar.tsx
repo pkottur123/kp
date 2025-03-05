@@ -18,13 +18,13 @@ const Navbar = () => {
             height={50}
             className="cursor-pointer hover:animate-slowspin"
           />
-          <span className="cursive text-[20px]  text-gray-300">
+          <span className="cursive text-[16px] md:text-[20px] text-gray-300">
             Prasanna Kottur
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 bg-[#0300145e] border border-[#0374ff] px-6 py-2 rounded-full text-gray-200">
+        <div className="hidden md:flex items-center space-x-6 bg-[#0300145e] border border-[#0374ff] px-6 py-2 rounded-full text-gray-200 text-sm md:text-base">
           <a href="#about-me" className="cursor-pointer">
             Home
           </a>
@@ -39,13 +39,13 @@ const Navbar = () => {
         {/* Desktop Social Links */}
         <div className="hidden md:flex flex-row gap-5">
           <a href="https://www.linkedin.com/in/prasannakottur/" target="_blank" rel="noopener noreferrer">
-            <Image src="/Linkedin.png" alt="LinkedIn" width={24} height={24} />
+            <Image src="/Linkedin.png" alt="LinkedIn" width={20} height={20} />
           </a>
           <a href="https://github.com/kotturp" target="_blank" rel="noopener noreferrer">
-            <Image src="/gitwhite.png" alt="GitHub" width={24} height={24} />
+            <Image src="/gitwhite.png" alt="GitHub" width={20} height={20} />
           </a>
           <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer">
-            <Image src="/discord.svg" alt="Discord" width={24} height={24} />
+            <Image src="/discord.svg" alt="Discord" width={20} height={20} />
           </a>
         </div>
 
@@ -68,7 +68,7 @@ const Navbar = () => {
           menuOpen ? "h-auto py-5" : "h-0 overflow-hidden"
         } md:hidden`}
       >
-        <div className="flex flex-col items-center space-y-5 text-gray-200">
+        <div className="flex flex-col items-center space-y-5 text-gray-200 text-sm">
           <a href="#about-me" className="cursor-pointer" onClick={() => setMenuOpen(false)}>
             Home
           </a>
@@ -81,13 +81,13 @@ const Navbar = () => {
           {/* Mobile Social Links */}
           <div className="flex gap-5 mt-3">
             <a href="https://www.linkedin.com/in/prasannakottur/" target="_blank" rel="noopener noreferrer">
-              <Image src="/Linkedin.png" alt="LinkedIn" width={24} height={24} />
+              <Image src="/Linkedin.png" alt="LinkedIn" width={20} height={20} />
             </a>
             <a href="https://github.com/kotturp" target="_blank" rel="noopener noreferrer">
-              <Image src="/gitwhite.png" alt="GitHub" width={24} height={24} />
+              <Image src="/gitwhite.png" alt="GitHub" width={20} height={20} />
             </a>
             <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer">
-              <Image src="/discord.svg" alt="Discord" width={24} height={24} />
+              <Image src="/discord.svg" alt="Discord" width={20} height={20} />
             </a>
           </div>
         </div>
