@@ -38,7 +38,7 @@ const HeroContent = () => {
           <span>
             
             
-            <span className="text-3xl md:text-5xl lg:text-6xl bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-cyan-500">
               {" "}
               Prasanna Kottur{" "}
             </span>
