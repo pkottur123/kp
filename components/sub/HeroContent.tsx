@@ -47,7 +47,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-sm md:text-lg text-gray-400 my-4 md:my-5 max-w-[350px] md:max-w-[600px]"
         >
-         
+        I&apos;m a Business Analyst with experience in data analysis, process optimization, and requirement gathering. I specialize in turning complex business needs into actionable insights and solutions.
         </motion.p>
         <motion.a
           onClick={handleHireMeClick}
