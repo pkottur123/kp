@@ -12,7 +12,7 @@ import Image from "next/image";
 
 const HeroContent = () => {
   const handleHireMeClick = () => {
-    window.open("/Prasanna_Kottur_Business_Analyst..pdf", "_blank");
+    window.open("/Prasanna_Kottur_Business_Analyst.pdf", "_blank");
   };
   return (
     <motion.div
