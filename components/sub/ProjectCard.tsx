@@ -7,9 +7,11 @@ interface Props {
   src: string;
   title: string;
   description: string;
+  fullDetails: string;
 }
 
-const ProjectCard = ({ src, title, description }: Props) => {
+const ProjectCard = ({ src, title, description, fullDetails }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
    <motion.div
       className="w-[300px] h-[220px] flex flex-col items-center bg-[#1A1A2E] rounded-lg shadow-lg border border-[#2A0E61]">
@@ -17,13 +19,7 @@ const ProjectCard = ({ src, title, description }: Props) => {
       onClick={() => setIsOpen(true)}
     >
       <div className="relative w-full h-[120px] overflow-hidden">
-        <Image
-          src={src}
-          alt={title}
-          layout="fill"
-          objectFit="contain"
-          className="rounded-t-lg"
-       />
+          <Image src={src} alt={title} layout="fill" objectFit="contain" className="rounded-t-lg" />
       </div>
 
       <div className="w-full p-4 text-center">
