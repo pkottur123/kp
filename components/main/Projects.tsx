@@ -47,7 +47,7 @@ const Projects = () => {
             onClick={() => {
               console.log(`✅ Opening Modal for: ${project.title}`);
               setSelectedProject(project);
-            }}
+            }} // ✅ Now correctly passing onClick
           />
         ))}
       </div>
