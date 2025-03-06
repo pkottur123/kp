@@ -7,10 +7,10 @@ interface Props {
   src: string;
   title: string;
   description: string;
-  fullDetails: string;
+  fullDetails: string; // Added full details for back side
 }
 
-const ExperienceCard = ({ src, title, description, fullDetails }: Props) => {
+const ProjectCard = ({ src, title, description, fullDetails }: Props) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
