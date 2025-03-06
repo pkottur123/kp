@@ -12,14 +12,12 @@ const Projects = () => {
         <ProjectCard
           src="/uta.png"
           title="University of Texas at Arlington"
-          description="Master's in Business Analytics (2023 - 2024)"
-          fullDetails="Completed a Master's degree in Business Analytics, focusing on data analysis, visualization, and machine learning applications in business."
+          description="Master's in Business Analytics(2023 - 2024)"
         />
         <ProjectCard
           src="/sppu.jpg"
           title="Pune University"
           description="Bachelor's in Computer Science (2018 - 2022)"
-          fullDetails="Earned a Bachelor's in Computer Science, with hands-on experience in programming, databases, and software development methodologies."
         />
       </div>
 
@@ -29,22 +27,19 @@ const Projects = () => {
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
         <ProjectCard
-          src="/reality.png"
-          title="RealityAI"
-          description="Gen AI Data Analyst (January 2025 - Present)"
-          fullDetails="At RealityAI, I work on developing AI-driven analytics solutions, implementing machine learning pipelines, and utilizing NLP for intelligent data processing."
+         src="/reality.png"
+         title="RealityAI"
+          description="Gen AI Data Analyst          (January 2025-Present)"// ✅ New Line
         />
         <ProjectCard
           src="/open.jpg"
           title="OpenQQuantify"
-          description="Business Analyst (September 2024 - December 2024)"
-          fullDetails="Developed data-driven strategies, conducted predictive analytics, and improved business intelligence solutions for data-driven decision-making."
+          description="Business Analyst            (September 2024 - December 2024)"
         />
         <ProjectCard
           src="/tripai.jpg"
           title="TripAI"
-          description="Business Analyst (September 2024 - December 2024)"
-          fullDetails="Contributed to AI-powered travel optimization models, customer data analytics, and automation of business processes for enhanced efficiency."
+          description="Business Analyst            (September 2024 - December 2024)"
         />
       </div>
     </div>
