@@ -9,21 +9,21 @@ const Projects = () => {
       <div className="flex justify-center items-center gap-12 flex-wrap">
         {[
           {
-            src: "/Port1.jpeg",
+            src: "/reality.png",
             title: "Job Compatibility Checker",
             description: "AI-powered tool that analyzes job descriptions and provides match scores.",
             fullDetails:
               "This tool uses NLP and AI-driven techniques to compare resumes with job descriptions. It provides users with a compatibility score and highlights missing skills.",
           },
           {
-            src: "/Port2.jpeg",
+            src: "/reality.png",
             title: "Query Genie",
             description: "Python-based chatbot using PandasAI, processing over 250,000+ entries.",
             fullDetails:
               "Query Genie is an AI chatbot built with PandasAI to automate repetitive queries in large datasets.",
           },
           {
-            src: "/Port3.jpeg",
+            src: "/reality.png",
             title: "Voice Based ChatBot",
             description: "Designed a voice-based feedback analysis system with ChatGPT integration.",
             fullDetails:
