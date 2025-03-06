@@ -56,8 +56,8 @@ const ProjectCard = ({ src, title, description, fullDetails }: Props) => {
             <button
               className="absolute top-4 right-4 text-white text-xl"
               onClick={() => {
-                console.log("Closing modal...");
-                setIsOpen(false);
+                console.log("Card clicked! Opening modal...");
+                setIsOpen(true);
               }}
             >
               ✖
