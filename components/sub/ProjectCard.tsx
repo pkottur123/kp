@@ -33,11 +33,7 @@ const ProjectCard = ({ src, title, description }: Props) => {
     </motion.div>
     {/* Modal Pop-Up */}
       {isOpen && (
-        <motion.div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
+        <motion.div>
           <div className="bg-[#1A1A2E] p-6 rounded-lg shadow-lg w-[90%] md:w-[600px]">
             {/* Close Button */}
             <button className="absolute top-4 right-4 text-white text-xl" onClick={() => setIsOpen(false)}>
