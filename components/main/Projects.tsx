@@ -37,7 +37,7 @@ const Projects = () => {
           description="Business Analyst            (September 2024 - December 2024)"
         />
         <ProjectCard
-          src="/tripai1.png"
+          src="/tripai.jpg"
           title="TripAI"
           description="Business Analyst            (September 2024 - December 2024)"
         />
