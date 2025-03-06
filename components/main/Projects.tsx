@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import ProjectCard from "../sub/ProjectCard";
+import ProjectCard from "./ProjectCard";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const Projects = () => {
+const ProjectPage = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
   const projects = [
@@ -33,10 +33,12 @@ const Projects = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center py-20" id="projects">
+    <div className="flex flex-col items-center justify-center py-20">
       <h1 className="text-[60px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-purple-500 py-10">
         Projects
       </h1>
+
+      {/* Project Cards */}
       <div className="flex justify-center items-center gap-12 flex-wrap">
         {projects.map((project, index) => (
           <ProjectCard
@@ -44,15 +46,12 @@ const Projects = () => {
             src={project.src}
             title={project.title}
             description={project.description}
-            onClick={() => {
-              console.log(`✅ Opening Modal for: ${project.title}`); // ✅ Debugging
-              setSelectedProject(project);
-            }}
+            onClick={() => setSelectedProject(project)}
           />
         ))}
       </div>
 
-      {/* ✅ Modal Pop-Up */}
+      {/* Modal Pop-Up */}
       {selectedProject && (
         <motion.div
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50"
@@ -63,10 +62,7 @@ const Projects = () => {
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 text-white text-xl"
-              onClick={() => {
-                console.log("❌ Closing Modal...");
-                setSelectedProject(null);
-              }}
+              onClick={() => setSelectedProject(null)}
             >
               ✖
             </button>
@@ -90,4 +86,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectPage;
