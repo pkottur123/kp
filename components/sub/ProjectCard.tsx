@@ -12,15 +12,18 @@ interface Props {
 }
 
 const ProjectCard = ({ src, title, description, fullDetails }: Props) => {
-  const [isOpen, setIsOpen] = useState(false); // ✅ Manages modal state
+  const [isOpen, setIsOpen] = useState(false); // ✅ Ensure useState is initialized
 
   return (
     <>
       {/* Project Card */}
       <motion.div
         className="w-[300px] h-[250px] flex flex-col items-center bg-[#1A1A2E] rounded-lg shadow-lg border border-[#2A0E61] cursor-pointer transition-all duration-300 hover:shadow-xl"
-        whileHover={{ scale: 1.05 }} // ✅ Hover effect works
-        onClick={() => setIsOpen(true)} // ✅ Opens modal on click
+        whileHover={{ scale: 1.05 }} // ✅ Hover effect
+        onClick={() => {
+          console.log("Card clicked! Opening modal...");
+          setIsOpen(true);
+        }} // ✅ Ensure modal opens on click
       >
         {/* Image */}
         <div className="relative w-full h-[120px] overflow-hidden">
@@ -41,7 +44,7 @@ const ProjectCard = ({ src, title, description, fullDetails }: Props) => {
         </div>
       </motion.div>
 
-      {/* Modal Pop-Up */}
+      {/* ✅ Modal Pop-Up (Check if it appears in the DOM) */}
       {isOpen && (
         <motion.div
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50"
@@ -50,7 +53,13 @@ const ProjectCard = ({ src, title, description, fullDetails }: Props) => {
         >
           <div className="bg-[#1A1A2E] p-6 rounded-lg shadow-lg w-[90%] md:w-[600px] relative">
             {/* Close Button */}
-            <button className="absolute top-4 right-4 text-white text-xl" onClick={() => setIsOpen(false)}>
+            <button
+              className="absolute top-4 right-4 text-white text-xl"
+              onClick={() => {
+                console.log("Closing modal...");
+                setIsOpen(false);
+              }}
+            >
               ✖
             </button>
 
