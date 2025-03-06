@@ -7,7 +7,7 @@ interface Props {
   src: string;
   title: string;
   description: string;
-  onClick: () => void; // ✅ Ensure this exists
+  onClick: () => void;
 }
 
 const ProjectCard = ({ src, title, description, onClick }: Props) => {
@@ -15,10 +15,7 @@ const ProjectCard = ({ src, title, description, onClick }: Props) => {
     <motion.div
       className="w-[300px] h-[250px] flex flex-col items-center bg-[#1A1A2E] rounded-lg shadow-lg border border-[#2A0E61] cursor-pointer transition-all duration-300 hover:shadow-xl"
       whileHover={{ scale: 1.05 }}
-      onClick={() => {
-        console.log(`🖱 Clicked on: ${title}`); // ✅ Debug log
-        onClick(); // ✅ Ensure this function runs
-      }}
+      onClick={onClick}
     >
       {/* Image */}
       <div className="relative w-full h-[120px] overflow-hidden">
