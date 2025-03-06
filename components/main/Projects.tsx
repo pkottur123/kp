@@ -36,7 +36,7 @@ const Projects = () => {
             src={project.src}
             title={project.title}
             description={project.description}
-            fullDetails={project.fullDetails} // ✅ Added missing property
+            fullDetails={project.fullDetails}
           />
         ))}
       </div>
