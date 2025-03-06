@@ -12,19 +12,26 @@ interface Props {
 }
 
 const ProjectCard = ({ src, title, description, fullDetails }: Props) => {
-  const [isOpen, setIsOpen] = useState(false); // ✅ Added state to control modal
+  const [isOpen, setIsOpen] = useState(false); // ✅ Manages modal state
 
   return (
     <>
       {/* Project Card */}
       <motion.div
-        className="w-[300px] h-[220px] flex flex-col items-center bg-[#1A1A2E] rounded-lg shadow-lg border border-[#2A0E61] cursor-pointer transition-all duration-300 hover:shadow-xl"
-        whileHover={{ scale: 1.05 }}
-        onClick={() => setIsOpen(true)} // ✅ Now correctly handles click event
+        className="w-[300px] h-[250px] flex flex-col items-center bg-[#1A1A2E] rounded-lg shadow-lg border border-[#2A0E61] cursor-pointer transition-all duration-300 hover:shadow-xl"
+        whileHover={{ scale: 1.05 }} // ✅ Hover effect works
+        onClick={() => setIsOpen(true)} // ✅ Opens modal on click
       >
         {/* Image */}
         <div className="relative w-full h-[120px] overflow-hidden">
-          <Image src={src} alt={title} layout="fill" objectFit="contain" className="rounded-t-lg" />
+          <Image
+            src={src}
+            alt={title}
+            width={280} // ✅ Fix broken images
+            height={120}
+            objectFit="cover"
+            className="rounded-t-lg"
+          />
         </div>
 
         {/* Text Content */}
