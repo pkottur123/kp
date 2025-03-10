@@ -3,6 +3,17 @@ import ProjectCard from "../sub/ProjectCard";
 
 const Projects = () => {
   return (
+    <head>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-07N4CB85Y7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-07N4CB85Y7');
+      </script>
+    </head>
     <div className="flex flex-col items-center justify-center py-20" id="projects">
       {/* Section 1: Education */}
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
