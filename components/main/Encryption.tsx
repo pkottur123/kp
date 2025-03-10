@@ -8,17 +8,7 @@ import Image from "next/image";
 
 const Encryption = () => {
   return (
-    <head>
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-07N4CB85Y7"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-07N4CB85Y7');
-      </script>
-    </head>
+    
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full bg-black">
       <div className="absolute w-auto h-auto top-0 z-[5]"></div> {/* Ensures full black background */}
 
