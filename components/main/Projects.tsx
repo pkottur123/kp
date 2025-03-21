@@ -54,7 +54,7 @@ const Projects = () => {
           description={
             <>
               Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.{" "}
-              
+            </>  
           }
         />
       </div>
