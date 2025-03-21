@@ -95,7 +95,7 @@ const Skills = () => {
 
       <section id="additional-skills" className="flex flex-wrap justify-center gap-5 py-20">
         {[
-          "Kotlin", "Rust", "Azure", "Redux", "Power BI", "FastAPI", "Terraform"
+          "Kotlin", "Rust", "Azure", "Java", "Power BI", "FastAPI", "SQL","Node.js","CSS3","Golang","TypeScript","JavaScript","HTML5","C","Tailwind CSS","MySQL","NoSQL","AWS"
         ].map((skill, index) => (
           <div key={index} className="text-white text-xl font-bold">{skill}</div>
         ))}
