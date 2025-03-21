@@ -4,12 +4,12 @@ import React, { ReactNode } from "react";
 interface Props {
   src: string;
   title: string;
-  description: ReactNode; // Change from string to ReactNode to allow links
+  description: ReactNode; // Allow JSX for hyperlink
 }
 
 const ProjectCard = ({ src, title, description }: Props) => {
   return (
-    <div className="w-[300px] h-auto flex flex-col items-center bg-[#1A1A2E] rounded-lg shadow-lg border border-[#2A0E61]">
+    <div className="w-[300px] h-auto flex flex-col items-center bg-[#1A1A2E] rounded-lg shadow-lg border border-[#2A0E61] p-4">
       {/* Image Section */}
       <div className="relative w-full h-[120px] overflow-hidden">
         <Image
@@ -22,9 +22,9 @@ const ProjectCard = ({ src, title, description }: Props) => {
       </div>
 
       {/* Text Content Section */}
-      <div className="w-full p-4 text-center">
+      <div className="w-full text-center mt-2">
         <h1 className="text-lg font-semibold text-white">{title}</h1>
-        <p className="mt-1 text-gray-400 text-sm">{description}</p> {/* JSX supported */}
+        <p className="mt-1 text-gray-400 text-sm">{description}</p>
       </div>
     </div>
   );
