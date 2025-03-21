@@ -5,17 +5,44 @@ import {
   Other_skill,
   Skill_data,
 } from "@/constants";
-import React from "react";
+import React, { useEffect } from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 
 const Skills = () => {
+  useEffect(() => {
+    const skillsContainer = document.getElementById("skills");
+    if (!skillsContainer) return;
+
+    const newSkills = ["Kotlin", "Rust", "Azure", "Redux", "Power BI", "FastAPI", "Terraform"];
+    const positions = [
+      { left: "10%", top: "5%" },
+      { left: "30%", top: "10%" },
+      { left: "50%", top: "15%" },
+      { left: "70%", top: "5%" },
+      { left: "85%", top: "20%" },
+      { left: "40%", top: "30%" },
+      { left: "60%", top: "35%" }
+    ];
+
+    newSkills.forEach((skill, index) => {
+      const skillElement = document.createElement("div");
+      skillElement.innerText = skill;
+      skillElement.style.position = "absolute";
+      skillElement.style.color = "white";
+      skillElement.style.fontSize = "20px";
+      skillElement.style.fontWeight = "bold";
+      skillElement.style.left = positions[index].left;
+      skillElement.style.top = positions[index].top;
+      skillsContainer.appendChild(skillElement);
+    });
+  }, []);
+
   return (
-    
     <section
       id="skills"
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
-      style={{ transform: "scale(0.9" }}
+      style={{ transform: "scale(0.9)" }}
     >
       <SkillText />
 
@@ -94,30 +121,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-// Additional code to overlay new skills
-document.addEventListener("DOMContentLoaded", () => {
-  const skillsContainer = document.getElementById("skills");
-  const newSkills = ["Kotlin", "Rust", "Azure", "Redux", "Power BI", "FastAPI", "Terraform"];
-  const positions = [
-    { left: "10%", top: "5%" },
-    { left: "30%", top: "10%" },
-    { left: "50%", top: "15%" },
-    { left: "70%", top: "5%" },
-    { left: "85%", top: "20%" },
-    { left: "40%", top: "30%" },
-    { left: "60%", top: "35%" }
-  ];
-
-  newSkills.forEach((skill, index) => {
-    const skillElement = document.createElement("div");
-    skillElement.innerText = skill;
-    skillElement.style.position = "absolute";
-    skillElement.style.color = "white";
-    skillElement.style.fontSize = "20px";
-    skillElement.style.fontWeight = "bold";
-    skillElement.style.left = positions[index].left;
-    skillElement.style.top = positions[index].top;
-    skillsContainer.appendChild(skillElement);
-  });
-});
