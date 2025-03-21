@@ -56,7 +56,7 @@ const Projects = () => {
           }
         />
         <ProjectCard
-          src="/tesla logo.jpg"
+          src="/Tesla_dashboard.jpeg"
           title="Tesla Sales Analysis"
           description={
             <>
