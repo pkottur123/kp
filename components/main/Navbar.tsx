@@ -34,6 +34,9 @@ const Navbar = () => {
           <a href="#projects" className="cursor-pointer">
             Career
           </a>
+          <a href="#projects" className="cursor-pointer">
+            Projects
+          </a>
         </div>
 
         {/* Desktop Social Links */}
