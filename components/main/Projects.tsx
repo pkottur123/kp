@@ -56,7 +56,7 @@ const Projects = () => {
       Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.
       <br />
       <a
-        href="/Netflix_Dashboard.pdf" // Change to actual PDF link
+        href="https://github.com/pkottur123/kp/blob/main/public/Netflix_Dashboard.png" // Change to actual PDF link
         target="_blank"
         rel="noopener noreferrer"
       >
