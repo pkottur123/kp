@@ -42,6 +42,28 @@ const Projects = () => {
           description="Business Analyst            (September 2024 - December 2024)"
         />
       </div>
+
+       {/* Section 2: Work Experience */}
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+        Projects
+      </h1>
+      <div className="flex justify-center items-center gap-12 flex-wrap">
+        <ProjectCard
+         src="/reality.png"
+         title="Netflix Content Analysis"
+          description="Gen AI Data Analyst          (January 2025-Present)"// ✅ New Line
+        />
+        <ProjectCard
+          src="/open.jpg"
+          title="Tesla Sales Insights Dashboard"
+          description="Business Analyst            (September 2024 - December 2024)"
+        />
+        <ProjectCard
+          src="/tripai.jpg"
+          title="TripAI"
+          description="Business Analyst            (September 2024 - December 2024)"
+        />
+      </div>
     </div>
   );
 };
