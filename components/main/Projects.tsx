@@ -69,7 +69,7 @@ const Projects = () => {
             <>
               Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.{" "}
               <motion.button
-                onClick={() => openModal("/Tesla_Dashboard.jpeg")}
+                onClick={() => openModal("/Tesla_dashboard.jpeg")}
                 variants={slideInFromRight(0.5)}
                 className="ml-2 text-white font-semibold bg-gradient-to-r from-blue-700 to-cyan-500 px-3 py-1 rounded-md hover:scale-105 transition-transform duration-300"
               >
