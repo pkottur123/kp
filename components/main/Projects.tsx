@@ -55,8 +55,8 @@ const Projects = () => {
         />
         <ProjectCard
           src="/tesla logo.jpg"
-          title="Tesla Sales Insights Dashboard"
-          description=""
+          title="Tesla Sales Analysis"
+          description="Provides insights into Tesla’s sales, revenue, and profitability across models, versions, and global markets."
         />
         <ProjectCard
           src="/tripai.jpg"
