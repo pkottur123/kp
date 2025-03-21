@@ -18,7 +18,7 @@ const Projects = () => {
         />
         <ProjectCard
           src="/sppu.jpg"
-          title="Pune University"
+          title="Savitribai Phule Pune University"
           description="Bachelor&apos;s in Computer Science (2018 - 2022)"
         />
       </div>
