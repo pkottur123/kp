@@ -6,39 +6,20 @@ import ProjectCard from "../sub/ProjectCard";
 const Projects = () => {
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
 
-  // Open PDF modal
-  const openPdfModal = (pdfPath: string) => {
-    console.log("Opening PDF:", pdfPath);
+  // Function to handle opening the PDF modal
+  const handleDashboardClick = (pdfPath: string) => {
+    console.log("Opening PDF:", pdfPath); // Debugging log
     setSelectedPdf(pdfPath);
   };
 
-  // Close PDF modal
+  // Function to close the modal
   const closePdfModal = () => {
-    console.log("Closing PDF Modal");
+    console.log("Closing PDF Modal"); // Debugging log
     setSelectedPdf(null);
   };
 
   return (
     <div className="flex flex-col items-center justify-center py-20" id="projects">
-      {/* Section: Education */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
-        Education
-      </h1>
-      <div className="flex justify-center items-center gap-12 flex-wrap">
-        <ProjectCard
-          src="/uta.png"
-          title="University of Texas at Arlington"
-          description="Master's in Business Analytics (2023 - 2024)"
-        />
-        <ProjectCard
-          src="/sppu.jpg"
-          title="Pune University"
-          description="Bachelor's in Computer Science (2018 - 2022)"
-        />
-      </div>
-
-      {/* Section: Projects */}
-      <div className="flex flex-col items-center justify-center py-20" id="projects">
       {/* Section: Projects */}
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Projects
@@ -52,7 +33,7 @@ const Projects = () => {
               Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.
               <br />
               <button
-                onClick={() => openPdfModal("/Netflix_dash.pdf")}
+                onClick={() => handleDashboardClick("/public/Netflix_dash.pdf")}
                 className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
               >
                 Dashboard
@@ -68,7 +49,7 @@ const Projects = () => {
               Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.
               <br />
               <button
-                onClick={() => openPdfModal("/Tesla_dash.pdf")}
+                onClick={() => handleDashboardClick("/public/Tesla_dash.pdf")}
                 className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
               >
                 Dashboard
