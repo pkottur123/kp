@@ -5,7 +5,7 @@ interface Props {
   src: string;
   title: string;
   description: ReactNode;
-  onButtonClick?: () => void; // ✅ Added event handler prop
+  onButtonClick?: () => void; // ✅ Button click function
 }
 
 const ProjectCard = ({ src, title, description, onButtonClick }: Props) => {
@@ -26,10 +26,14 @@ const ProjectCard = ({ src, title, description, onButtonClick }: Props) => {
       <div className="w-full text-center mt-3">
         <h1 className="text-lg font-semibold text-white">{title}</h1>
         <p className="mt-2 text-gray-400 text-sm">{description}</p>
-        {/* Button (Only shows if `onButtonClick` is provided) */}
+        {/* Button (Only if `onButtonClick` is passed) */}
         {onButtonClick && (
           <button
-            onClick={onButtonClick}
+            onClick={(e) => {
+              e.stopPropagation(); // ✅ Prevent event propagation issues
+              console.log("Dashboard Button Clicked"); // ✅ Debugging Log
+              onButtonClick();
+            }}
             className="mt-3 px-4 py-2 text-white bg-gradient-to-r from-blue-700 to-cyan-500 rounded-md hover:scale-105 transition-transform duration-300"
           >
             Dashboard
