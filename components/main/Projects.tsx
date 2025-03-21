@@ -57,6 +57,15 @@ const Projects = () => {
             </>  
           }
         />
+        <ProjectCard
+          src="/Samsung_dash.jpeg"
+          title="Samsung 5G Market Analysis"
+          description={
+            <>
+              This Samsung 5G Market Analysis dashboard provides insights into sales, revenue, market share, and regional 5G adoption trends across different smartphone models.{" "}
+            </>  
+          }
+        />
       </div>
     </div>
   );
