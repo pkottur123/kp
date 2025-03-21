@@ -58,11 +58,6 @@ const Projects = () => {
           title="Tesla Sales Analysis"
           description="Provides insights into Tesla’s sales, revenue, and profitability across models, versions, and global markets."
         />
-        <ProjectCard
-          src="/tripai.jpg"
-          title="TripAI"
-          description="Business Analyst            (September 2024 - December 2024)"
-        />
       </div>
     </div>
   );
