@@ -8,11 +8,13 @@ const Projects = () => {
 
   // Open PDF modal
   const openPdfModal = (pdfPath: string) => {
+    console.log("Opening PDF:", pdfPath);
     setSelectedPdf(pdfPath);
   };
 
   // Close PDF modal
   const closePdfModal = () => {
+    console.log("Closing PDF Modal");
     setSelectedPdf(null);
   };
 
@@ -35,6 +37,8 @@ const Projects = () => {
         />
       </div>
 
+      {/* Section: Projects */}
+      <div className="flex flex-col items-center justify-center py-20" id="projects">
       {/* Section: Projects */}
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Projects
