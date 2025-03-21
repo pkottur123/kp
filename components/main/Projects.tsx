@@ -1,26 +1,46 @@
-"use client"; // Ensure this runs on the client-side in Next.js
+"use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCard from "../sub/ProjectCard";
+import { motion } from "framer-motion";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
 const Projects = () => {
-  const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const modalRef = useRef();
 
-  // Function to handle opening the PDF modal
-  const handleDashboardClick = (pdfPath: string) => {
-    console.log("Opening PDF:", pdfPath); // Debugging log
-    setSelectedPdf(pdfPath);
+  // Function to open modal
+  const openModal = (image) => {
+    setSelectedImage(image);
   };
 
-  // Function to close the modal
-  const closePdfModal = () => {
-    console.log("Closing PDF Modal"); // Debugging log
-    setSelectedPdf(null);
+  // Function to close modal
+  const closeModal = () => {
+    setSelectedImage(null);
   };
 
   return (
     <div className="flex flex-col items-center justify-center py-20" id="projects">
-      {/* Section: Projects */}
+      {/* Section 1: Education */}
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+        Education
+      </h1>
+      <div className="flex justify-center items-center gap-12 flex-wrap">
+        <ProjectCard src="/uta.png" title="University of Texas at Arlington" description="Master's in Business Analytics (2023 - 2024)" />
+        <ProjectCard src="/sppu.jpg" title="Pune University" description="Bachelor's in Computer Science (2018 - 2022)" />
+      </div>
+
+      {/* Section 2: Work Experience */}
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+        Experience
+      </h1>
+      <div className="flex justify-center items-center gap-12 flex-wrap">
+        <ProjectCard src="/reality.png" title="RealityAI" description="Gen AI Data Analyst (January 2025 - Present)" />
+        <ProjectCard src="/open.jpg" title="OpenQQuantify" description="Business Analyst (September 2024 - December 2024)" />
+        <ProjectCard src="/tripai.jpg" title="TripAI" description="Business Analyst (September 2024 - December 2024)" />
+      </div>
+
+      {/* Section 3: Projects */}
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Projects
       </h1>
@@ -30,14 +50,14 @@ const Projects = () => {
           title="Netflix Content Analysis"
           description={
             <>
-              Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.
-              <br />
-              <button
-                onClick={() => handleDashboardClick("/public/Netflix_dash.pdf")}
-                className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
+              Analyzes Netflix's content distribution, ratings, genres, and regional availability to uncover streaming trends.{" "}
+              <motion.button
+                onClick={() => openModal("/Netflix_Dashboard.png")}
+                variants={slideInFromRight(0.5)}
+                className="ml-2 text-white font-semibold bg-gradient-to-r from-blue-700 to-cyan-500 px-3 py-1 rounded-md hover:scale-105 transition-transform duration-300"
               >
                 Dashboard
-              </button>
+              </motion.button>
             </>
           }
         />
@@ -46,34 +66,27 @@ const Projects = () => {
           title="Tesla Sales Analysis"
           description={
             <>
-              Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.
-              <br />
-              <button
-                onClick={() => handleDashboardClick("/public/Tesla_dash.pdf")}
-                className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
+              Provides insights into Tesla’s sales, revenue, and profitability across models, versions, and global markets.{" "}
+              <motion.button
+                onClick={() => openModal("/Tesla_dashboard.jpeg")}
+                variants={slideInFromRight(0.5)}
+                className="ml-2 text-white font-semibold bg-gradient-to-r from-blue-700 to-cyan-500 px-3 py-1 rounded-md hover:scale-105 transition-transform duration-300"
               >
                 Dashboard
-              </button>
+              </motion.button>
             </>
           }
         />
       </div>
 
-      {/* Modal for PDF Viewer */}
-      {selectedPdf && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-          <div className="relative bg-white p-4 rounded-lg shadow-lg w-[90vw] h-[80vh]">
-            <button
-              className="absolute top-2 right-2 text-black text-xl font-bold"
-              onClick={closePdfModal}
-            >
+      {/* Modal Popup */}
+      {selectedImage && (
+        <div ref={modalRef} className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+          <div className="relative bg-white p-4 rounded-lg shadow-lg max-w-[90vw] max-h-[80vh]">
+            <button className="absolute top-2 right-2 text-black text-xl font-bold" onClick={closeModal}>
               ✖
             </button>
-            <iframe
-              src={selectedPdf}
-              className="w-full h-full"
-              title="PDF Viewer"
-            />
+            <img src={selectedImage} alt="Dashboard" className="max-w-full max-h-full rounded-lg" />
           </div>
         </div>
       )}
