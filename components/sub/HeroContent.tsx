@@ -26,7 +26,7 @@ const HeroContent = () => {
           className="Welcome-box py-[6px] px-[5px] border border-[#7042f88b] opacity-[0.9]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[8px] h-4 w-4 md:h-5 md:w-5" />
-          <h1 className="Welcome-text text-xs md:text-sm">Business Analyst</h1>
+          <h1 className="Welcome-text text-xs md:text-sm">Business Intelligence Analyst</h1>
         </motion.div>
 
         <motion.div
@@ -39,7 +39,7 @@ const HeroContent = () => {
               Prasanna Kottur{" "}
             </span>
             <br className="block md:hidden" /> {/* Adds a break on small screens */}
-            Business Analyst
+            Business Intelligence Analyst
           </span>
         </motion.div>
 
