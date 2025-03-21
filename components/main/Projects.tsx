@@ -2,6 +2,19 @@ import React from "react";
 import ProjectCard from "../sub/ProjectCard";
 
 const Projects = () => {
+  // State for handling modal pop-ups
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Function to open modal
+  const openModal = (image) => {
+    setSelectedImage(image);
+  };
+
+  // Function to close modal
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+  
   return (
     <div className="flex flex-col items-center justify-center py-20" id="projects">
       {/* Section 1: Education */}
@@ -43,7 +56,7 @@ const Projects = () => {
         />
       </div>
 
-       {/* Section 2: Work Experience */}
+       {/* Section 3: Projects */}
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Projects
       </h1>
@@ -51,14 +64,40 @@ const Projects = () => {
         <ProjectCard
          src="/Netflix logo.png"
          title="Netflix Content Analysis"
-          description="Analyzes Netflix's content distribution, ratings, genres, and regional availability to uncover streaming trends."// ✅ New Line
+          description={
+            <>
+              Analyzes Netflix's content distribution, ratings, genres, and regional availability to uncover streaming trends.{" "}
+              <span className="text-blue-500 cursor-pointer underline" onClick={() => openModal("/Netflix_Dashboard.png")}>
+                Dashboard
+              </span>
+            </>
+          }
         />
         <ProjectCard
           src="/tesla logo.jpg"
           title="Tesla Sales Analysis"
-          description="Provides insights into Tesla’s sales, revenue, and profitability across models, versions, and global markets."
+          description={
+            <>
+              Provides insights into Tesla’s sales, revenue, and profitability across models, versions, and global markets.{" "}
+              <span className="text-blue-500 cursor-pointer underline" onClick={() => openModal("/Tesla_dashboard.jpeg")}>
+                Dashboard
+              </span>
+            </>
+          }
         />
       </div>
+
+      {/* Modal Popup */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+          <div className="relative bg-white p-4 rounded-lg shadow-lg">
+            <button className="absolute top-2 right-2 text-black text-xl font-bold" onClick={closeModal}>
+              ✖
+            </button>
+            <img src={selectedImage} alt="Dashboard" className="max-w-[90vw] max-h-[80vh] rounded-lg" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
