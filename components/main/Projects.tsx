@@ -44,14 +44,7 @@ const Projects = () => {
           description={
             <>
               Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.{" "}
-              <a
-                href="https://drive.google.com/your-netflix-image-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 underline hover:text-blue-600 transition-colors"
-              >
-                Dashboard
-              </a>
+              
             </>
           }
         />
@@ -61,15 +54,7 @@ const Projects = () => {
           description={
             <>
               Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.{" "}
-              <a
-                href="https://drive.google.com/your-tesla-image-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 underline hover:text-blue-600 transition-colors"
-              >
-                Dashboard
-              </a>
-            </>
+              
           }
         />
       </div>
