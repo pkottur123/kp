@@ -49,22 +49,24 @@ const Projects = () => {
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
         <ProjectCard
-          src="/Netflix logo.png"
-          title="Netflix Content Analysis"
-          description={
-            <>
-              Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.{" "}
-              <a
-                href="https://github.com/pkottur123/kp/blob/main/public/Netflix_Dashboard.png" // Change this to your actual PDF link
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 underline"
-               >
-                Dashboard
-               </a>
-             </>
-            }
-        />
+  src="/Netflix logo.png"
+  title="Netflix Content Analysis"
+  description={
+    <>
+      Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.
+      <br />
+      <a
+        href="/Netflix_Dashboard.pdf" // Change to actual PDF link
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
+          Dashboard
+        </button>
+      </a>
+    </>
+  }
+/>
         
       </div>
     </div>
