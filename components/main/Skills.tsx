@@ -7,11 +7,11 @@ import {
   Other_skill,
   Skill_data,
 } from "@/constants";
-import React, { useEffect } from "react";
+import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 
-
+const Skills = () => {
   return (
     <section
       id="skills"
@@ -91,35 +91,13 @@ import SkillText from "../sub/SkillText";
         </div>
       </div>
     </section>
+
+    <section id="additional-skills" className="flex flex-wrap justify-center gap-5 py-20">
+      {["Kotlin", "Rust", "Azure", "Redux", "Power BI", "FastAPI", "Terraform"].map((skill, index) => (
+        <div key={index} className="text-white text-xl font-bold">{skill}</div>
+      ))}
+    </section>
   );
 };
-const Skills = () => {
-  useEffect(() => {
-    const skillsContainer = document.getElementById("skills");
-    if (!skillsContainer) return;
-
-    const newSkills = ["Kotlin", "Rust", "Azure", "Redux", "Power BI", "FastAPI", "Terraform"];
-    const positions = [
-      { left: "10%", top: "5%" },
-      { left: "30%", top: "10%" },
-      { left: "50%", top: "15%" },
-      { left: "70%", top: "5%" },
-      { left: "85%", top: "20%" },
-      { left: "40%", top: "30%" },
-      { left: "60%", top: "35%" }
-    ];
-
-    newSkills.forEach((skill, index) => {
-      const skillElement = document.createElement("div");
-      skillElement.innerText = skill;
-      skillElement.style.position = "absolute";
-      skillElement.style.color = "white";
-      skillElement.style.fontSize = "20px";
-      skillElement.style.fontWeight = "bold";
-      skillElement.style.left = positions[index].left;
-      skillElement.style.top = positions[index].top;
-      skillsContainer.appendChild(skillElement);
-    });
-  }, []);
 
 export default Skills;
