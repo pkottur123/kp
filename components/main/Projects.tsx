@@ -10,10 +10,16 @@ const Projects = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-const Projects = () => {
-  const handleHireMeClick = () => {
-    window.open("/Netflix_dash.pdf", "_blank");
+  // Function to open modal
+  const openModal = (image: string) => {
+    setSelectedImage(image);
   };
+
+  // Function to close modal
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center py-20" id="projects">
       {/* Section 1: Education */}
@@ -46,14 +52,14 @@ const Projects = () => {
           description={
             <>
               Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.{" "}
-              <motion.a
-          onClick={handleHireMeClick}
-          variants={slideInFromRight(1)}
-          className="py-2 px-4 md:px-5 bg-gradient-to-r from-blue-700 to-cyan-500 text-white font-semibold text-sm md:text-lg rounded-lg max-w-[100px] md:max-w-[120px] hover:scale-105 transition-transform duration-300"
-        >
-          Resume
-        </motion.a>
-      </div>
+              <motion.button
+                onClick={() => openModal("/Netflix_Dashboard.png")}
+                variants={slideInFromRight(0.5)}
+                className="ml-2 text-white font-semibold bg-gradient-to-r from-blue-700 to-cyan-500 px-3 py-1 rounded-md hover:scale-105 transition-transform duration-300"
+              >
+                Dashboard
+              </motion.button>
+            </>
           }
         />
         <ProjectCard
