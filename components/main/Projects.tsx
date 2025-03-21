@@ -39,7 +39,7 @@ const Projects = () => {
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
         <ProjectCard
-          src="/Netflix logo.png"
+          src="/Netflix_Dashboard.png"
           title="Netflix Content Analysis"
           description={
             <>
