@@ -49,20 +49,20 @@ const Projects = () => {
           }
         />
         <ProjectCard
-          src="/Tesla_dashboard.jpeg"
-          title="Tesla Sales Analysis"
-          description={
-            <>
-              Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.{" "}
-            </>  
-          }
-        />
-        <ProjectCard
           src="/Samsung_dash.jpeg"
           title="Samsung 5G Market Analysis"
           description={
             <>
               This Samsung 5G Market Analysis dashboard provides insights into sales, revenue, market share, and regional 5G.{" "}
+            </>  
+          }
+        />
+        <ProjectCard
+          src="/Tesla_dashboard.jpeg"
+          title="Tesla Sales Analysis"
+          description={
+            <>
+              Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.{" "}
             </>  
           }
         />
