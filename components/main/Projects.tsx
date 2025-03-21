@@ -43,7 +43,7 @@ const Projects = () => {
         />
       </div>
 
-       {/* Section 3: Projects */}
+       {/* Section 2: Work Experience */}
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Projects
       </h1>
@@ -52,31 +52,11 @@ const Projects = () => {
          src="/Netflix logo.png"
          title="Netflix Content Analysis"
           description="Analyzes Netflix's content distribution, ratings, genres, and regional availability to uncover streaming trends."// ✅ New Line
-          <a
-                href="/Netflix_dash.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 cursor-pointer underline"
-              >
-                Dashboard
-          </a>
-         />
+        />
         <ProjectCard
           src="/tesla logo.jpg"
           title="Tesla Sales Analysis"
-          description={
-            <>
-              Provides insights into Tesla’s sales, revenue, and profitability across models, versions, and global markets.{" "}
-              <a
-                href="/Tesla_dash.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 cursor-pointer underline"
-              >
-                Dashboard
-              </a>
-            </>
-          }
+          description="Provides insights into Tesla’s sales, revenue, and profitability across models, versions, and global markets."
         />
       </div>
     </div>
