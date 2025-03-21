@@ -2,8 +2,8 @@
 
 import React, { useState, useRef } from "react";
 import ProjectCard from "../sub/ProjectCard";
-import { motion } from "framer-motion";
-import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { slideInFromRight } from "@/utils/motion";
 import Image from "next/image";
 
 const Projects = () => {
@@ -81,22 +81,40 @@ const Projects = () => {
       </div>
 
       {/* Modal Popup */}
-      {selectedImage && (
-        <div ref={modalRef} className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-          <div className="relative bg-white p-4 rounded-lg shadow-lg max-w-[90vw] max-h-[80vh]">
-            <button className="absolute top-2 right-2 text-black text-xl font-bold" onClick={closeModal}>
-              ✖
-            </button>
-            <Image
-              src={selectedImage}
-              alt="Dashboard"
-              width={800}
-              height={600}
-              className="max-w-full max-h-full rounded-lg"
-            />
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeModal}
+          >
+            <motion.div
+              ref={modalRef}
+              className="relative bg-white p-4 rounded-lg shadow-lg max-w-[90vw] max-h-[80vh]"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+            >
+              <button
+                className="absolute top-2 right-2 text-black text-xl font-bold"
+                onClick={closeModal}
+              >
+                ✖
+              </button>
+              <Image
+                src={selectedImage}
+                alt="Dashboard"
+                width={800}
+                height={600}
+                className="max-w-full max-h-full rounded-lg"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
