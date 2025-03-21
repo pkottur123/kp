@@ -4,13 +4,14 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "../sub/ProjectCard";
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
+import Image from "next/image";
 
 const Projects = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const modalRef = useRef();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   // Function to open modal
-  const openModal = (image) => {
+  const openModal = (image: string) => {
     setSelectedImage(image);
   };
 
@@ -26,8 +27,8 @@ const Projects = () => {
         Education
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
-        <ProjectCard src="/uta.png" title="University of Texas at Arlington" description="Master's in Business Analytics (2023 - 2024)" />
-        <ProjectCard src="/sppu.jpg" title="Pune University" description="Bachelor's in Computer Science (2018 - 2022)" />
+        <ProjectCard src="/uta.png" title="University of Texas at Arlington" description="Master&apos;s in Business Analytics (2023 - 2024)" />
+        <ProjectCard src="/sppu.jpg" title="Pune University" description="Bachelor&apos;s in Computer Science (2018 - 2022)" />
       </div>
 
       {/* Section 2: Work Experience */}
@@ -50,7 +51,7 @@ const Projects = () => {
           title="Netflix Content Analysis"
           description={
             <>
-              Analyzes Netflix's content distribution, ratings, genres, and regional availability to uncover streaming trends.{" "}
+              Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.{" "}
               <motion.button
                 onClick={() => openModal("/Netflix_Dashboard.png")}
                 variants={slideInFromRight(0.5)}
@@ -66,9 +67,9 @@ const Projects = () => {
           title="Tesla Sales Analysis"
           description={
             <>
-              Provides insights into Tesla’s sales, revenue, and profitability across models, versions, and global markets.{" "}
+              Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.{" "}
               <motion.button
-                onClick={() => openModal("/Tesla_dashboard.jpeg")}
+                onClick={() => openModal("/Tesla_Dashboard.jpeg")}
                 variants={slideInFromRight(0.5)}
                 className="ml-2 text-white font-semibold bg-gradient-to-r from-blue-700 to-cyan-500 px-3 py-1 rounded-md hover:scale-105 transition-transform duration-300"
               >
@@ -86,7 +87,13 @@ const Projects = () => {
             <button className="absolute top-2 right-2 text-black text-xl font-bold" onClick={closeModal}>
               ✖
             </button>
-            <img src={selectedImage} alt="Dashboard" className="max-w-full max-h-full rounded-lg" />
+            <Image
+              src={selectedImage}
+              alt="Dashboard"
+              width={800}
+              height={600}
+              className="max-w-full max-h-full rounded-lg"
+            />
           </div>
         </div>
       )}
