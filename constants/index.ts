@@ -199,7 +199,7 @@ export const Skill_data = [
     },
     {
       skill_name: "Prisma",
-      Image: "/prisma.webp",
+      Image: "/Tab.png",
       width: 70,
       height: 70,
     },
