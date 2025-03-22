@@ -15,7 +15,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Categories
 const categories = ["All", "Programming", "Cloud", "Data Science", "DevOps", "Other"];
 
-// Skill Groups (with tooltips)
+// Skill Groups
 const skillGroups = [
   {
     category: "Programming",
@@ -26,18 +26,18 @@ const skillGroups = [
       { name: "SQL", description: "Structured Query Language for databases." },
       { name: "JavaScript", description: "Popular scripting language for the web." },
       { name: "TypeScript", description: "Typed superset of JavaScript." },
-      { name: "Python", description: "General-purpose language used in AI, scripting, etc." },
-      { name: "C", description: "Low-level programming language." },
-      { name: "R", description: "Statistical computing and graphics." },
-      { name: "HTML5", description: "Markup language for web pages." },
-      { name: "CSS3", description: "Styling language for web content." },
-      { name: "Go (Golang)", description: "Compiled language known for concurrency." },
-      { name: "Node.js", description: "Backend JavaScript runtime." },
-      { name: "Express.js", description: "Web framework for Node.js." },
-      { name: "React.js", description: "Library for building UI components." },
-      { name: "Next.js", description: "React framework for full-stack apps." },
+      { name: "Python", description: "General-purpose programming language." },
+      { name: "C", description: "Low-level system programming language." },
+      { name: "R", description: "Language for statistical computing." },
+      { name: "HTML5", description: "Standard markup for web pages." },
+      { name: "CSS3", description: "Styling language for HTML." },
+      { name: "Go (Golang)", description: "Compiled, concurrent programming language." },
+      { name: "Node.js", description: "JavaScript runtime for backend." },
+      { name: "Express.js", description: "Minimal web framework for Node.js." },
+      { name: "React.js", description: "UI library for building components." },
+      { name: "Next.js", description: "React framework for production apps." },
       { name: "Tailwind CSS", description: "Utility-first CSS framework." },
-      { name: "GraphQL", description: "API query language and runtime." },
+      { name: "GraphQL", description: "Query language for APIs." },
     ],
   },
   {
@@ -46,11 +46,11 @@ const skillGroups = [
     color: "from-green-700 to-green-900",
     skills: [
       { name: "MySQL", description: "Relational database system." },
-      { name: "NoSQL", description: "Non-relational databases like MongoDB." },
-      { name: "MongoDB", description: "Document-oriented NoSQL DB." },
+      { name: "NoSQL", description: "Non-relational database systems." },
+      { name: "MongoDB", description: "NoSQL document database." },
       { name: "Google Cloud Platform (GCP)", description: "Cloud services by Google." },
-      { name: "Amazon Web Services (AWS)", description: "Cloud platform by Amazon." },
-      { name: "Firebase", description: "Mobile & web app backend platform." },
+      { name: "Amazon Web Services (AWS)", description: "Cloud services by Amazon." },
+      { name: "Firebase", description: "App development platform." },
     ],
   },
   {
@@ -58,12 +58,12 @@ const skillGroups = [
     title: "Data Science & AI",
     color: "from-purple-700 to-purple-900",
     skills: [
-      { name: "Jupyter Notebook", description: "Interactive coding environment." },
-      { name: "OpenAI", description: "AI research and deployment company." },
+      { name: "Jupyter Notebook", description: "Web-based interactive code environment." },
+      { name: "OpenAI", description: "Artificial intelligence research lab." },
       { name: "PyTorch", description: "Deep learning framework." },
-      { name: "TensorFlow", description: "Machine learning framework." },
-      { name: "Spark", description: "Big data processing engine." },
-      { name: "Hadoop", description: "Framework for distributed data processing." },
+      { name: "TensorFlow", description: "Machine learning platform." },
+      { name: "Spark", description: "Big data processing framework." },
+      { name: "Hadoop", description: "Distributed storage and processing framework." },
     ],
   },
   {
@@ -80,11 +80,11 @@ const skillGroups = [
     title: "Other Tools & Technologies",
     color: "from-pink-700 to-pink-900",
     skills: [
-      { name: "REST API", description: "Web API architectural style." },
-      { name: "JSON", description: "Data interchange format." },
-      { name: "SAP", description: "Enterprise resource planning system." },
-      { name: "Figma", description: "Interface design and prototyping tool." },
-      { name: "Tableau", description: "Data visualization tool." },
+      { name: "REST API", description: "API design architecture." },
+      { name: "JSON", description: "Lightweight data-interchange format." },
+      { name: "SAP", description: "Enterprise resource planning software." },
+      { name: "Figma", description: "UI/UX design collaboration tool." },
+      { name: "Tableau", description: "Business intelligence and visualization tool." },
       { name: "Material UI (MUI)", description: "React UI component library." },
     ],
   },
@@ -156,7 +156,7 @@ const Skills = () => {
           Additional Skills
         </motion.h2>
 
-        {/* Filter Bar with Animation */}
+        {/* Filter Bar */}
         <div className="relative flex flex-wrap gap-3 justify-center mb-6">
           {categories.map((cat) => (
             <motion.button
@@ -181,7 +181,7 @@ const Skills = () => {
         {/* Filtered Skill Cards */}
         <div className="w-full">
           <AnimatePresence mode="wait">
-            {filteredGroups.map((group, idx) => (
+            {filteredGroups.map((group) => (
               <motion.div
                 key={group.title}
                 initial={{ opacity: 0, scale: 0.9, y: 30 }}
@@ -200,11 +200,10 @@ const Skills = () => {
                       whileHover={{ scale: 1.08 }}
                       className="relative group text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition duration-300 bg-white/10 text-white shadow-md hover:text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]"
                     >
-                      {typeof skill === "string" ? skill : skill.name}
-
+                      {skill.name}
                       {/* Tooltip */}
-                      {typeof skill !== "string" && skill.description && (
-                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max max-w-xs text-xs bg-black text-white px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 whitespace-nowrap pointer-events-none">
+                      {skill.description && (
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-xs text-xs bg-black text-white px-3 py-1 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 z-50">
                           {skill.description}
                         </div>
                       )}
