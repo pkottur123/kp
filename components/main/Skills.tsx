@@ -44,6 +44,7 @@ const Skills = () => {
             />
           ))}
         </div>
+
         <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
           {Backend_skill.map((image, index) => (
             <SkillDataProvider
@@ -55,6 +56,7 @@ const Skills = () => {
             />
           ))}
         </div>
+
         <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
           {Full_stack.map((image, index) => (
             <SkillDataProvider
@@ -66,6 +68,7 @@ const Skills = () => {
             />
           ))}
         </div>
+
         <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
           {Other_skill.map((image, index) => (
             <SkillDataProvider
@@ -93,98 +96,73 @@ const Skills = () => {
         </div>
       </section>
 
+      {/* Additional Skills Section */}
       <section
-  id="additional-skills"
-  className="flex flex-col items-center justify-center gap-10 px-10 py-20 mx-auto max-w-7xl"
->
-  <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8">
-    Additional Skills
-  </h2>
+        id="additional-skills"
+        className="flex flex-col items-center justify-center gap-10 px-6 py-16 mx-auto max-w-7xl"
+      >
+        <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8">
+          Additional Skills
+        </h2>
 
-  {/* Programming Languages & Frameworks */}
-  <div className="w-full">
-    <h3 className="text-xl font-bold text-cyan-300 mb-4">Programming Languages & Frameworks</h3>
-    <div className="flex flex-wrap gap-2">
-      {[
-        "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
-        "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL"
-      ].map((skill, index) => (
-        <div
-          key={index}
-          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
-        >
-          {skill}
-        </div>
-      ))}
-    </div>
-  </div>
+        {/* Reusable Skill Group */}
+        {[
+          {
+            title: "Programming Languages & Frameworks",
+            color: "text-cyan-300",
+            skills: [
+              "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
+              "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
+            ],
+          },
+          {
+            title: "Databases & Cloud Technologies",
+            color: "text-green-300",
+            skills: [
+              "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Firebase",
+            ],
+          },
+          {
+            title: "Data Science & AI",
+            color: "text-purple-300",
+            skills: [
+              "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop",
+            ],
+          },
+          {
+            title: "DevOps & Tools",
+            color: "text-yellow-300",
+            skills: [
+              "Docker", "Kubernetes",
+            ],
+          },
+          {
+            title: "Other Tools & Technologies",
+            color: "text-pink-300",
+            skills: [
+              "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)",
+            ],
+          },
+        ].map((group, idx) => (
+          <div className="w-full" key={idx}>
+            <h3 className={`text-xl font-bold ${group.color} mt-10 mb-4`}>
+              {group.title}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {group.skills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+    </>
+  );
+};
 
-  {/* Databases & Cloud Technologies */}
-  <div className="w-full">
-    <h3 className="text-xl font-bold text-green-300 mt-10 mb-4">Databases & Cloud Technologies</h3>
-    <div className="flex flex-wrap gap-2">
-      {[
-        "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)",
-        "Amazon Web Services (AWS)", "Firebase"
-      ].map((skill, index) => (
-        <div
-          key={index}
-          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
-        >
-          {skill}
-        </div>
-      ))}
-    </div>
-  </div>
-
-  {/* Data Science & AI */}
-  <div className="w-full">
-    <h3 className="text-xl font-bold text-purple-300 mt-10 mb-4">Data Science & AI</h3>
-    <div className="flex flex-wrap gap-2">
-      {[
-        "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop"
-      ].map((skill, index) => (
-        <div
-          key={index}
-          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
-        >
-          {skill}
-        </div>
-      ))}
-    </div>
-  </div>
-
-  {/* DevOps & Tools */}
-  <div className="w-full">
-    <h3 className="text-xl font-bold text-yellow-300 mt-10 mb-4">DevOps & Tools</h3>
-    <div className="flex flex-wrap gap-2">
-      {[
-        "Docker", "Kubernetes"
-      ].map((skill, index) => (
-        <div
-          key={index}
-          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
-        >
-          {skill}
-        </div>
-      ))}
-    </div>
-  </div>
-
-  {/* Other Tools & Technologies */}
-  <div className="w-full">
-    <h3 className="text-xl font-bold text-pink-300 mt-10 mb-4">Other Tools & Technologies</h3>
-    <div className="flex flex-wrap gap-2">
-      {[
-        "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)"
-      ].map((skill, index) => (
-        <div
-          key={index}
-          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
-        >
-          {skill}
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+export default Skills;
