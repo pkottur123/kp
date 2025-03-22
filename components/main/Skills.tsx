@@ -94,32 +94,97 @@ const Skills = () => {
       </section>
 
       <section
-        id="additional-skills"
-        className="flex flex-col items-center justify-center gap-10 px-10 py-20 mx-auto max-w-7xl"
-      >
-        <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8">
-          
-        </h2>
-        <div className="className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-white/40">
-          {[
-            "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
-            "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
-            "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Firebase",
-            "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop",
-            "Docker", "Kubernetes",
-            "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)"
-          ].map((skill, index) => (
-            <div
-              key={index}
-              className="text-white text-base md:text-lg font-medium px-5 py-2 rounded-full bg-gradient-to-r from-slate-700 to-slate-900 hover:from-white hover:to-white hover:text-black shadow-md transition duration-300 hover:shadow-white"
-            >
-              {skill}
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-};
+  id="additional-skills"
+  className="flex flex-col items-center justify-center gap-10 px-10 py-20 mx-auto max-w-7xl"
+>
+  <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8">
+    Additional Skills
+  </h2>
 
-export default Skills;
+  {/* Programming Languages & Frameworks */}
+  <div className="w-full">
+    <h3 className="text-xl font-bold text-cyan-300 mb-4">Programming Languages & Frameworks</h3>
+    <div className="flex flex-wrap gap-2">
+      {[
+        "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
+        "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL"
+      ].map((skill, index) => (
+        <div
+          key={index}
+          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
+        >
+          {skill}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Databases & Cloud Technologies */}
+  <div className="w-full">
+    <h3 className="text-xl font-bold text-green-300 mt-10 mb-4">Databases & Cloud Technologies</h3>
+    <div className="flex flex-wrap gap-2">
+      {[
+        "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)",
+        "Amazon Web Services (AWS)", "Firebase"
+      ].map((skill, index) => (
+        <div
+          key={index}
+          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
+        >
+          {skill}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Data Science & AI */}
+  <div className="w-full">
+    <h3 className="text-xl font-bold text-purple-300 mt-10 mb-4">Data Science & AI</h3>
+    <div className="flex flex-wrap gap-2">
+      {[
+        "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop"
+      ].map((skill, index) => (
+        <div
+          key={index}
+          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
+        >
+          {skill}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* DevOps & Tools */}
+  <div className="w-full">
+    <h3 className="text-xl font-bold text-yellow-300 mt-10 mb-4">DevOps & Tools</h3>
+    <div className="flex flex-wrap gap-2">
+      {[
+        "Docker", "Kubernetes"
+      ].map((skill, index) => (
+        <div
+          key={index}
+          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
+        >
+          {skill}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Other Tools & Technologies */}
+  <div className="w-full">
+    <h3 className="text-xl font-bold text-pink-300 mt-10 mb-4">Other Tools & Technologies</h3>
+    <div className="flex flex-wrap gap-2">
+      {[
+        "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)"
+      ].map((skill, index) => (
+        <div
+          key={index}
+          className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
+        >
+          {skill}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
