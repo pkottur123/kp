@@ -100,7 +100,7 @@ const Skills = () => {
         <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8">
           Additional Skills
         </h2>
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-4">
           {[
             "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
             "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
