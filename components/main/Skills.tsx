@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 const Skills = () => {
   return (
     <>
+      {/* Main Skill Icons Section */}
       <section
         id="skills"
         className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-10"
@@ -22,65 +23,19 @@ const Skills = () => {
       >
         <SkillText />
 
-        <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-          {Skill_data.map((image, index) => (
-            <SkillDataProvider
-              key={index}
-              src={image.Image}
-              width={image.width}
-              height={image.height}
-              index={index}
-            />
-          ))}
-        </div>
-
-        <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-          {Frontend_skill.map((image, index) => (
-            <SkillDataProvider
-              key={index}
-              src={image.Image}
-              width={image.width}
-              height={image.height}
-              index={index}
-            />
-          ))}
-        </div>
-
-        <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-          {Backend_skill.map((image, index) => (
-            <SkillDataProvider
-              key={index}
-              src={image.Image}
-              width={image.width}
-              height={image.height}
-              index={index}
-            />
-          ))}
-        </div>
-
-        <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-          {Full_stack.map((image, index) => (
-            <SkillDataProvider
-              key={index}
-              src={image.Image}
-              width={image.width}
-              height={image.height}
-              index={index}
-            />
-          ))}
-        </div>
-
-        <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-          {Other_skill.map((image, index) => (
-            <SkillDataProvider
-              key={index}
-              src={image.Image}
-              width={image.width}
-              height={image.height}
-              index={index}
-            />
-          ))}
-        </div>
+        {[Skill_data, Frontend_skill, Backend_skill, Full_stack, Other_skill].map((skillSet, setIndex) => (
+          <div key={setIndex} className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+            {skillSet.map((image, index) => (
+              <SkillDataProvider
+                key={index}
+                src={image.Image}
+                width={image.width}
+                height={image.height}
+                index={index}
+              />
+            ))}
+          </div>
+        ))}
 
         <div className="w-full h-full absolute">
           <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
@@ -97,10 +52,10 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Additional Skills Section */}
+      {/* Animated Additional Skills (Grouped Card Style) */}
       <section
         id="additional-skills"
-        className="flex flex-col items-center justify-center gap-10 px-6 py-16 mx-auto max-w-7xl"
+        className="flex flex-col items-center justify-center gap-12 px-6 py-20 mx-auto max-w-7xl"
       >
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -112,71 +67,68 @@ const Skills = () => {
           Additional Skills
         </motion.h2>
 
-        {[
-          {
-            title: "Programming Languages & Frameworks",
-            color: "text-cyan-300",
-            skills: [
-              "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
-              "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
-            ],
-          },
-          {
-            title: "Databases & Cloud Technologies",
-            color: "text-green-300",
-            skills: [
-              "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Firebase",
-            ],
-          },
-          {
-            title: "Data Science & AI",
-            color: "text-purple-300",
-            skills: [
-              "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop",
-            ],
-          },
-          {
-            title: "DevOps & Tools",
-            color: "text-yellow-300",
-            skills: [
-              "Docker", "Kubernetes",
-            ],
-          },
-          {
-            title: "Other Tools & Technologies",
-            color: "text-pink-300",
-            skills: [
-              "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)",
-            ],
-          },
-        ].map((group, idx) => (
-          <div className="w-full" key={idx}>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+          {[
+            {
+              title: "Programming Languages & Frameworks",
+              color: "from-cyan-700 to-cyan-900",
+              skills: [
+                "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
+                "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
+              ],
+            },
+            {
+              title: "Databases & Cloud Technologies",
+              color: "from-green-700 to-green-900",
+              skills: [
+                "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Firebase",
+              ],
+            },
+            {
+              title: "Data Science & AI",
+              color: "from-purple-700 to-purple-900",
+              skills: [
+                "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop",
+              ],
+            },
+            {
+              title: "DevOps & Tools",
+              color: "from-yellow-700 to-yellow-900",
+              skills: [
+                "Docker", "Kubernetes",
+              ],
+            },
+            {
+              title: "Other Tools & Technologies",
+              color: "from-pink-700 to-pink-900",
+              skills: [
+                "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)",
+              ],
+            },
+          ].map((group, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className={`text-xl font-bold ${group.color} mt-10 mb-4`}
+              className={`rounded-xl p-6 bg-gradient-to-br ${group.color} shadow-xl text-white`}
             >
-              {group.title}
-            </motion.h3>
-
-            <div className="flex flex-wrap gap-2">
-              {group.skills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.02 }}
-                  viewport={{ once: true }}
-                  className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
-                >
-                  {skill}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        ))}
+              <h3 className="text-lg font-bold mb-4">{group.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.08 }}
+                    className="bg-black/20 hover:bg-white hover:text-black text-sm font-medium px-4 py-1.5 rounded-full transition duration-300"
+                  >
+                    {skill}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </section>
     </>
   );
