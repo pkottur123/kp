@@ -12,10 +12,8 @@ import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Categories
 const categories = ["All", "Programming", "Cloud", "Data Science", "DevOps", "Other"];
 
-// Skill Groups
 const skillGroups = [
   {
     category: "Programming",
@@ -68,7 +66,7 @@ const Skills = () => {
 
   return (
     <>
-      {/* Primary Skill Logos Section */}
+      {/* Main Skill Icons Section */}
       <section
         id="skills"
         className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-10"
@@ -110,7 +108,7 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Additional Skills Section */}
+      {/* Additional Skills Section with Category Filter */}
       <section
         id="additional-skills"
         className="flex flex-col items-center justify-center gap-10 px-4 sm:px-6 py-20 mx-auto max-w-7xl"
@@ -125,39 +123,34 @@ const Skills = () => {
           Additional Skills
         </motion.h2>
 
-        {/* Animated Filter Bar */}
-        <div className="relative flex flex-wrap gap-3 justify-center mb-6">
+        {/* Filter Bar */}
+        <div className="flex flex-wrap gap-3 justify-center mb-4">
           {categories.map((cat) => (
-            <motion.button
+            <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className="relative px-4 py-1.5 text-sm font-medium rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300 overflow-hidden"
+              className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-300 ${
+                selectedCategory === cat
+                  ? "bg-white text-black shadow-md"
+                  : "bg-white/10 text-white hover:bg-white/20"
+              }`}
             >
-              {selectedCategory === cat && (
-                <motion.div
-                  layoutId="pill-highlight"
-                  className="absolute inset-0 rounded-full bg-white z-0"
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10 text-sm font-medium text-white">
-                {cat}
-              </span>
-            </motion.button>
+              {cat}
+            </button>
           ))}
         </div>
 
         {/* Filtered Skill Cards */}
-        <div className="w-full">
-          <AnimatePresence mode="wait">
+        <div className="grid gap-6 w-full grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
+          <AnimatePresence>
             {filteredGroups.map((group, idx) => (
               <motion.div
                 key={group.title}
-                initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: -30 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.4 }}
-                className={`rounded-xl p-5 sm:p-6 lg:p-8 mb-6 bg-gradient-to-br ${group.color} shadow-xl text-white backdrop-blur-md bg-opacity-30 border border-white/10`}
+                className={`rounded-xl p-5 sm:p-6 lg:p-8 bg-gradient-to-br ${group.color} shadow-xl text-white backdrop-blur-md bg-opacity-30 border border-white/10`}
               >
                 <h3 className="text-base sm:text-lg md:text-xl font-bold mb-4">
                   {group.title}
