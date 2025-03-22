@@ -12,8 +12,10 @@ import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Categories
 const categories = ["All", "Programming", "Cloud", "Data Science", "DevOps", "Other"];
 
+// Skill Groups
 const skillGroups = [
   {
     category: "Programming",
@@ -66,7 +68,7 @@ const Skills = () => {
 
   return (
     <>
-      {/* Main Skill Icons Section */}
+      {/* Main Skill Logos Section */}
       <section
         id="skills"
         className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-10"
@@ -93,6 +95,7 @@ const Skills = () => {
           )
         )}
 
+        {/* Background Video */}
         <div className="w-full h-full absolute">
           <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
             <video
@@ -108,7 +111,7 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Additional Skills Section with Category Filter */}
+      {/* Additional Skills Section with Filter */}
       <section
         id="additional-skills"
         className="flex flex-col items-center justify-center gap-10 px-4 sm:px-6 py-20 mx-auto max-w-7xl"
@@ -123,8 +126,8 @@ const Skills = () => {
           Additional Skills
         </motion.h2>
 
-        {/* Filter Bar */}
-        <div className="flex flex-wrap gap-3 justify-center mb-4">
+        {/* Category Filter Bar */}
+        <div className="flex flex-wrap gap-3 justify-center mb-6">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -140,17 +143,17 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Filtered Skill Cards */}
-        <div className="grid gap-6 w-full grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-          <AnimatePresence>
+        {/* Cards with AnimatePresence */}
+        <div className="w-full">
+          <AnimatePresence mode="wait">
             {filteredGroups.map((group, idx) => (
               <motion.div
                 key={group.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: -30 }}
                 transition={{ duration: 0.4 }}
-                className={`rounded-xl p-5 sm:p-6 lg:p-8 bg-gradient-to-br ${group.color} shadow-xl text-white backdrop-blur-md bg-opacity-30 border border-white/10`}
+                className={`rounded-xl p-5 sm:p-6 lg:p-8 mb-6 bg-gradient-to-br ${group.color} shadow-xl text-white backdrop-blur-md bg-opacity-30 border border-white/10`}
               >
                 <h3 className="text-base sm:text-lg md:text-xl font-bold mb-4">
                   {group.title}
