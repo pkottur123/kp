@@ -95,7 +95,7 @@ const Skills = () => {
 
       <section
         id="additional-skills"
-        className="flex flex-col items-center justify-center gap-10 px-10 py-20 bg-opacity-10 backdrop-blur-md rounded-xl mx-auto max-w-7xl"
+        className="flex flex-col items-center justify-center gap-10 px-10 py-20 mx-auto max-w-7xl"
       >
         <h2 className="text-3xl font-bold text-white mb-4">Additional Skills</h2>
         <div className="flex flex-wrap justify-center gap-6">
@@ -109,7 +109,7 @@ const Skills = () => {
           ].map((skill, index) => (
             <div
               key={index}
-              className="text-white text-lg md:text-xl font-semibold px-4 py-2 rounded-xl shadow-lg hover:scale-105 transition-transform bg-gradient-to-r from-blue-700 to-cyan-500"
+              className="text-white text-lg md:text-xl font-semibold px-4 py-2 rounded-xl shadow-md transition-all duration-300 bg-[#1e1e1e] hover:bg-white hover:text-black hover:shadow-white hover:scale-105"
             >
               {skill}
             </div>
