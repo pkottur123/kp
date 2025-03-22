@@ -98,7 +98,7 @@ const Skills = () => {
         className="flex flex-col items-center justify-center gap-10 px-10 py-20 mx-auto max-w-7xl"
       >
         <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8">
-          Additional Skills
+          
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
           {[
