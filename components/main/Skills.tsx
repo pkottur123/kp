@@ -93,11 +93,21 @@ const Skills = () => {
         </div>
       </section>
 
-      <section id="additional-skills" className="flex flex-wrap justify-center gap-5 py-20">
+      <section
+        id="additional-skills"
+        className="flex flex-wrap justify-center gap-6 px-10 py-16 bg-opacity-10 backdrop-blur-md rounded-xl mx-auto max-w-7xl"
+      >
         {[
-          "Kotlin", "Rust", "Azure", "Java", "Power BI", "FastAPI", "SQL","Node.js","CSS3","Golang","TypeScript","JavaScript","HTML5","C","Tailwind CSS","MySQL","NoSQL","AWS"
+          "Kotlin", "Rust", "Azure", "Redux", "Power BI", "FastAPI", "Terraform",
+          "Java", "SQL", "Node.js", "CSS3", "Golang", "TypeScript",
+          "JavaScript", "HTML5", "C", "Tailwind CSS", "MySQL", "NoSQL", "AWS"
         ].map((skill, index) => (
-          <div key={index} className="text-white text-xl font-bold">{skill}</div>
+          <div
+            key={index}
+            className="text-white text-lg md:text-xl font-semibold px-4 py-2 bg-white/10 rounded-xl shadow-md hover:scale-105 transition-transform"
+          >
+            {skill}
+          </div>
         ))}
       </section>
     </>
