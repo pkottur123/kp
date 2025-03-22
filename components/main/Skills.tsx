@@ -109,9 +109,10 @@ const Skills = () => {
           ].map((skill, index) => (
             <div
               key={index}
-              className="text-white text-lg md:text-xl font-semibold px-4 py-2 rounded-xl shadow-md transition-all duration-300 bg-[#1e1e1e] hover:bg-white hover:text-black hover:shadow-white hover:scale-105"
+              className="text-white text-lg md:text-xl font-semibold px-4 py-2 rounded-xl shadow-md transition-all duration-300 bg-[#1e1e1e] relative group"
             >
-              {skill}
+              <span className="z-10 relative">{skill}</span>
+              <span className="absolute inset-0 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/60"></span>
             </div>
           ))}
         </div>
