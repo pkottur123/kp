@@ -10,6 +10,7 @@ import {
 import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   return (
@@ -101,11 +102,16 @@ const Skills = () => {
         id="additional-skills"
         className="flex flex-col items-center justify-center gap-10 px-6 py-16 mx-auto max-w-7xl"
       >
-        <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8"
+        >
           Additional Skills
-        </h2>
+        </motion.h2>
 
-        {/* Reusable Skill Group */}
         {[
           {
             title: "Programming Languages & Frameworks",
@@ -145,17 +151,28 @@ const Skills = () => {
           },
         ].map((group, idx) => (
           <div className="w-full" key={idx}>
-            <h3 className={`text-xl font-bold ${group.color} mt-10 mb-4`}>
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className={`text-xl font-bold ${group.color} mt-10 mb-4`}
+            >
               {group.title}
-            </h3>
+            </motion.h3>
+
             <div className="flex flex-wrap gap-2">
               {group.skills.map((skill, index) => (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.02 }}
+                  viewport={{ once: true }}
                   className="text-white text-sm md:text-base font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-white hover:to-white hover:text-black shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-white/40"
                 >
                   {skill}
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
