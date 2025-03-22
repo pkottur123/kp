@@ -109,7 +109,7 @@ const Skills = () => {
           ].map((skill, index) => (
             <div
               key={index}
-              className="text-white text-lg md:text-xl font-semibold px-4 py-2 rounded-xl shadow-lg hover:scale-105 transition-transform bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+              className="text-white text-lg md:text-xl font-semibold px-4 py-2 rounded-xl shadow-lg hover:scale-105 transition-transform bg-gradient-to-r from-blue-500 via-cyan-500 to-pink-500"
             >
               {skill}
             </div>
