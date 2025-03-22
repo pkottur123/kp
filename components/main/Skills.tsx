@@ -12,16 +12,32 @@ import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Categories
 const categories = ["All", "Programming", "Cloud", "Data Science", "DevOps", "Other"];
 
+// Skill Groups (with tooltips)
 const skillGroups = [
   {
     category: "Programming",
     title: "Programming Languages & Frameworks",
     color: "from-cyan-700 to-cyan-900",
     skills: [
-      "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
-      "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
+      { name: "Java", description: "Object-oriented programming language." },
+      { name: "SQL", description: "Structured Query Language for databases." },
+      { name: "JavaScript", description: "Popular scripting language for the web." },
+      { name: "TypeScript", description: "Typed superset of JavaScript." },
+      { name: "Python", description: "General-purpose language used in AI, scripting, etc." },
+      { name: "C", description: "Low-level programming language." },
+      { name: "R", description: "Statistical computing and graphics." },
+      { name: "HTML5", description: "Markup language for web pages." },
+      { name: "CSS3", description: "Styling language for web content." },
+      { name: "Go (Golang)", description: "Compiled language known for concurrency." },
+      { name: "Node.js", description: "Backend JavaScript runtime." },
+      { name: "Express.js", description: "Web framework for Node.js." },
+      { name: "React.js", description: "Library for building UI components." },
+      { name: "Next.js", description: "React framework for full-stack apps." },
+      { name: "Tailwind CSS", description: "Utility-first CSS framework." },
+      { name: "GraphQL", description: "API query language and runtime." },
     ],
   },
   {
@@ -29,7 +45,12 @@ const skillGroups = [
     title: "Databases & Cloud Technologies",
     color: "from-green-700 to-green-900",
     skills: [
-      "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Firebase",
+      { name: "MySQL", description: "Relational database system." },
+      { name: "NoSQL", description: "Non-relational databases like MongoDB." },
+      { name: "MongoDB", description: "Document-oriented NoSQL DB." },
+      { name: "Google Cloud Platform (GCP)", description: "Cloud services by Google." },
+      { name: "Amazon Web Services (AWS)", description: "Cloud platform by Amazon." },
+      { name: "Firebase", description: "Mobile & web app backend platform." },
     ],
   },
   {
@@ -37,21 +58,34 @@ const skillGroups = [
     title: "Data Science & AI",
     color: "from-purple-700 to-purple-900",
     skills: [
-      "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop",
+      { name: "Jupyter Notebook", description: "Interactive coding environment." },
+      { name: "OpenAI", description: "AI research and deployment company." },
+      { name: "PyTorch", description: "Deep learning framework." },
+      { name: "TensorFlow", description: "Machine learning framework." },
+      { name: "Spark", description: "Big data processing engine." },
+      { name: "Hadoop", description: "Framework for distributed data processing." },
     ],
   },
   {
     category: "DevOps",
     title: "DevOps & Tools",
     color: "from-yellow-700 to-yellow-900",
-    skills: ["Docker", "Kubernetes"],
+    skills: [
+      { name: "Docker", description: "Containerization platform." },
+      { name: "Kubernetes", description: "Container orchestration system." },
+    ],
   },
   {
     category: "Other",
     title: "Other Tools & Technologies",
     color: "from-pink-700 to-pink-900",
     skills: [
-      "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)",
+      { name: "REST API", description: "Web API architectural style." },
+      { name: "JSON", description: "Data interchange format." },
+      { name: "SAP", description: "Enterprise resource planning system." },
+      { name: "Figma", description: "Interface design and prototyping tool." },
+      { name: "Tableau", description: "Data visualization tool." },
+      { name: "Material UI (MUI)", description: "React UI component library." },
     ],
   },
 ];
@@ -66,14 +100,13 @@ const Skills = () => {
 
   return (
     <>
-      {/* Main Skill Icons Section */}
+      {/* Skill Logos Section */}
       <section
         id="skills"
         className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-10"
         style={{ transform: "scale(0.9)" }}
       >
         <SkillText />
-
         {[Skill_data, Frontend_skill, Backend_skill, Full_stack, Other_skill].map(
           (skillSet, setIndex) => (
             <div
@@ -92,7 +125,7 @@ const Skills = () => {
             </div>
           )
         )}
-
+        {/* Background video */}
         <div className="w-full h-full absolute">
           <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
             <video
@@ -108,7 +141,7 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Additional Skills Section with Category Filter */}
+      {/* Additional Skills Section */}
       <section
         id="additional-skills"
         className="flex flex-col items-center justify-center gap-10 px-4 sm:px-6 py-20 mx-auto max-w-7xl"
@@ -123,34 +156,39 @@ const Skills = () => {
           Additional Skills
         </motion.h2>
 
-        {/* Filter Bar */}
-        <div className="flex flex-wrap gap-3 justify-center mb-4">
+        {/* Filter Bar with Animation */}
+        <div className="relative flex flex-wrap gap-3 justify-center mb-6">
           {categories.map((cat) => (
-            <button
+            <motion.button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-300 ${
-                selectedCategory === cat
-                  ? "bg-white text-black shadow-md"
-                  : "bg-white/10 text-white hover:bg-white/20"
-              }`}
+              className="relative px-4 py-1.5 text-sm font-medium rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300 overflow-hidden"
             >
-              {cat}
-            </button>
+              {selectedCategory === cat && (
+                <motion.div
+                  layoutId="pill-highlight"
+                  className="absolute inset-0 rounded-full bg-white z-0"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10 text-sm font-medium text-white">
+                {cat}
+              </span>
+            </motion.button>
           ))}
         </div>
 
         {/* Filtered Skill Cards */}
-        <div className="grid gap-6 w-full grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-          <AnimatePresence>
+        <div className="w-full">
+          <AnimatePresence mode="wait">
             {filteredGroups.map((group, idx) => (
               <motion.div
                 key={group.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: -30 }}
                 transition={{ duration: 0.4 }}
-                className={`rounded-xl p-5 sm:p-6 lg:p-8 bg-gradient-to-br ${group.color} shadow-xl text-white backdrop-blur-md bg-opacity-30 border border-white/10`}
+                className={`rounded-xl p-5 sm:p-6 lg:p-8 mb-6 bg-gradient-to-br ${group.color} shadow-xl text-white backdrop-blur-md bg-opacity-30 border border-white/10`}
               >
                 <h3 className="text-base sm:text-lg md:text-xl font-bold mb-4">
                   {group.title}
@@ -160,9 +198,16 @@ const Skills = () => {
                     <motion.div
                       key={index}
                       whileHover={{ scale: 1.08 }}
-                      className="text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition duration-300 bg-white/10 text-white shadow-md hover:text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]"
+                      className="relative group text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition duration-300 bg-white/10 text-white shadow-md hover:text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]"
                     >
-                      {skill}
+                      {typeof skill === "string" ? skill : skill.name}
+
+                      {/* Tooltip */}
+                      {typeof skill !== "string" && skill.description && (
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max max-w-xs text-xs bg-black text-white px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 whitespace-nowrap pointer-events-none">
+                          {skill.description}
+                        </div>
+                      )}
                     </motion.div>
                   ))}
                 </div>
