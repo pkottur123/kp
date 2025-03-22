@@ -100,9 +100,12 @@ const Skills = () => {
         <h2 className="text-3xl font-bold text-white mb-4">Additional Skills</h2>
         <div className="flex flex-wrap justify-center gap-6">
           {[
-            "Kotlin", "Rust", "Azure", "Redux", "Power BI", "FastAPI", "Terraform",
-            "Java", "SQL", "Node.js", "CSS3", "Golang", "TypeScript",
-            "JavaScript", "HTML5", "C", "Tailwind CSS", "MySQL", "NoSQL", "AWS"
+            "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
+            "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
+            "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Firebase",
+            "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop",
+            "Docker", "Kubernetes",
+            "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)"
           ].map((skill, index) => (
             <div
               key={index}
