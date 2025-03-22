@@ -97,7 +97,9 @@ const Skills = () => {
         id="additional-skills"
         className="flex flex-col items-center justify-center gap-10 px-10 py-20 mx-auto max-w-7xl"
       >
-        <h2 className="text-3xl font-bold text-white mb-4">Additional Skills</h2>
+        <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8">
+          Additional Skills
+        </h2>
         <div className="flex flex-wrap justify-center gap-6">
           {[
             "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
@@ -109,10 +111,9 @@ const Skills = () => {
           ].map((skill, index) => (
             <div
               key={index}
-              className="text-white text-lg md:text-xl font-semibold px-4 py-2 rounded-xl bg-[#1e1e1e] transition duration-300 relative hover:text-white hover:before:content-[''] hover:before:absolute hover:before:inset-0 hover:before:rounded-xl hover:before:bg-white hover:before:blur-2xl hover:before:opacity-40"
-              style={{ zIndex: 0 }}
+              className="text-white text-base md:text-lg font-medium px-5 py-2 rounded-full bg-gradient-to-r from-slate-700 to-slate-900 hover:from-white hover:to-white hover:text-black shadow-md transition duration-300 hover:shadow-white"
             >
-              <span className="relative z-10">{skill}</span>
+              {skill}
             </div>
           ))}
         </div>
