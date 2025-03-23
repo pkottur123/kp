@@ -21,7 +21,7 @@ const skillGroups = [
     color: "from-cyan-700 to-cyan-900",
     skills: [
       "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
-      "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
+      "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS",
     ],
   },
   {
