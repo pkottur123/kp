@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 const skillGroups = [
   {
     title: "Programming Languages & Frameworks",
-    color: "from-blue-400 to-cyan-500",
+    color: "from-cyan-700 to-cyan-900",
     skills: [
       { name: "Java", level: "Intermediate" },
       { name: "SQL", level: "Advanced" },
@@ -50,7 +50,7 @@ const skillGroups = [
   },
   {
     title: "Databases & Cloud Technologies",
-    color: "from-green-700 to-green-900",
+    color: "from-cyan-300 to-blue-200",
     skills: [
       { name: "MySQL", level: "Advanced" },
       { name: "NoSQL", level: "Intermediate" },
