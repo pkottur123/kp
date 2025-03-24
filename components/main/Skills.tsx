@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 
 const skillGroups = [
   {
@@ -94,6 +95,7 @@ const Skills = () => {
       id="additional-skills"
       className="flex flex-col items-center justify-center gap-12 px-6 py-20 mx-auto max-w-7xl"
     >
+      {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +106,7 @@ const Skills = () => {
         Additional Skills
       </motion.h2>
 
-      {/* Counter */}
+      {/* Animated Skill Counter */}
       <motion.div
         ref={counterRef}
         className="text-white text-xl font-medium bg-white/10 px-6 py-3 rounded-full backdrop-blur-md border border-white/10"
@@ -115,7 +117,7 @@ const Skills = () => {
         {count}+ Skills
       </motion.div>
 
-      {/* Skill Tiles */}
+      {/* Skills Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {skillGroups.map((group, idx) => (
           <motion.div
@@ -124,8 +126,9 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             viewport={{ once: true }}
-            className={`relative rounded-xl p-6 bg-gradient-to-br ${group.color} shadow-xl text-white 
-              backdrop-blur-md bg-white/10 border border-white/10`}
+            className={`relative rounded-xl p-6 bg-gradient-to-br ${group.color} 
+              shadow-xl text-white bg-[url('/soft_texture.png')] bg-cover bg-no-repeat bg-blend-overlay 
+              backdrop-blur-md border border-white/10`}
           >
             <h3 className="text-lg font-bold mb-4">{group.title}</h3>
             <div className="flex flex-wrap gap-3">
