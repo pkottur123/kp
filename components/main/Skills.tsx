@@ -12,38 +12,69 @@ import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 import { motion } from "framer-motion";
 
-// Skill Groups
+// Skill Groups with Usage Badges
 const skillGroups = [
   {
     title: "Programming Languages & Frameworks",
     color: "from-cyan-700 to-cyan-900",
     skills: [
-      "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
-      "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
+      { name: "Java", level: "Advanced" },
+      { name: "SQL", level: "Advanced" },
+      { name: "JavaScript", level: "Advanced" },
+      { name: "TypeScript", level: "Intermediate" },
+      { name: "Python", level: "Advanced" },
+      { name: "C", level: "Intermediate" },
+      { name: "R", level: "Beginner" },
+      { name: "HTML5", level: "Advanced" },
+      { name: "CSS3", level: "Advanced" },
+      { name: "Go (Golang)", level: "Beginner" },
+      { name: "Node.js", level: "Advanced" },
+      { name: "Express.js", level: "Advanced" },
+      { name: "React.js", level: "Advanced" },
+      { name: "Next.js", level: "Intermediate" },
+      { name: "Tailwind CSS", level: "Advanced" },
+      { name: "GraphQL", level: "Intermediate" },
     ],
   },
   {
     title: "Databases & Cloud Technologies",
     color: "from-green-700 to-green-900",
     skills: [
-      "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Firebase",
+      { name: "MySQL", level: "Advanced" },
+      { name: "NoSQL", level: "Intermediate" },
+      { name: "MongoDB", level: "Intermediate" },
+      { name: "Google Cloud Platform (GCP)", level: "Intermediate" },
+      { name: "Amazon Web Services (AWS)", level: "Intermediate" },
+      { name: "Firebase", level: "Beginner" },
     ],
   },
   {
     title: "Data Science & AI",
     color: "from-purple-700 to-purple-900",
     skills: [
-      "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop",
+      { name: "Jupyter Notebook", level: "Intermediate" },
+      { name: "OpenAI", level: "Intermediate" },
+      { name: "PyTorch", level: "Intermediate" },
+      { name: "TensorFlow", level: "Intermediate" },
+      { name: "Spark", level: "Intermediate" },
+      { name: "Hadoop", level: "Intermediate" },
     ],
   },
   {
     title: "DevOps & Tools",
     color: "from-yellow-700 to-yellow-900",
     skills: [
-      "Docker", "Kubernetes",
+      { name: "Docker", level: "Intermediate" },
+      { name: "Kubernetes", level: "Beginner" },
     ],
   },
 ];
+
+const levelColors: Record<string, string> = {
+  Beginner: "bg-red-400",
+  Intermediate: "bg-yellow-400",
+  Advanced: "bg-green-400",
+};
 
 const Skills = () => {
   return (
@@ -100,10 +131,14 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-6 text-center"
+          className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-2 text-center"
         >
           Additional Skills
         </motion.h2>
+
+        <div className="text-white bg-white/10 px-6 py-2 rounded-full mb-8 text-sm shadow-md">
+          {skillGroups.reduce((acc, group) => acc + group.skills.length, 0)}+ Skills
+        </div>
 
         {/* Skills Grid */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -125,9 +160,14 @@ const Skills = () => {
                   <motion.div
                     key={i}
                     whileHover={{ scale: 1.05 }}
-                    className="text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
+                    className="flex items-center gap-2 text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
                   >
-                    {skill}
+                    {skill.name}
+                    <span
+                      className={`text-[10px] font-semibold text-black px-2 py-0.5 rounded-full ${levelColors[skill.level]}`}
+                    >
+                      {skill.level}
+                    </span>
                   </motion.div>
                 ))}
               </div>
