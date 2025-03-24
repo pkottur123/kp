@@ -43,6 +43,13 @@ const skillGroups = [
       "Docker", "Kubernetes",
     ],
   },
+  {
+  title: "Other Tools & Technologies",
+  color: "from-rose-700 to-rose-900", // You can customize this color
+  skills: [
+    "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)"
+  ]
+}
 ];
 
 const Skills = () => {
