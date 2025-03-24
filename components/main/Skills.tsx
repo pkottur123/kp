@@ -37,18 +37,6 @@ const skillGroups = [
     ],
   },
   {
-    title: "Cloud Technologies",
-    color: "from-green-700 to-green-500",
-    skills: [
-      { name: "MySQL", level: "Advanced" },
-      { name: "NoSQL", level: "Intermediate" },
-      { name: "MongoDB", level: "Intermediate" },
-      { name: "Google Cloud Platform (GCP)", level: "Advanced" },
-      { name: "Amazon Web Services (AWS)", level: "Advanced" },
-      { name: "Firebase", level: "Intermediate" },
-    ],
-  },
-  {
     title: "Databases & Cloud Technologies",
     color: "from-cyan-400 to-blue-300",
     skills: [
@@ -57,7 +45,7 @@ const skillGroups = [
       { name: "MongoDB", level: "Intermediate" },
       { name: "Google Cloud Platform (GCP)", level: "Intermediate" },
       { name: "Amazon Web Services (AWS)", level: "Intermediate" },
-      { name: "Firebase", level: "Beginner" },
+      { name: "Firebase", level: "Intermediate" },
     ],
   },
   {
