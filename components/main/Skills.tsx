@@ -16,18 +16,18 @@ import { motion } from "framer-motion";
 const skillGroups = [
   {
     title: "Programming Languages & Frameworks",
-    color: "from-cyan-700 to-cyan-900",
+    color: "from-blue-400 to-cyan-500",
     skills: [
-      { name: "Java", level: "Advanced" },
+      { name: "Java", level: "Intermediate" },
       { name: "SQL", level: "Advanced" },
       { name: "JavaScript", level: "Advanced" },
-      { name: "TypeScript", level: "Intermediate" },
+      { name: "TypeScript", level: "Advanced" },
       { name: "Python", level: "Advanced" },
       { name: "C", level: "Intermediate" },
-      { name: "R", level: "Beginner" },
+      { name: "R", level: "Advanced" },
       { name: "HTML5", level: "Advanced" },
       { name: "CSS3", level: "Advanced" },
-      { name: "Go (Golang)", level: "Beginner" },
+      { name: "Go (Golang)", level: "Intermediate" },
       { name: "Node.js", level: "Advanced" },
       { name: "Express.js", level: "Advanced" },
       { name: "React.js", level: "Advanced" },
@@ -43,9 +43,9 @@ const skillGroups = [
       { name: "MySQL", level: "Advanced" },
       { name: "NoSQL", level: "Intermediate" },
       { name: "MongoDB", level: "Intermediate" },
-      { name: "Google Cloud Platform (GCP)", level: "Intermediate" },
-      { name: "Amazon Web Services (AWS)", level: "Intermediate" },
-      { name: "Firebase", level: "Beginner" },
+      { name: "Google Cloud Platform (GCP)", level: "Advanced" },
+      { name: "Amazon Web Services (AWS)", level: "Advanced" },
+      { name: "Firebase", level: "Intermediate" },
     ],
   },
   {
@@ -64,20 +64,20 @@ const skillGroups = [
     title: "Data Science & AI",
     color: "from-purple-700 to-purple-900",
     skills: [
-      { name: "Jupyter Notebook", level: "Intermediate" },
-      { name: "OpenAI", level: "Intermediate" },
-      { name: "PyTorch", level: "Intermediate" },
-      { name: "TensorFlow", level: "Intermediate" },
-      { name: "Spark", level: "Intermediate" },
-      { name: "Hadoop", level: "Intermediate" },
+      { name: "Jupyter Notebook", level: "Advanced" },
+      { name: "OpenAI API", level: "Advanced" },
+      { name: "PyTorch", level: "Advanced" },
+      { name: "TensorFlow", level: "Advanced" },
+      { name: "Spark", level: "Advanced" },
+      { name: "Hadoop", level: "Advanced" },
     ],
   },
   {
     title: "DevOps & Tools",
     color: "from-yellow-700 to-yellow-900",
     skills: [
-      { name: "Docker", level: "Intermediate" },
-      { name: "Kubernetes", level: "Beginner" },
+      { name: "Docker", level: "Advanced" },
+      { name: "Kubernetes", level: "Advanced" },
     ],
   },
 ];
@@ -164,7 +164,7 @@ const Skills = () => {
               className={`rounded-xl p-6 sm:p-8 bg-gradient-to-br ${group.color} text-white shadow-lg border border-white/10 relative overflow-hidden`}
             >
               {/* Sand/Grainy Overlay */}
-              <div className="absolute inset-0 bg-[url('/grain..jpeg')] opacity-10 z-0 pointer-events-none mix-blend-soft-light"></div>
+              <div className="absolute inset-0 bg-[url('/grain..jpeg')] opacity-50 z-0 pointer-events-none mix-blend-soft-light"></div>
 
               <h3 className="text-xl font-bold mb-4 relative z-10">{group.title}</h3>
               <div className="flex flex-wrap gap-3 relative z-10">
