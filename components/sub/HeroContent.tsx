@@ -62,7 +62,7 @@ const HeroContent = () => {
         <motion.a
           onClick={handleHireMeClick}
           variants={slideInFromRight(1)}
-          className="mt-4 inline-block py-2 px-6 bg-gradient-to-r from-blue-700 to-cyan-500 text-white font-semibold text-sm md:text-lg rounded-lg hover:scale-76 transition-transform duration-300 shadow-md cursor-pointer"
+          className="mt-4 inline-block py-2 px-2 bg-gradient-to-r from-blue-700 to-cyan-500 text-white font-semibold text-sm md:text-lg rounded-lg hover:scale-76 transition-transform duration-300 shadow-md cursor-pointer"
         >
           Resume
         </motion.a>
