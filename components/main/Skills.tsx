@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 const skillGroups = [
   {
     title: "Programming Languages & Frameworks",
-    color: "from-purple-700 to-cyan-900",
+    color: "from-cyan-700 to-cyan-900",
     skills: [
       { name: "Java", level: "Advanced" },
       { name: "SQL", level: "Advanced" },
@@ -74,7 +74,7 @@ const skillGroups = [
   skills: [
     "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)"
   ]
-  }
+}
 ];
 
 const levelColors: Record<string, string> = {
@@ -159,7 +159,7 @@ const Skills = () => {
               className={`rounded-xl p-6 sm:p-8 bg-gradient-to-br ${group.color} text-white shadow-lg border border-white/10 relative overflow-hidden`}
             >
               {/* Sand/Grainy Overlay */}
-              <div className="absolute inset-0 bg-[url('/grain..jpeg')] opacity-40 z-0 pointer-events-none mix-blend-soft-light"></div>
+              <div className="absolute inset-0 bg-[url('/grain.jpeg')] opacity-10 z-0 pointer-events-none mix-blend-soft-light"></div>
 
               <h3 className="text-xl font-bold mb-4 relative z-10">{group.title}</h3>
               <div className="flex flex-wrap gap-3 relative z-10">
