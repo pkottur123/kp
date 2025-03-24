@@ -1,141 +1,141 @@
 "use client";
 
+import {
+  Backend_skill,
+  Frontend_skill,
+  Full_stack,
+  Other_skill,
+  Skill_data,
+} from "@/constants";
 import React from "react";
+import SkillDataProvider from "../sub/SkillDataProvider";
+import SkillText from "../sub/SkillText";
 import { motion } from "framer-motion";
 
-const skillCategories = [
+// Skill Groups
+const skillGroups = [
   {
     title: "Programming Languages & Frameworks",
-    color: "bg-gradient-to-br from-cyan-800 to-cyan-950",
-    texture: "/public/grain..jpeg",
+    color: "from-cyan-700 to-cyan-900",
     skills: [
-      { name: "Java", level: "Advanced" },
-      { name: "SQL", level: "Advanced" },
-      { name: "JavaScript", level: "Advanced" },
-      { name: "TypeScript", level: "Intermediate" },
-      { name: "Python", level: "Advanced" },
-      { name: "C", level: "Intermediate" },
-      { name: "R", level: "Beginner" },
-      { name: "HTML5", level: "Advanced" },
-      { name: "CSS3", level: "Advanced" },
-      { name: "Go (Golang)", level: "Beginner" },
-      { name: "Node.js", level: "Advanced" },
-      { name: "Express.js", level: "Advanced" },
-      { name: "React.js", level: "Advanced" },
-      { name: "Next.js", level: "Intermediate" },
-      { name: "Tailwind CSS", level: "Advanced" },
-      { name: "GraphQL", level: "Intermediate" },
+      "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
+      "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
     ],
   },
   {
     title: "Databases & Cloud Technologies",
-    color: "bg-gradient-to-br from-green-800 to-green-950",
-    texture: "/public/grain..jpeg",
+    color: "from-green-700 to-green-900",
     skills: [
-      { name: "MySQL", level: "Advanced" },
-      { name: "NoSQL", level: "Intermediate" },
-      { name: "MongoDB", level: "Intermediate" },
-      { name: "Google Cloud Platform (GCP)", level: "Intermediate" },
-      { name: "Amazon Web Services (AWS)", level: "Intermediate" },
-      { name: "Firebase", level: "Beginner" },
+      "MySQL", "NoSQL", "MongoDB", "Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Firebase",
     ],
   },
   {
     title: "Data Science & AI",
-    color: "bg-gradient-to-br from-purple-800 to-purple-950",
-    texture: "/public/grain..jpeg",
+    color: "from-purple-700 to-purple-900",
     skills: [
-      { name: "Jupyter Notebook", level: "Intermediate" },
-      { name: "OpenAI", level: "Intermediate" },
-      { name: "PyTorch", level: "Intermediate" },
-      { name: "TensorFlow", level: "Intermediate" },
-      { name: "Spark", level: "Intermediate" },
-      { name: "Hadoop", level: "Intermediate" },
+      "Jupyter Notebook", "OpenAI", "PyTorch", "TensorFlow", "Spark", "Hadoop",
     ],
   },
   {
     title: "DevOps & Tools",
-    color: "bg-gradient-to-br from-yellow-800 to-yellow-950",
-    texture: "/public/grain..jpeg",
+    color: "from-yellow-700 to-yellow-900",
     skills: [
-      { name: "Docker", level: "Intermediate" },
-      { name: "Kubernetes", level: "Beginner" },
-    ],
-  },
-  {
-    title: "Other Tools & Technologies",
-    color: "bg-gradient-to-br from-pink-800 to-pink-950",
-    texture: "/public/grain..jpeg",
-    skills: [
-      { name: "REST API", level: "Intermediate" },
-      { name: "JSON", level: "Intermediate" },
-      { name: "SAP", level: "Beginner" },
-      { name: "Figma", level: "Intermediate" },
-      { name: "Tableau", level: "Intermediate" },
-      { name: "Material UI (MUI)", level: "Intermediate" },
+      "Docker", "Kubernetes",
     ],
   },
 ];
 
-const levelColor = {
-  Beginner: "bg-red-400",
-  Intermediate: "bg-yellow-400",
-  Advanced: "bg-green-400",
-};
-
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="flex flex-col items-center justify-center px-6 py-20 gap-10"
-    >
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-8"
+    <>
+      {/* Main Skill Icons Section */}
+      <section
+        id="skills"
+        className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-10"
+        style={{ transform: "scale(0.9)" }}
       >
-        Additional Skills
-      </motion.h2>
+        <SkillText />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl w-full">
-        {skillCategories.map((category, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className={`rounded-xl p-6 text-white shadow-lg backdrop-blur-md bg-opacity-60 relative overflow-hidden`}
-            style={{
-              backgroundImage: `url(${category.texture})`,
-              backgroundSize: "cover",
-              backgroundBlendMode: "overlay",
-            }}
-          >
-            <div className={`${category.color} bg-opacity-60 rounded-xl p-4`}>
-              <h3 className="text-lg font-bold mb-4">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-sm hover:scale-105 transition duration-300"
+        {[Skill_data, Frontend_skill, Backend_skill, Full_stack, Other_skill].map(
+          (skillSet, setIndex) => (
+            <div
+              key={setIndex}
+              className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
+            >
+              {skillSet.map((image, index) => (
+                <SkillDataProvider
+                  key={index}
+                  src={image.Image}
+                  width={image.width}
+                  height={image.height}
+                  index={index}
+                />
+              ))}
+            </div>
+          )
+        )}
+
+        <div className="w-full h-full absolute">
+          <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
+            <video
+              className="w-full h-auto"
+              preload="false"
+              playsInline
+              loop
+              muted
+              autoPlay
+              src="/cards-video.webm"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Skills Section */}
+      <section
+        id="additional-skills"
+        className="flex flex-col items-center justify-center gap-10 px-4 sm:px-6 py-20 mx-auto max-w-7xl"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-6 text-center"
+        >
+          Additional Skills
+        </motion.h2>
+
+        {/* Skills Grid */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+          {skillGroups.map((group, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className={`rounded-xl p-6 sm:p-8 bg-gradient-to-br ${group.color} text-white shadow-lg border border-white/10 relative overflow-hidden`}
+            >
+              {/* Sand/Grainy Overlay */}
+              <div className="absolute inset-0 bg-[url('/grain..jpeg')] opacity-10 z-0 pointer-events-none mix-blend-soft-light"></div>
+
+              <h3 className="text-xl font-bold mb-4 relative z-10">{group.title}</h3>
+              <div className="flex flex-wrap gap-3 relative z-10">
+                {group.skills.map((skill, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.05 }}
+                    className="text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
                   >
-                    <span>{skill.name}</span>
-                    <span
-                      className={`text-xs font-semibold text-black px-2 py-0.5 rounded-full ${levelColor[skill.level]}`}
-                    >
-                      {skill.level}
-                    </span>
-                  </div>
+                    {skill}
+                  </motion.div>
                 ))}
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
