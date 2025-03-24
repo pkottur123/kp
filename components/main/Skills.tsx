@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 const skillGroups = [
   {
     title: "Programming Languages & Frameworks",
-    color: "from-cyan-600 to-cyan-900",
+    color: "from-cyan-600 to-cyan-700",
     skills: [
       { name: "Java", level: "Intermediate" },
       { name: "SQL", level: "Advanced" },
@@ -38,7 +38,7 @@ const skillGroups = [
   },
   {
     title: "Cloud Technologies",
-    color: "from-green-700 to-green-900",
+    color: "from-green-700 to-green-500",
     skills: [
       { name: "MySQL", level: "Advanced" },
       { name: "NoSQL", level: "Intermediate" },
@@ -50,7 +50,7 @@ const skillGroups = [
   },
   {
     title: "Databases & Cloud Technologies",
-    color: "from-cyan-400 to-blue-200",
+    color: "from-cyan-400 to-blue-300",
     skills: [
       { name: "MySQL", level: "Advanced" },
       { name: "NoSQL", level: "Intermediate" },
@@ -62,7 +62,7 @@ const skillGroups = [
   },
   {
     title: "Data Science & AI",
-    color: "from-purple-700 to-purple-900",
+    color: "from-purple-400 to-purple-600",
     skills: [
       { name: "Jupyter Notebook", level: "Advanced" },
       { name: "OpenAI API", level: "Advanced" },
@@ -74,7 +74,7 @@ const skillGroups = [
   },
   {
     title: "DevOps & Tools",
-    color: "from-yellow-700 to-yellow-900",
+    color: "from-orange-400 to-orange-500",
     skills: [
       { name: "Docker", level: "Advanced" },
       { name: "Kubernetes", level: "Advanced" },
