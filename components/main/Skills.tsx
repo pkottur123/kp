@@ -7,25 +7,22 @@ import {
   Other_skill,
   Skill_data,
 } from "@/constants";
-import React, { useState } from "react";
+import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-const categories = ["All", "Programming", "Cloud", "Data Science", "DevOps", "Other"];
-
+// Skill Groups
 const skillGroups = [
   {
-    category: "Programming",
     title: "Programming Languages & Frameworks",
     color: "from-cyan-700 to-cyan-900",
     skills: [
       "Java", "SQL", "JavaScript", "TypeScript", "Python", "C", "R", "HTML5", "CSS3", "Go (Golang)",
-      "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS",
+      "Node.js", "Express.js", "React.js", "Next.js", "Tailwind CSS", "GraphQL",
     ],
   },
   {
-    category: "Cloud",
     title: "Databases & Cloud Technologies",
     color: "from-green-700 to-green-900",
     skills: [
@@ -33,7 +30,6 @@ const skillGroups = [
     ],
   },
   {
-    category: "Data Science",
     title: "Data Science & AI",
     color: "from-purple-700 to-purple-900",
     skills: [
@@ -41,29 +37,15 @@ const skillGroups = [
     ],
   },
   {
-    category: "DevOps",
     title: "DevOps & Tools",
     color: "from-yellow-700 to-yellow-900",
-    skills: ["Docker", "Kubernetes"],
-  },
-  {
-    category: "Other",
-    title: "Other Tools & Technologies",
-    color: "from-pink-700 to-pink-900",
     skills: [
-      "REST API", "JSON", "SAP", "Figma", "Tableau", "Material UI (MUI)",
+      "Docker", "Kubernetes",
     ],
   },
 ];
 
 const Skills = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const filteredGroups =
-    selectedCategory === "All"
-      ? skillGroups
-      : skillGroups.filter((group) => group.category === selectedCategory);
-
   return (
     <>
       {/* Main Skill Icons Section */}
@@ -108,7 +90,7 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Additional Skills Section with Category Filter */}
+      {/* Additional Skills Section */}
       <section
         id="additional-skills"
         className="flex flex-col items-center justify-center gap-10 px-4 sm:px-6 py-20 mx-auto max-w-7xl"
@@ -123,52 +105,34 @@ const Skills = () => {
           Additional Skills
         </motion.h2>
 
-        {/* Filter Bar */}
-        <div className="flex flex-wrap gap-3 justify-center mb-4">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-300 ${
-                selectedCategory === cat
-                  ? "bg-white text-black shadow-md"
-                  : "bg-white/10 text-white hover:bg-white/20"
-              }`}
+        {/* Skills Grid */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+          {skillGroups.map((group, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className={`rounded-xl p-6 sm:p-8 bg-gradient-to-br ${group.color} text-white shadow-lg border border-white/10 relative overflow-hidden`}
             >
-              {cat}
-            </button>
-          ))}
-        </div>
+              {/* Sand/Grainy Overlay */}
+              <div className="absolute inset-0 bg-[url('/grain.png')] opacity-10 z-0 pointer-events-none mix-blend-soft-light"></div>
 
-        {/* Filtered Skill Cards */}
-        <div className="grid gap-6 w-full grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-          <AnimatePresence>
-            {filteredGroups.map((group, idx) => (
-              <motion.div
-                key={group.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
-                transition={{ duration: 0.4 }}
-                className={`rounded-xl p-5 sm:p-6 lg:p-8 bg-gradient-to-br ${group.color} shadow-xl text-white backdrop-blur-md bg-opacity-30 border border-white/10`}
-              >
-                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-4">
-                  {group.title}
-                </h3>
-                <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {group.skills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.08 }}
-                      className="text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition duration-300 bg-white/10 text-white shadow-md hover:text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]"
-                    >
-                      {skill}
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+              <h3 className="text-xl font-bold mb-4 relative z-10">{group.title}</h3>
+              <div className="flex flex-wrap gap-3 relative z-10">
+                {group.skills.map((skill, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.05 }}
+                    className="text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
+                  >
+                    {skill}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
     </>
