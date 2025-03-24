@@ -12,7 +12,6 @@ import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 import { motion } from "framer-motion";
 
-// Skill Groups with Usage Badges
 const skillGroups = [
   {
     title: "Programming Languages & Frameworks",
@@ -68,18 +67,23 @@ const skillGroups = [
       { name: "Kubernetes", level: "Beginner" },
     ],
   },
+  {
+    title: "Other Tools & Technologies",
+    color: "from-pink-700 to-pink-900",
+    skills: [
+      { name: "REST API", level: "Advanced" },
+      { name: "JSON", level: "Advanced" },
+      { name: "SAP", level: "Intermediate" },
+      { name: "Figma", level: "Intermediate" },
+      { name: "Tableau", level: "Intermediate" },
+      { name: "Material UI (MUI)", level: "Intermediate" },
+    ],
+  },
 ];
-
-const levelColors: Record<string, string> = {
-  Beginner: "bg-red-400",
-  Intermediate: "bg-yellow-400",
-  Advanced: "bg-green-400",
-};
 
 const Skills = () => {
   return (
     <>
-      {/* Main Skill Icons Section */}
       <section
         id="skills"
         className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-10"
@@ -121,7 +125,6 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Additional Skills Section */}
       <section
         id="additional-skills"
         className="flex flex-col items-center justify-center gap-10 px-4 sm:px-6 py-20 mx-auto max-w-7xl"
@@ -131,16 +134,11 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-2 text-center"
+          className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-6 text-center"
         >
           Additional Skills
         </motion.h2>
 
-        <div className="text-white bg-white/10 px-6 py-2 rounded-full mb-8 text-sm shadow-md">
-          {skillGroups.reduce((acc, group) => acc + group.skills.length, 0)}+ Skills
-        </div>
-
-        {/* Skills Grid */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillGroups.map((group, idx) => (
             <motion.div
@@ -151,8 +149,7 @@ const Skills = () => {
               viewport={{ once: true }}
               className={`rounded-xl p-6 sm:p-8 bg-gradient-to-br ${group.color} text-white shadow-lg border border-white/10 relative overflow-hidden`}
             >
-              {/* Sand/Grainy Overlay */}
-              <div className="absolute inset-0 bg-[url('/grain.jpeg')] opacity-10 z-0 pointer-events-none mix-blend-soft-light"></div>
+              <div className="absolute inset-0 bg-[url('/grain..jpeg')] opacity-10 z-0 pointer-events-none mix-blend-soft-light"></div>
 
               <h3 className="text-xl font-bold mb-4 relative z-10">{group.title}</h3>
               <div className="flex flex-wrap gap-3 relative z-10">
@@ -162,10 +159,8 @@ const Skills = () => {
                     whileHover={{ scale: 1.05 }}
                     className="flex items-center gap-2 text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
                   >
-                    {skill.name}
-                    <span
-                      className={`text-[10px] font-semibold text-black px-2 py-0.5 rounded-full ${levelColors[skill.level]}`}
-                    >
+                    <span>{skill.name}</span>
+                    <span className="bg-white/20 text-[10px] px-2 py-0.5 rounded-full">
                       {skill.level}
                     </span>
                   </motion.div>
