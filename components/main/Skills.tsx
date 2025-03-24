@@ -127,7 +127,7 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             viewport={{ once: true }}
             className={`relative rounded-xl p-6 bg-gradient-to-br ${group.color} 
-              shadow-xl text-white bg-[url('/soft_texture.png')] bg-cover bg-no-repeat bg-blend-overlay 
+              shadow-xl text-white bg-[url('/grain..jpeg')] bg-cover bg-no-repeat bg-blend-overlay 
               backdrop-blur-md border border-white/10`}
           >
             <h3 className="text-lg font-bold mb-4">{group.title}</h3>
