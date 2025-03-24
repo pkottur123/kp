@@ -23,13 +23,15 @@ const HeroContent = () => {
     >
       {/* Left Content */}
       <div className="h-full w-full flex flex-col gap-6 justify-center text-start">
-        {/* Sparkle Intro Box */}
+        {/* Intro Tag */}
         <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[6px] px-[5px] border border-[#7042f88b] opacity-[0.9] flex items-center w-fit"
         >
           <SparklesIcon className="text-[#b49bff] mr-[8px] h-5 w-5" />
-          <h1 className="Welcome-text text-sm text-white">Business Intelligence Analyst</h1>
+          <h1 className="Welcome-text text-sm text-white">
+            Business Intelligence Analyst
+          </h1>
         </motion.div>
 
         {/* Name & Role */}
@@ -42,23 +44,30 @@ const HeroContent = () => {
           </h2>
 
           <div className="relative w-fit">
-            <span className="text-[44px] md:text-[60px] text-white block">Business</span>
-            <span className="text-[44px] md:text-[60px] text-white block">Intelligence</span>
+            <span className="text-[44px] md:text-[60px] text-white block">
+              Business
+            </span>
+            <span className="text-[44px] md:text-[60px] text-white block">
+              Intelligence
+            </span>
             <span className="text-[44px] md:text-[60px] font-extrabold text-white block tracking-wide">
               Analyst
             </span>
           </div>
         </motion.div>
 
-        {/* Description */}
+        {/* Bio */}
         <motion.p
           variants={slideInFromLeft(0.8)}
           className="text-sm md:text-lg text-gray-300 max-w-lg mt-4"
         >
-          I&apos;m a Business Analyst with experience in data analysis, process optimization, and requirement gathering. I specialize in turning complex business needs into actionable insights and solutions.
+          I&apos;m a Business Analyst with experience in data analysis,
+          process optimization, and requirement gathering. I specialize in
+          turning complex business needs into actionable insights and
+          solutions.
         </motion.p>
 
-        {/* Resume Button */}
+        {/* Resume Button (smaller) */}
         <motion.a
           onClick={handleHireMeClick}
           variants={slideInFromRight(1)}
@@ -66,8 +75,9 @@ const HeroContent = () => {
         >
           Resume
         </motion.a>
+      </div>
 
-      {/* Right Image */}
+      {/* Right Content (Icons) */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center mt-10 md:mt-0"
