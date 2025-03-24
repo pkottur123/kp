@@ -23,7 +23,7 @@ const HeroContent = () => {
     >
       {/* Left Content */}
       <div className="h-full w-full flex flex-col gap-6 justify-center text-start">
-        {/* Intro Tag */}
+        {/* Sparkle Intro Box */}
         <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[6px] px-[5px] border border-[#7042f88b] opacity-[0.9] flex items-center w-fit"
@@ -56,28 +56,27 @@ const HeroContent = () => {
           </div>
         </motion.div>
 
-        {/* Bio */}
+        {/* Description */}
         <motion.p
           variants={slideInFromLeft(0.8)}
           className="text-sm md:text-lg text-gray-300 max-w-lg mt-4"
         >
-          I&apos;m a Business Analyst with experience in data analysis,
-          process optimization, and requirement gathering. I specialize in
-          turning complex business needs into actionable insights and
-          solutions.
+          I&apos;m a Business Analyst with experience in data analysis, process
+          optimization, and requirement gathering. I specialize in turning
+          complex business needs into actionable insights and solutions.
         </motion.p>
 
-        {/* Resume Button (smaller) */}
+        {/* Shortened Resume Button */}
         <motion.a
           onClick={handleHireMeClick}
           variants={slideInFromRight(1)}
-          className="mt-4 inline-block py-1 px-3 bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-xs font-medium rounded-md hover:scale-105 transition-transform duration-300 shadow-sm cursor-pointer"
+          className="mt-4 inline-block py-1 px-4 bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-semibold rounded-md hover:scale-105 transition-transform duration-300 shadow-sm cursor-pointer w-fit"
         >
           Resume
         </motion.a>
       </div>
 
-      {/* Right Content (Icons) */}
+      {/* Right Image */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center mt-10 md:mt-0"
