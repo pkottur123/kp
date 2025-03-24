@@ -250,3 +250,14 @@ export const Skill_data = [
       height: 60,
     },
   ];
+.hero-blur-text {
+  @apply absolute blur-[3px] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500;
+  font-weight: 900;
+  -webkit-text-stroke: 1px transparent;
+  opacity: 0.25;
+}
+
+.hero-overlay-text {
+  @apply relative text-white;
+  font-weight: 800;
+}
