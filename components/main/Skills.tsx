@@ -117,7 +117,7 @@ const Skills = () => {
               className={`rounded-xl p-6 sm:p-8 bg-gradient-to-br ${group.color} text-white shadow-lg border border-white/10 relative overflow-hidden`}
             >
               {/* Sand/Grainy Overlay */}
-              <div className="absolute inset-0 bg-[url('/grain..jpeg')] opacity-10 z-0 pointer-events-none mix-blend-soft-light"></div>
+              <div className="absolute inset-0 bg-[url('/grain..jpeg')] opacity-30 z-0 pointer-events-none mix-blend-soft-light"></div>
 
               <h3 className="text-xl font-bold mb-4 relative z-10">{group.title}</h3>
               <div className="flex flex-wrap gap-3 relative z-10">
