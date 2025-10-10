@@ -43,8 +43,7 @@ const Projects = () => {
           title="CRM Analytics Dashboard "
           description={
             <>
-              Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved decision-making efficiency
-by 60%.{" "}
+              Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved.{" "}
               
             </>
           }
