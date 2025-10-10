@@ -39,6 +39,17 @@ const Projects = () => {
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
         <ProjectCard
+          src="/CRM.jpeg"
+          title="CRM Analytics Dashboard "
+          description={
+            <>
+              Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved decision-making efficiency
+by 60%.{" "}
+              
+            </>
+          }
+        />
+        <ProjectCard
           src="/Netflix_Dashboard.png"
           title="Netflix Content Analysis"
           description={
