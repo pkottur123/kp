@@ -18,11 +18,10 @@ const skillGroups = [
     title: "Programming Languages & Frameworks",
     color: "from-cyan-600 to-cyan-700",
     skills: [
-      { name: "Pyhton", level: "Advanced" },
+      { name: "Python", level: "Advanced" },
       { name: "SQL", level: "Advanced" },
       { name: "JavaScript", level: "Advanced" },
       { name: "TypeScript", level: "Advanced" },
-      { name: "Python", level: "Advanced" },
       { name: "C", level: "Intermediate" },
       { name: "R", level: "Advanced" },
       { name: "HTML5", level: "Advanced" },
@@ -36,6 +35,27 @@ const skillGroups = [
       { name: "GraphQL", level: "Intermediate" },
     ],
   },
+    {
+    title: "Data Visualization",
+    color: "from-fuchsia-500 to-pink-600",
+    skills: [
+      { name: "AWS QuickSight", level: "Advanced" },
+      { name: "Palantir Foundry", level: "Advanced" },
+      { name: "Power BI", level: "Advanced" },
+      { name: "Power BI", level: "Advanced" },
+      { name: "Tableau", level: "Advanced" },
+      { name: "Looker Studio", level: "Intermediate" },
+      { name: "AWS QuickSight", level: "Advanced" },
+      { name: "Matplotlib", level: "Advanced" },
+      { name: "Plotly", level: "Advanced" },
+      { name: "ggplot2", level: "Intermediate" },
+      { name: "Power Query", level: "Advanced" },
+      { name: "DAX", level: "Advanced" },
+      { name: "KPI Design", level: "Advanced" },
+      { name: "Dashboard UX", level: "Advanced" },
+      { name: "Data Storytelling", level: "Advanced" },
+    ],
+  },
   {
     title: "Databases & Cloud Technologies",
     color: "from-cyan-400 to-blue-300",
@@ -46,7 +66,7 @@ const skillGroups = [
       { name: "MongoDB", level: "Intermediate" },
       { name: "Google Cloud Platform (GCP)", level: "Intermediate" },
       { name: "Amazon Web Services (AWS)", level: "Advanced" },
-      { name: "RedShift (AWS)", level: "Advanced" },
+      { name: "Amazon Redshift", level: "Advanced" },
       { name: "Firebase", level: "Advanced" },
     ],
   },
@@ -62,14 +82,7 @@ const skillGroups = [
       { name: "Hadoop", level: "Advanced" },
     ],
   },
-  {
-    title: "DevOps & Tools",
-    color: "from-orange-400 to-orange-500",
-    skills: [
-      { name: "Docker", level: "Advanced" },
-      { name: "Kubernetes", level: "Advanced" },
-    ],
-  },
+  // 🔁 REPLACED "DevOps & Tools" WITH THIS
 ];
 
 const levelColors: Record<string, string> = {
