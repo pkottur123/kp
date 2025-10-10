@@ -234,8 +234,8 @@ export const Skill_data = [
     {
       skill_name: "Palantir",
       Image: "/Palantir2.png",
-      width: 80,
-      height: 80,
+      width: 100,
+      height: 100,
     },
   
   ];
