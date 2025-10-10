@@ -18,7 +18,7 @@ const skillGroups = [
     title: "Programming Languages & Frameworks",
     color: "from-cyan-600 to-cyan-700",
     skills: [
-      { name: "Java", level: "Intermediate" },
+      { name: "Pyhton", level: "Advanced" },
       { name: "SQL", level: "Advanced" },
       { name: "JavaScript", level: "Advanced" },
       { name: "TypeScript", level: "Advanced" },
@@ -40,12 +40,14 @@ const skillGroups = [
     title: "Databases & Cloud Technologies",
     color: "from-cyan-400 to-blue-300",
     skills: [
+      { name: "ETL Pipeline", level: "Advanced" },
       { name: "MySQL", level: "Advanced" },
       { name: "NoSQL", level: "Intermediate" },
       { name: "MongoDB", level: "Intermediate" },
       { name: "Google Cloud Platform (GCP)", level: "Intermediate" },
-      { name: "Amazon Web Services (AWS)", level: "Intermediate" },
-      { name: "Firebase", level: "Intermediate" },
+      { name: "Amazon Web Services (AWS)", level: "Advanced" },
+      { name: "RedShift (AWS)", level: "Advanced" },
+      { name: "Firebase", level: "Advanced" },
     ],
   },
   {
