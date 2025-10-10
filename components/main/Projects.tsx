@@ -10,37 +10,30 @@ const Projects = () => {
         Projects
       </h1>
 
-      {/* 2x2 grid – wide tiles */}
+      {/* 2x2 grid on md+, 1x4 on mobile */}
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
         <ProjectCard
-          containerClassName="w-full"
-          imageHeightClass="h-[300px]"  // taller image area
           src={["/CRM.jpeg", "/CRM2.jpeg"]}
           title="CRM Analytics Dashboard"
+          imageHeightClass="h-[300px]"
           description={<>Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved.</>}
         />
-
         <ProjectCard
-          containerClassName="w-full"
-          imageHeightClass="h-[300px]"
           src="/Netflix_Dashboard.png"
           title="Netflix Content Analysis"
+          imageHeightClass="h-[300px]"
           description={<>Analyzes Netflix’s content distribution, ratings, genres, and regional availability to uncover streaming trends.</>}
         />
-
         <ProjectCard
-          containerClassName="w-full"
-          imageHeightClass="h-[300px]"
           src="/Samsung_dash.jpeg"
           title="Samsung 5G Market Analysis"
+          imageHeightClass="h-[300px]"
           description={<>Insights into sales, revenue, market share, and regional 5G.</>}
         />
-
         <ProjectCard
-          containerClassName="w-full"
-          imageHeightClass="h-[300px]"
           src="/Tesla_dashboard.jpeg"
           title="Tesla Sales Analysis"
+          imageHeightClass="h-[300px]"
           description={<>Insights into Tesla’s sales, revenue, and profitability across models and markets.</>}
         />
       </div>
