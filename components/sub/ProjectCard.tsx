@@ -59,7 +59,8 @@ const ProjectCard = ({
               {skills.map((s) => (
                 <span
                   key={s}
-                  className="px-2.5 py-1 text-xs rounded-full bg-[#0f172a] text-slate-200 border border-slate-700/60"
+                  class="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-400/40 ring-1 ring-cyan-500/20 hover:bg-cyan-500/25"
+
                 >
                   {s}
                 </span>
