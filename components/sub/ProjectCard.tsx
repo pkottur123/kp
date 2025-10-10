@@ -5,8 +5,9 @@ interface Props {
   src: string | string[];
   title: string;
   description: ReactNode;
-  containerClassName?: string;   // optional width/padding overrides
-  imageHeightClass?: string;     // e.g., "h-[300px]"
+  skills?: string[];                 // <— NEW
+  containerClassName?: string;
+  imageHeightClass?: string;
 }
 
 const join = (...parts: Array<string | undefined>) =>
@@ -16,6 +17,7 @@ const ProjectCard = ({
   src,
   title,
   description,
+  skills = [],                     // default empty
   containerClassName,
   imageHeightClass = "h-[300px]",
 }: Props) => {
@@ -48,6 +50,23 @@ const ProjectCard = ({
       <div className="w-full text-center mt-3">
         <h1 className="text-2xl font-semibold text-white">{title}</h1>
         <p className="mt-2 text-gray-300 text-base leading-relaxed">{description}</p>
+
+        {/* Skills (optional) */}
+        {skills.length > 0 && (
+          <div className="mt-3">
+            <p className="text-sm font-medium text-slate-200 mb-2">Skills used</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {skills.map((s) => (
+                <span
+                  key={s}
+                  className="px-2.5 py-1 text-xs rounded-full bg-[#0f172a] text-slate-200 border border-slate-700/60"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
