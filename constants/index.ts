@@ -232,8 +232,8 @@ export const Skill_data = [
     },
   
     {
-      skill_name: "Figma",
-      Image: "/figma.png",
+      skill_name: "Palantir",
+      Image: "/Palantir.png",
       width: 50,
       height: 50,
     },
