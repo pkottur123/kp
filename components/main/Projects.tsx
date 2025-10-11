@@ -6,6 +6,51 @@ import ProjectCard from "../sub/ProjectCard";
 const Projects = () => {
   return (
     <div className="flex flex-col items-center justify-center py-20" id="projects">
+      {/* ===== Education ===== */}
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+        Education
+      </h1>
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
+        <ProjectCard
+          src="/uta.png"
+          title="University of Texas at Arlington"
+          imageHeightClass="h-[180px]"
+          description={"Master's in Business Analytics (2023 - 2024)"}
+        />
+        <ProjectCard
+          src="/sppu.jpg"
+          title="Savitribai Phule Pune University"
+          imageHeightClass="h-[180px]"
+          description={"Bachelor's in Computer Science (2018 - 2022)"}
+        />
+      </div>
+
+      {/* ===== Experience ===== */}
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+        Experience
+      </h1>
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-10">
+        <ProjectCard
+          src="/reality.png"
+          title="RealityAI"
+          imageHeightClass="h-[180px]"
+          description={"Gen AI Data Analyst (January 2025 - Present)"}
+        />
+        <ProjectCard
+          src="/open.jpg"
+          title="OpenQQuantify"
+          imageHeightClass="h-[180px]"
+          description={"Business Analyst (September 2024 - December 2024)"}
+        />
+        <ProjectCard
+          src="/tripai.jpg"
+          title="TripAI"
+          imageHeightClass="h-[180px]"
+          description={"Business Analyst (September 2024 - December 2024)"}
+        />
+      </div>
+
+      {/* ===== Projects ===== */}
       <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
         Projects
       </h1>
