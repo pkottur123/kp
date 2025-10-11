@@ -4,7 +4,7 @@
 import Image from "next/image";
 import React from "react";
 
-const BLUE = "#0374ff";
+const BLUE = "#F5BD02";
 
 interface CardProps {
   src: string;
@@ -28,7 +28,7 @@ const SkillChips: React.FC<{ skills?: string[] }> = ({ skills }) => {
         <span
           key={`${s}-${i}`}
           className="rounded-full border px-2 py-1 text-[10px] leading-none tracking-wide text-white/90"
-          style={{ borderColor: BLUE, background: "#0374ff" }}
+          style={{ borderColor: GOLD, background: "#F5BD02" }}
         >
           {s}
         </span>
@@ -74,7 +74,7 @@ const ProjectCard: React.FC<CardProps> = ({
   const Body = (
     <div
       className={`group w-[300px] ${S.cardHeight} flex flex-col items-center rounded-2xl shadow-lg border`}
-      style={{ borderColor: BLUE, background: "#0374ff" }}
+      style={{ borderColor: GOLD, background: "#F5BD02" }}
     >
       {/* Image */}
       <div className={`relative w-full ${S.imgHeight} overflow-hidden rounded-t-2xl`}>
@@ -88,7 +88,7 @@ const ProjectCard: React.FC<CardProps> = ({
         {badge && (
           <span
             className="absolute top-2 left-2 rounded-full border px-2 py-0.5 text-[10px] tracking-wide"
-            style={{ borderColor: BLUE, color: BLUE, background: "#0374ff" }}
+            style={{ borderColor: GOLD, color: GOLD, background: "#F5BD02" }}
           >
             {badge}
           </span>
