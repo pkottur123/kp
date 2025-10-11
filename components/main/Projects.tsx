@@ -6,28 +6,28 @@ import ProjectCard from "../sub/ProjectCard";
 const Projects = () => {
   return (
     <div className="flex flex-col items-center justify-center py-20" id="projects">
-      {/* Section 1: Education */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+      {/* Education */}
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-8">
         Education
       </h1>
-      <div className="flex justify-center items-center gap-12 flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 place-items-center">
         <ProjectCard
-          src="/uta.png"
-          title="Master's in Business Analytics"
-          description={"University of Texas at Arlington (2023 - 2024)"}
+          src="/uta2.png"
+          title="University of Texas at Arlington"
+          description={"Master's in Computer Science (January 2023 - December 2024)"}
         />
         <ProjectCard
-          src="/sppu.jpg"
-          title="Bachelor's in Computer Science"
-          description={"Bachelor's in Computer Science(2018 - 2022)"}
+          src="/vignan.png"
+          title="Vignan Institute of Technology & Science"
+          description={"Bachelor's in Computer Science (August 2016 - September 2020)"}
         />
       </div>
 
-      {/* Section 2: Work Experience */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+      {/* Experience */}
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-8">
         Experience
       </h1>
-      <div className="flex justify-center items-center gap-12 flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
         <ProjectCard
           src="/reality.png"
           title="RealityAI"
@@ -45,11 +45,11 @@ const Projects = () => {
         />
       </div>
 
-      {/* Section 3: Projects */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+      {/* Projects */}
+      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-8">
         Projects
       </h1>
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
         <ProjectCard
           src="/CRM.jpeg"
           title="CRM Analytics Dashboard"
