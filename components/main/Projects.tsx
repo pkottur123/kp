@@ -18,8 +18,8 @@ const Projects = () => {
         />
         <ProjectCard
           src="/vignan.png"
-          title="Vignan Institute of Technology & Science"
-          description={"Bachelor's in Computer Science (August 2016 - September 2020)"}
+          title="Pune University"
+          description={"Bachelor's in Computer Science (August 2018 - September 2022)"}
         />
       </div>
 
