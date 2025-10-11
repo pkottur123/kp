@@ -1,139 +1,115 @@
+// components/sub/ProjectCard.tsx
+"use client";
+
 import Image from "next/image";
-import React, { ReactNode } from "react";
+import React from "react";
 
-interface Props {
-  /** Image(s). If you pass 2+, the card shows a 2-up grid. */
-  src: string | string[];
+const GOLD = "#E4B860";
+
+interface CardProps {
+  src: string;
   title: string;
-  description: ReactNode;
-
-  /** Optional: skill chips */
-  skills?: string[];
-  /** Max chips before showing +N */
-  maxBadges?: number;
-
-  /** Layout tweaks */
-  containerClassName?: string;
-  imageHeightClass?: string;
-  cardWidthClass?: string;
-
-  /** Styling tweaks */
-  useGoldTheme?: boolean;   // gold border/ring like your screenshot
-  isCurrent?: boolean;      // “Current” pill in the top-left
+  description: string;
+  href?: string;        // optional link to details/demo
+  badge?: string;       // small badge (e.g., "Current", "2025")
+  skills?: string[];    // chips under description
+  size?: "sm" | "lg";   // controls tile height/image height
 }
 
-const join = (...parts: Array<string | undefined | false>) =>
-  parts.filter(Boolean).join(" ");
+const SkillChips: React.FC<{ skills?: string[] }> = ({ skills }) => {
+  if (!skills || skills.length === 0) return null;
+  const max = 6;
+  const shown = skills.slice(0, max);
+  const extra = skills.length - shown.length;
 
-const gold = {
-  border: "border-amber-300/60",
-  ring: "ring-amber-300/25",
-  text: "text-amber-200",
-  chip: "border-amber-300/60 text-amber-100 hover:bg-amber-300/10",
+  return (
+    <div className="mt-3 flex flex-wrap justify-center gap-2">
+      {shown.map((s, i) => (
+        <span
+          key={`${s}-${i}`}
+          className="rounded-full border px-2 py-1 text-[10px] leading-none tracking-wide text-white/90"
+          style={{ borderColor: GOLD, background: "#0b0d12" }}
+        >
+          {s}
+        </span>
+      ))}
+      {extra > 0 && (
+        <span
+          className="rounded-full border px-2 py-1 text-[10px] leading-none tracking-wide text-white/70"
+          style={{ borderColor: GOLD, background: "#0b0d12" }}
+          aria-label={`and ${extra} more skills`}
+        >
+          +{extra}
+        </span>
+      )}
+    </div>
+  );
 };
 
-const slate = {
-  border: "border-[#2A0E61]",
-  ring: "ring-black/0",
-  text: "text-slate-200",
-  chip: "border-slate-700/60 text-slate-200 hover:bg-slate-700/10",
-};
+// Size presets
+const CARD_SIZES = {
+  sm: {
+    cardHeight: "h-[320px]",
+    imgHeight: "h-[120px] sm:h-[130px] lg:h-[140px]",
+    imgPadding: "p-2",
+  },
+  lg: {
+    cardHeight: "h-[420px]",
+    imgHeight: "h-[220px] sm:h-[230px] lg:h-[240px]",
+    imgPadding: "p-1",
+  },
+} as const;
 
-const ProjectCard = ({
+const ProjectCard: React.FC<CardProps> = ({
   src,
   title,
   description,
-  skills = [],
-  maxBadges = 6,
-  containerClassName,
-  imageHeightClass = "h-[140px]",
-  cardWidthClass = "w-[240px]",
-  useGoldTheme = false,
-  isCurrent = false,
-}: Props) => {
-  const images = Array.isArray(src) ? src : [src];
-  const multi = images.length > 1;
-  const theme = useGoldTheme ? gold : slate;
+  href,
+  badge,
+  skills,
+  size = "sm",
+}) => {
+  const S = CARD_SIZES[size];
 
-  const shown = skills.slice(0, maxBadges);
-  const overflow = Math.max(0, skills.length - shown.length);
-
-  return (
+  const Body = (
     <div
-      className={join(
-        "relative",
-        `${cardWidthClass} h-auto flex flex-col items-center bg-[#1A1A2E] rounded-2xl p-4`,
-        "border ring-1 shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_14px_30px_rgba(0,0,0,0.35)]",
-        theme.border,
-        theme.ring,
-        containerClassName
-      )}
+      className={`group w-[300px] ${S.cardHeight} flex flex-col items-center rounded-2xl shadow-lg border`}
+      style={{ borderColor: GOLD, background: "#11131A" }}
     >
-      {/* Current pill */}
-      {isCurrent && (
-        <div
-          className={join(
-            "absolute -top-3 left-4 text-[12px] px-3 py-1 rounded-full bg-black/50 border",
-            theme.border,
-            theme.text
-          )}
-        >
-          Current
-        </div>
-      )}
-
-      {/* Image Section */}
-      {multi ? (
-        <div className={join("grid grid-cols-2 gap-2 w-full rounded-lg overflow-hidden", imageHeightClass)}>
-          {images.slice(0, 4).map((img, i) => (
-            <div key={`${img}-${i}`} className="relative w-full h-full bg-black/20 rounded-md">
-              <Image src={img} alt={`${title} screenshot ${i + 1}`} fill style={{ objectFit: "contain" }} />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className={join("relative w-full overflow-hidden rounded-lg", imageHeightClass)}>
-          <Image src={images[0]} alt={title} fill style={{ objectFit: "contain" }} />
-        </div>
-      )}
-
-      {/* Text */}
-      <div className="w-full text-center mt-3">
-        <h1 className="text-base md:text-lg font-semibold text-white leading-tight">{title}</h1>
-        <p className="mt-1 text-gray-300 text-xs md:text-sm leading-snug">{description}</p>
-
-        {skills.length > 0 && (
-          <div className="mt-2">
-            <p className={join("text-[11px] md:text-xs font-medium mb-1", theme.text)}>Skills used</p>
-            <div className="flex flex-wrap justify-center gap-1.5">
-              {shown.map((s) => (
-                <span
-                  key={s}
-                  className={join(
-                    "px-2 py-0.5 text-[10px] md:text-[11px] rounded-full border transition-colors",
-                    "bg-[#0b0f19]",
-                    theme.chip
-                  )}
-                >
-                  {s}
-                </span>
-              ))}
-              {overflow > 0 && (
-                <span
-                  className={join(
-                    "px-2 py-0.5 text-[10px] md:text-[11px] rounded-full border",
-                    "bg-[#0b0f19]",
-                    theme.chip
-                  )}
-                >
-                  +{overflow}
-                </span>
-              )}
-            </div>
-          </div>
+      {/* Image */}
+      <div className={`relative w-full ${S.imgHeight} overflow-hidden rounded-t-2xl`}>
+        <Image
+          src={src}
+          alt={title}
+          fill
+          className={`object-contain ${S.imgPadding} transition-transform duration-300 group-hover:scale-[1.04] pointer-events-none`}
+          sizes="(max-width: 768px) 300px, 300px"
+        />
+        {badge && (
+          <span
+            className="absolute top-2 left-2 rounded-full border px-2 py-0.5 text-[10px] tracking-wide"
+            style={{ borderColor: GOLD, color: GOLD, background: "#0b0d12" }}
+          >
+            {badge}
+          </span>
         )}
       </div>
+
+      {/* Text */}
+      <div className="w-full p-4 text-center">
+        <h3 className="text-base font-semibold text-white line-clamp-1">{title}</h3>
+        <p className="mt-1 text-gray-400 text-xs leading-snug line-clamp-2">{description}</p>
+        <SkillChips skills={skills} />
+      </div>
     </div>
+  );
+
+  return href ? (
+    <a href={href} target="_blank" rel="noreferrer noopener" aria-label={`${title} (opens in new tab)`}>
+      {Body}
+    </a>
+  ) : (
+    Body
   );
 };
 
