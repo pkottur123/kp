@@ -7,7 +7,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#0374ff]/50 bg-[#03001417] backdrop-blur-md z-50 px-5 md:px-10">
+    <nav className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#ffffff]/50 bg-[#03001417] backdrop-blur-md z-50 px-5 md:px-10">
       <div className="w-full h-full flex items-center justify-between px-4 md:px-10">
         {/* Logo */}
         <a href="#about-me" className="flex items-center">
@@ -24,7 +24,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 bg-[#0300145e] border border-[#787878] px-6 py-2 rounded-full text-gray-200 text-sm md:text-base">
+        <div className="hidden md:flex items-center space-x-6 bg-[#0300145e] border border-[#0374ff] px-6 py-2 rounded-full text-gray-200 text-sm md:text-base">
           <a href="#about-me" className="cursor-pointer">
             Home
           </a>
