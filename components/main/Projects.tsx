@@ -5,108 +5,73 @@ import ProjectCard from "../sub/ProjectCard";
 
 const Projects = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-20" id="projects">
-      {/* ===== Education ===== */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+    <div className="flex flex-col items-center justify-center py-16" id="projects">
+      {/* Education */}
+      <h1 className="text-[44px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-6">
         Education
       </h1>
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 gap-6 place-items-center">
         <ProjectCard
           src="/uta.png"
           title="University of Texas at Arlington"
-          imageHeightClass="h-[180px]"
           description={"Master's in Business Analytics (2023 - 2024)"}
+          imageHeightClass="h-[110px]"
+          cardWidthClass="w-[240px]"
         />
         <ProjectCard
           src="/sppu.jpg"
           title="Savitribai Phule Pune University"
-          imageHeightClass="h-[180px]"
           description={"Bachelor's in Computer Science (2018 - 2022)"}
+          imageHeightClass="h-[110px]"
+          cardWidthClass="w-[240px]"
         />
       </div>
 
-      {/* ===== Experience ===== */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+      {/* Experience */}
+      <h1 className="text-[44px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-6">
         Experience
       </h1>
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-10">
-        <ProjectCard
-          src="/reality.png"
-          title="RealityAI"
-          imageHeightClass="h-[180px]"
-          description={"Gen AI Data Analyst (January 2025 - Present)"}
-        />
-        <ProjectCard
-          src="/open.jpg"
-          title="OpenQQuantify"
-          imageHeightClass="h-[180px]"
-          description={"Business Analyst (September 2024 - December 2024)"}
-        />
-        <ProjectCard
-          src="/tripai.jpg"
-          title="TripAI"
-          imageHeightClass="h-[180px]"
-          description={"Business Analyst (September 2024 - December 2024)"}
-        />
+      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+        <ProjectCard src="/reality.png" title="RealityAI" description={"Gen AI Data Analyst (Jan 2025 - Present)"} imageHeightClass="h-[110px]" cardWidthClass="w-[240px]" />
+        <ProjectCard src="/open.jpg"    title="OpenQQuantify" description={"Business Analyst (Sep 2024 - Dec 2024)"}   imageHeightClass="h-[110px]" cardWidthClass="w-[240px]" />
+        <ProjectCard src="/tripai.jpg"  title="TripAI"        description={"Business Analyst (Sep 2024 - Dec 2024)"}   imageHeightClass="h-[110px]" cardWidthClass="w-[240px]" />
       </div>
 
-      {/* ===== Projects ===== */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
+      {/* Projects */}
+      <h1 className="text-[44px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-6">
         Projects
       </h1>
-
-      {/* 2x2 grid on md+ (1 per row on mobile) */}
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
-        {/* CRM (two images side-by-side) */}
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
         <ProjectCard
           src={["/CRM.jpeg", "/CRM2.jpeg"]}
           title="CRM Analytics Dashboard"
-          imageHeightClass="h-[300px]"
-          description={
-            <>
-              Designed CRM dashboard integrating 100 companies and 500+ employer
-              records; dynamic filtering improved.
-            </>
-          }
+          description={"Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved."}
+          imageHeightClass="h-[140px]"
+          cardWidthClass="w-[260px]"
           skills={["Power BI", "SQL", "DAX", "Data Modeling", "ETL"]}
         />
-
         <ProjectCard
           src="/Netflix_Dashboard.png"
           title="Netflix Content Analysis"
-          imageHeightClass="h-[300px]"
-          description={
-            <>
-              Analyzes content distribution, ratings, genres, and regional
-              availability to uncover streaming trends.
-            </>
-          }
+          description={"Analyzes content distribution, ratings, genres, and regional availability to uncover streaming trends."}
+          imageHeightClass="h-[140px]"
+          cardWidthClass="w-[260px]"
           skills={["Tableau", "Python", "Pandas", "EDA", "Storytelling"]}
         />
-
         <ProjectCard
           src="/Samsung_dash.jpeg"
           title="Samsung 5G Market Analysis"
-          imageHeightClass="h-[300px]"
-          description={
-            <>
-              Insights into sales, revenue, market share, and regional 5G
-              capabilities for strategic planning.
-            </>
-          }
+          description={"Insights into sales, revenue, market share, and regional 5G capabilities for strategic planning."}
+          imageHeightClass="h-[140px]"
+          cardWidthClass="w-[260px]"
           skills={["Power BI", "SQL", "Excel", "Data Cleaning", "KPI Design"]}
         />
-
         <ProjectCard
           src="/Tesla_dashboard.jpeg"
           title="Tesla Sales Analysis"
-          imageHeightClass="h-[300px]"
-          description={
-            <>
-              Breakdown of sales, revenue, and profitability across models,
-              trims, and markets with executive KPIs.
-            </>
-          }
+          description={"Breakdown of sales, revenue, and profitability across models, trims, and markets with executive KPIs."}
+          imageHeightClass="h-[140px]"
+          cardWidthClass="w-[260px]"
           skills={["Tableau", "SQL", "Joins & Aggregations", "KPIs", "Filters"]}
         />
       </div>
