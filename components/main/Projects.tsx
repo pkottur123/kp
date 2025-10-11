@@ -122,12 +122,7 @@ const Projects: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
-        <div
-          className="mt-16 h-px w-2/3"
-          style={{ background: "linear-gradient(130deg, transparent, #ffffff, transparent)" }}
-          />
-        </div>
-
+       
         {/* Experience */}
         <SectionTitle size="lg">Experience</SectionTitle>
         <motion.div
