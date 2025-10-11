@@ -101,22 +101,7 @@ const Projects: React.FC = () => {
         "Breakdown of sales, revenue, and profitability across models, trims, and markets with executive KPIs.",
      skills: ["Tableau", "SQL", "Joins & Aggregations", "KPIs", "Filters"],
     },
-    {
-      src: "/Port2.jpeg",
-      title: "Query Genie",
-      description:
-        "Python chatbot (PandasAI) over 250k+ rows with ~95% precision on factual queries.",
-      skills: ["Python", "Pandas", "PandasAI", "Evaluation"],
-      href: "https://github.com/praneetha0909/Data-Mining/blob/main/Mukkamala_2894_Mulkalapally_8345_Munduru_6693_python.ipynb",
-    },
-    {
-      src: "/Port3.jpeg",
-      title: "Voice-Based Chatbot",
-      description:
-        "Voice feedback analysis with ChatGPT integration and streaming responses.",
-      skills: ["Web Speech API", "Node/Flask", "LLM", "Streaming", "OpenAI API"],
-      href: "https://github.com/praneetha0909/ConversAI-VoiceBot-Assistant",
-    },
+    
   ];
 
   return (
@@ -172,7 +157,7 @@ const Projects: React.FC = () => {
 
         <div
           className="mt-16 h-px w-2/3"
-          style={{ background: "linear-gradient(90deg, transparent, #E4B860, transparent)" }}
+          style={{ background: "linear-gradient(90deg, transparent, #032085, transparent)" }}
         />
       </div>
     </div>
