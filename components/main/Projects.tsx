@@ -14,12 +14,12 @@ const Projects = () => {
         <ProjectCard
           src="/uta.png"
           title="University of Texas at Arlington"
-          description="Master&apos;s in Business Analytics (2023 - 2024)"
+          description="Master's in Business Analytics (2023 - 2024)"
         />
         <ProjectCard
           src="/sppu.jpg"
           title="Savitribai Phule Pune University"
-          description="Bachelor&apos;s in Computer Science (2018 - 2022)"
+          description="Bachelor's in Computer Science (2018 - 2022)"
         />
       </div>
 
@@ -28,9 +28,21 @@ const Projects = () => {
         Experience
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
-        <ProjectCard src="/reality.png" title="RealityAI" description="Gen AI Data Analyst (January 2025 - Present)" />
-        <ProjectCard src="/open.jpg" title="OpenQQuantify" description="Business Analyst (September 2024 - December 2024)" />
-        <ProjectCard src="/tripai.jpg" title="TripAI" description="Business Analyst (September 2024 - December 2024)" />
+        <ProjectCard
+          src="/reality.png"
+          title="RealityAI"
+          description="Gen AI Data Analyst (January 2025 - Present)"
+        />
+        <ProjectCard
+          src="/open.jpg"
+          title="OpenQQuantify"
+          description="Business Analyst (September 2024 - December 2024)"
+        />
+        <ProjectCard
+          src="/tripai.jpg"
+          title="TripAI"
+          description="Business Analyst (September 2024 - December 2024)"
+        />
       </div>
 
       {/* Section 3: Projects */}
@@ -38,53 +50,47 @@ const Projects = () => {
         Projects
       </h1>
       <div className="flex justify-center items-center gap-12 flex-wrap">
+        {/* CRM card with TWO images */}
         <ProjectCard
-          src="/CRM.jpeg"
-          title="CRM Analytics Dashboard "
+          src={["/crm-analytics-1.jpeg", "/crm-analytics-2.jpeg"]}
+          title="CRM Analytics Dashboard"
           description={
             <>
-              Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved.{" "}
-              
+              Designed CRM dashboard integrating 100 companies and 500+ employer
+              records; dynamic filtering improved.
             </>
           }
         />
+
         <ProjectCard
           src="/Netflix_Dashboard.png"
           title="Netflix Content Analysis"
-          imageHeightClass="h-[300px]"
           description={
             <>
-              Analyzes content distribution, ratings, genres, and regional
-              availability to uncover streaming trends.
+              Analyzes Netflix&apos;s content distribution, ratings, genres, and
+              regional availability to uncover streaming trends.
             </>
           }
-          skills={["Tableau", "Python", "Pandas", "EDA", "SQL"]}
         />
-
         <ProjectCard
           src="/Samsung_dash.jpeg"
           title="Samsung 5G Market Analysis"
-          imageHeightClass="h-[300px]"
           description={
             <>
-              Insights into sales, revenue, market share, and regional 5G
-              capabilities for strategic planning.
+              This Samsung 5G Market Analysis dashboard provides insights into
+              sales, revenue, market share, and regional 5G.
             </>
           }
-          skills={["Power BI", "SQL", "Excel", "Data Cleaning", "KPI Design"]}
         />
-
         <ProjectCard
           src="/Tesla_dashboard.jpeg"
           title="Tesla Sales Analysis"
-          imageHeightClass="h-[300px]"
           description={
             <>
-              Breakdown of sales, revenue, and profitability across models,
-              trims, and markets with executive KPIs.
+              Provides insights into Tesla&apos;s sales, revenue, and
+              profitability across models, versions, and global markets.
             </>
           }
-          skills={["Tableau", "SQL", "Joins & Aggregations", "KPIs", "Filters"]}
         />
       </div>
     </div>
