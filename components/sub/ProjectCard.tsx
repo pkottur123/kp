@@ -28,7 +28,7 @@ const SkillChips: React.FC<{ skills?: string[] }> = ({ skills }) => {
         <span
           key={`${s}-${i}`}
           className="rounded-full border px-2 py-1 text-[10px] leading-none tracking-wide text-white/90"
-          style={{ borderColor: GOLD, background: "#0b0d12" }}
+          style={{ borderColor: BLUE, background: "#0b0d12" }}
         >
           {s}
         </span>
