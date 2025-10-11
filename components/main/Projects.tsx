@@ -157,7 +157,7 @@ const Projects: React.FC = () => {
 
         <div
           className="mt-16 h-px w-2/3"
-          style={{ background: "linear-gradient(180deg, transparent, #0374ff, transparent)" }}
+          style={{ background: "linear-gradient(90deg, transparent, #0d07b3, transparent)" }}
         />
       </div>
     </div>
