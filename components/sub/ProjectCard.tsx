@@ -1,85 +1,115 @@
+// components/sub/ProjectCard.tsx
 "use client";
 
 import Image from "next/image";
-import React, { ReactNode } from "react";
+import React from "react";
 
-interface Props {
-  /** Single image OR multiple (shows side-by-side when >1) */
-  src: string | string[];
+const GOLD = "#E4B860";
+
+interface CardProps {
+  src: string;
   title: string;
-  description: ReactNode;
-
-  /** Optional chips */
-  skills?: string[];
-
-  /** Optional layout overrides used by your calls */
-  imageHeightClass?: string;   // e.g. "h-[110px]"
-  cardWidthClass?: string;     // e.g. "w-[240px]"
-  containerClassName?: string; // extra classes if needed
+  description: string;
+  href?: string;        // optional link to details/demo
+  badge?: string;       // small badge (e.g., "Current", "2025")
+  skills?: string[];    // chips under description
+  size?: "sm" | "lg";   // controls tile height/image height
 }
 
-// Accent color (Blue)
-const BLUE = "#60A5FA"; // Tailwind sky-400-ish; you can use "#3B82F6" for blue-500
+const SkillChips: React.FC<{ skills?: string[] }> = ({ skills }) => {
+  if (!skills || skills.length === 0) return null;
+  const max = 6;
+  const shown = skills.slice(0, max);
+  const extra = skills.length - shown.length;
 
-const join = (...parts: Array<string | undefined>) =>
-  parts.filter(Boolean).join(" ");
+  return (
+    <div className="mt-3 flex flex-wrap justify-center gap-2">
+      {shown.map((s, i) => (
+        <span
+          key={`${s}-${i}`}
+          className="rounded-full border px-2 py-1 text-[10px] leading-none tracking-wide text-white/90"
+          style={{ borderColor: GOLD, background: "#0b0d12" }}
+        >
+          {s}
+        </span>
+      ))}
+      {extra > 0 && (
+        <span
+          className="rounded-full border px-2 py-1 text-[10px] leading-none tracking-wide text-white/70"
+          style={{ borderColor: GOLD, background: "#0b0d12" }}
+          aria-label={`and ${extra} more skills`}
+        >
+          +{extra}
+        </span>
+      )}
+    </div>
+  );
+};
 
-const ProjectCard = ({
+// Size presets
+const CARD_SIZES = {
+  sm: {
+    cardHeight: "h-[320px]",
+    imgHeight: "h-[120px] sm:h-[130px] lg:h-[140px]",
+    imgPadding: "p-2",
+  },
+  lg: {
+    cardHeight: "h-[420px]",
+    imgHeight: "h-[220px] sm:h-[230px] lg:h-[240px]",
+    imgPadding: "p-1",
+  },
+} as const;
+
+const ProjectCard: React.FC<CardProps> = ({
   src,
   title,
   description,
-  skills = [],
-  imageHeightClass = "h-[140px]",
-  cardWidthClass = "w-[260px]",
-  containerClassName,
-}: Props) => {
-  const images = Array.isArray(src) ? src : [src];
-  const multi = images.length > 1;
+  href,
+  badge,
+  skills,
+  size = "sm",
+}) => {
+  const S = CARD_SIZES[size];
 
-  return (
+  const Body = (
     <div
-      className={join(
-        `${cardWidthClass} h-auto flex flex-col items-center rounded-2xl border p-4 shadow-lg`,
-        containerClassName
-      )}
-      style={{ borderColor: BLUE, background: "#11131A" }}
+      className={`group w-[300px] ${S.cardHeight} flex flex-col items-center rounded-2xl shadow-lg border`}
+      style={{ borderColor: GOLD, background: "#11131A" }}
     >
-      {/* Image(s) */}
-      {multi ? (
-        <div className={join("grid grid-cols-2 gap-2 w-full overflow-hidden rounded-lg", imageHeightClass)}>
-          {images.slice(0, 4).map((img, i) => (
-            <div key={`${img}-${i}`} className="relative w-full h-full bg-black/25 rounded-md">
-              <Image src={img} alt={`${title} screenshot ${i + 1}`} fill style={{ objectFit: "contain" }} />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className={join("relative w-full overflow-hidden rounded-lg bg-black/10", imageHeightClass)}>
-          <Image src={images[0]} alt={title} fill style={{ objectFit: "contain" }} />
-        </div>
-      )}
-
-      {/* Text */}
-      <div className="w-full text-center mt-3">
-        <h3 className="text-base font-semibold text-white leading-tight line-clamp-2">{title}</h3>
-        <p className="mt-1 text-gray-300 text-xs leading-snug">{description}</p>
-
-        {/* Skill chips */}
-        {skills.length > 0 && (
-          <div className="mt-2 flex flex-wrap justify-center gap-1.5">
-            {skills.map((s) => (
-              <span
-                key={s}
-                className="px-2 py-0.5 text-[10px] rounded-full border"
-                style={{ borderColor: BLUE, background: "#0b0d12", color: "rgba(255,255,255,0.9)" }}
-              >
-                {s}
-              </span>
-            ))}
-          </div>
+      {/* Image */}
+      <div className={`relative w-full ${S.imgHeight} overflow-hidden rounded-t-2xl`}>
+        <Image
+          src={src}
+          alt={title}
+          fill
+          className={`object-contain ${S.imgPadding} transition-transform duration-300 group-hover:scale-[1.04] pointer-events-none`}
+          sizes="(max-width: 768px) 300px, 300px"
+        />
+        {badge && (
+          <span
+            className="absolute top-2 left-2 rounded-full border px-2 py-0.5 text-[10px] tracking-wide"
+            style={{ borderColor: GOLD, color: GOLD, background: "#0b0d12" }}
+          >
+            {badge}
+          </span>
         )}
       </div>
+
+      {/* Text */}
+      <div className="w-full p-4 text-center">
+        <h3 className="text-base font-semibold text-white line-clamp-1">{title}</h3>
+        <p className="mt-1 text-gray-400 text-xs leading-snug line-clamp-2">{description}</p>
+        <SkillChips skills={skills} />
+      </div>
     </div>
+  );
+
+  return href ? (
+    <a href={href} target="_blank" rel="noreferrer noopener" aria-label={`${title} (opens in new tab)`}>
+      {Body}
+    </a>
+  ) : (
+    Body
   );
 };
 
