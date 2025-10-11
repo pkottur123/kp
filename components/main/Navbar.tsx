@@ -24,7 +24,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 bg-[#0300145e] border border-[#0374ff] px-6 py-2 rounded-full text-gray-200 text-sm md:text-base">
+        <div className="hidden md:flex items-center space-x-6 bg-[#0300145e] border border-[#787878] px-6 py-2 rounded-full text-gray-200 text-sm md:text-base">
           <a href="#about-me" className="cursor-pointer">
             Home
           </a>
