@@ -5,6 +5,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "../sub/ProjectCard";
 
+/* ---------- Animation helpers ---------- */
 const sectionVariants = {
   hidden: { opacity: 0, y: 12 },
   show: {
@@ -15,6 +16,7 @@ const sectionVariants = {
 };
 const item = { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } };
 
+/* ---------- Section title ---------- */
 const SectionTitle: React.FC<{ children: React.ReactNode; size?: "lg" | "xl" }> = ({
   children,
   size = "xl",
@@ -30,19 +32,28 @@ const SectionTitle: React.FC<{ children: React.ReactNode; size?: "lg" | "xl" }> 
   </h2>
 );
 
+/* ---------- Thin white divider ---------- */
+const Divider: React.FC<{ className?: string }> = ({ className = "" }) => (
+  <div
+    className={`mx-auto h-px w-2/3 bg-gradient-to-r from-transparent via-white/70 to-transparent ${className}`}
+  />
+);
+
+/* ===================================================================== */
+
 const Projects: React.FC = () => {
+  /* ---- Your data (unchanged) ---- */
   const education = [
     {
       src: "/uta.png",
-      title: "Master's in Business Analytics",
-      description: "University of Texas at Arlington (Jan 2023 – Dec 2024)",
+      title: "University of Texas at Arlington",
+      description: "Master's in Business Analytics (2023 - 2024)",
       skills: ["Database Systems", "AI/ML", "Data Mining", "Cloud & Big Data"],
     },
     {
       src: "/sppu.jpg",
-      title: "Bachelor's in Computer Science",
-      description:
-        "Savitribai Phule Pune University (Aug 2018 – Sep 2022)",
+      title: "Savitribai Phule Pune University",
+      description: "Bachelor's in Computer Science (2018 - 2022)",
       skills: ["Python", "Data Warehouse", "Web Data Mgmt", "Software Engg"],
     },
   ];
@@ -50,24 +61,23 @@ const Projects: React.FC = () => {
   const experience = [
     {
       src: "/reality.png",
-      title: "Business Intelligence Analyst",
-      description: "Reality AI Lab (Jan 2025 – Present)",
+      title: "RealityAI",
+      description: "Gen AI Data Analyst (Jan 2025 - Present)",
       badge: "Current",
       skills: ["Python", "SQL", "Airflow", "AWS", "CI/CD", "Docker", "ETL", "Redshift"],
     },
     {
       src: "/open.jpg",
-      title: "Business Analyst",
-      description: "OpenQQuantify (Sep 2024 – Dec 2024)",
+      title: "OpenQQuantify",
+      description: "Business Analyst (Sep 2024 - Dec 2024)",
       skills: ["Power BI", "A/B Testing", "Python", "ETL", "KPI Design"],
     },
     {
       src: "/tripai.jpg",
-      title: "Business Analyst",
-      description: "OpenQQuantify (Aug 2024 – Dec 2025)",
+      title: "TripAI",
+      description: "Business Analyst (Sep 2024 - Dec 2024)",
       skills: ["SQL", "Excel", "Dashboards", "Stakeholder Reports", "Power BI"],
     },
-    
   ];
 
   const projects = [
@@ -76,16 +86,14 @@ const Projects: React.FC = () => {
       title: "CRM Analytics Dashboard",
       description:
         "Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved.",
-      skills: ["Palantir Foundry", "SQL", "Python", "ETL", "Redshift"],
-     
+      skills: ["Power BI", "SQL", "DAX", "Data Modeling", "ETL"],
     },
     {
       src: "/Netflix_Dashboard.png",
       title: "Netflix Content Analysis",
       description:
         "Analyzes content distribution, ratings, genres, and regional availability to uncover streaming trends.",
-     skills: ["Tableau", "Python", "Pandas", "EDA", "Storytelling"],
-     
+      skills: ["Tableau", "Python", "Pandas", "EDA", "Storytelling"],
     },
     {
       src: "/Samsung_dash.jpeg",
@@ -99,16 +107,18 @@ const Projects: React.FC = () => {
       title: "Tesla Sales Analysis",
       description:
         "Breakdown of sales, revenue, and profitability across models, trims, and markets with executive KPIs.",
-     skills: ["Tableau", "SQL", "Joins & Aggregations", "KPIs", "Filters"],
+      skills: ["Tableau", "SQL", "Joins & Aggregations", "KPIs", "Filters"],
     },
-    
   ];
 
   return (
     <div id="projects" className="w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center py-20">
-        {/* Education */}
+
+        {/* ==================== Education ==================== */}
+        <Divider className="mt-2 mb-6" /> {/* <= white line ABOVE Education */}
         <SectionTitle>Education</SectionTitle>
+
         <motion.div
           variants={sectionVariants}
           initial="hidden"
@@ -122,9 +132,11 @@ const Projects: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
-       
-        {/* Experience */}
+
+        {/* ==================== Experience ==================== */}
+        <Divider className="mt-14 mb-6" /> {/* remove if you only want it above Education */}
         <SectionTitle size="lg">Experience</SectionTitle>
+
         <motion.div
           variants={sectionVariants}
           initial="hidden"
@@ -139,8 +151,10 @@ const Projects: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Projects (bigger tiles) */}
+        {/* ==================== Projects ==================== */}
+        <Divider className="mt-14 mb-6" /> {/* remove if not desired here */}
         <SectionTitle>Projects</SectionTitle>
+
         <motion.div
           variants={sectionVariants}
           initial="hidden"
@@ -155,10 +169,8 @@ const Projects: React.FC = () => {
           ))}
         </motion.div>
 
-        <div
-          className="mt-16 h-px w-2/3"
-          style={{ background: "linear-gradient(130deg, transparent, #ffffff, transparent)" }}
-        />
+        {/* Footer divider (optional) */}
+        <Divider className="mt-16" />
       </div>
     </div>
   );
