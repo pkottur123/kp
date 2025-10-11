@@ -1,85 +1,86 @@
-// app/components/Projects.tsx (or wherever your file lives)
 "use client";
 
 import React from "react";
-import ProjectCard from "../sub/ProjectCard";
+import { motion } from "framer-motion";
+import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
+import { SparklesIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
-const Projects = () => {
+const HeroContent = () => {
+  const handleHireMeClick = () => {
+    window.open("/Prasanna_Kottur_Business_Intelligence_Engineer.pdf", "_blank");
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center py-20" id="projects">
-      {/* Section 1: Education */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
-        Education
-      </h1>
-      <div className="flex justify-center items-center gap-12 flex-wrap">
-        <ProjectCard
-          src="/uta.png"
-          title="University of Texas at Arlington"
-          description="Master's in Business Analytics (2023 - 2024)"
-        />
-        <ProjectCard
-          src="/sppu.jpg"
-          title="Savitribai Phule Pune University"
-          description="Bachelor's in Computer Science (2018 - 2022)"
-        />
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      className="flex flex-col md:flex-row items-center justify-center px-5 md:px-20 mt-20 md:mt-40 w-full z-[20]"
+    >
+      {/* Left Content */}
+      <div className="h-full w-full flex flex-col gap-6 justify-center text-start">
+        {/* Sparkle Intro Box */}
+        <motion.div
+          variants={slideInFromTop}
+          className="Welcome-box py-[6px] px-[5px] border border-[#7042f88b] opacity-[0.9] flex items-center w-fit"
+        >
+          <SparklesIcon className="text-[#b49bff] mr-[8px] h-5 w-5" />
+          <h1 className="Welcome-text text-sm text-white">Business Intelligence Analyst</h1>
+        </motion.div>
+
+        {/* Name & Role */}
+        <motion.div
+          variants={slideInFromLeft(0.5)}
+          className="flex flex-col gap-1 text-4xl md:text-6xl font-bold text-white leading-tight max-w-xl"
+        >
+          <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400">
+            Prasanna Kottur
+          </h2>
+
+          <div className="relative w-fit">
+            <span className="text-[44px] md:text-[60px] text-white block">Business</span>
+            <span className="text-[44px] md:text-[60px] text-white block">Intelligence</span>
+            <span className="text-[44px] md:text-[60px] font-extrabold text-white block tracking-wide">
+              Analyst
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Description */}
+        <motion.p
+          variants={slideInFromLeft(0.8)}
+          className="text-sm md:text-lg text-gray-300 max-w-lg mt-4"
+        >
+          I&apos;m a Business Analyst with experience in data analysis, process optimization, and
+          requirement gathering. I specialize in turning complex business needs into actionable
+          insights and solutions.
+        </motion.p>
+
+        {/* Resume Button */}
+        <motion.a
+          onClick={handleHireMeClick}
+          variants={slideInFromRight(1)}
+          className="mt-4 inline-block py-1 px-4 bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-semibold rounded-md hover:scale-105 transition-transform duration-300 shadow-sm cursor-pointer w-fit"
+        >
+          Resume
+        </motion.a>
       </div>
 
-      {/* Section 2: Work Experience */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
-        Experience
-      </h1>
-      <div className="flex justify-center items-center gap-12 flex-wrap">
-        <ProjectCard src="/reality.png" title="RealityAI" description="Gen AI Data Analyst (January 2025 - Present)" />
-        <ProjectCard src="/open.jpg" title="OpenQQuantify" description="Business Analyst (September 2024 - December 2024)" />
-        <ProjectCard src="/tripai.jpg" title="TripAI" description="Business Analyst (September 2024 - December 2024)" />
-      </div>
-
-      {/* Section 3: Projects */}
-      <h1 className="text-[50px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-500 py-10">
-        Projects
-      </h1>
-      <div className="flex justify-center items-center gap-12 flex-wrap">
-        {/* CRM card now with TWO images */}
-        <ProjectCard
-          src={["/crm-analytics-1.jpeg", "/crm-analytics-2.jpeg"]}
-          title="CRM Analytics Dashboard "
-          description={
-            <>
-              Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved.
-            </>
-          }
+      {/* Right Image */}
+      <motion.div
+        variants={slideInFromRight(0.8)}
+        className="w-full h-full flex justify-center items-center mt-10 md:mt-0"
+      >
+        <Image
+          src="/mainIconsdark.svg"
+          alt="work icons"
+          height={500}
+          width={500}
+          className="w-[250px] h-[250px] md:w-[500px] md:h-[500px]"
         />
-
-        <ProjectCard
-          src="/Netflix_Dashboard.png"
-          title="Netflix Content Analysis"
-          description={
-            <>
-              Analyzes Netflix's content distribution, ratings, genres, and regional availability to uncover streaming trends.
-            </>
-          }
-        />
-        <ProjectCard
-          src="/Samsung_dash.jpeg"
-          title="Samsung 5G Market Analysis"
-          description={
-            <>
-              This Samsung 5G Market Analysis dashboard provides insights into sales, revenue, market share, and regional 5G.
-            </>
-          }
-        />
-        <ProjectCard
-          src="/Tesla_dashboard.jpeg"
-          title="Tesla Sales Analysis"
-          description={
-            <>
-              Provides insights into Tesla's sales, revenue, and profitability across models, versions, and global markets.
-            </>
-          }
-        />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
-export default Projects;
+export default HeroContent;
