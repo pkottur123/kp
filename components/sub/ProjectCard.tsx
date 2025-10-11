@@ -1,39 +1,83 @@
-// components/sub/ProjectCard.tsx
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface Props {
-  src: string;
+  /** Single image OR multiple (shows side-by-side when >1) */
+  src: string | string[];
   title: string;
-  description: string;
-  badge?: string;
+  description: ReactNode;
+
+  /** Optional chips */
+  skills?: string[];
+
+  /** Optional layout overrides used by your calls */
+  imageHeightClass?: string;   // e.g. "h-[110px]"
+  cardWidthClass?: string;     // e.g. "w-[240px]"
+  containerClassName?: string; // extra classes if needed
 }
 
-const ProjectCard: React.FC<Props> = ({ src, title, description, badge }) => {
-  return (
-    <div className="w-full max-w-[520px] sm:max-w-[560px] bg-[#050505] rounded-xl shadow-lg border border-[#E4B860] overflow-hidden">
-      <div className="relative w-full aspect-[16/9] bg-gradient-to-b from-black/10 to-black/0">
-        <Image
-          src={src}
-          alt={title}
-          fill
-          className="object-contain p-2"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          priority={false}
-        />
-        {badge && (
-          <span
-            className="absolute top-2 left-2 rounded-full border px-2 py-0.5 text-[10px] tracking-wide"
-            style={{ borderColor: "#E4B860", color: "#E4B860", background: "#0b0d12" }}
-          >
-            {badge}
-          </span>
-        )}
-      </div>
+// Accent color (Blue)
+const BLUE = "#60A5FA"; // Tailwind sky-400-ish; you can use "#3B82F6" for blue-500
 
-      <div className="p-4 text-center">
-        <h3 className="text-[18px] sm:text-[20px] font-semibold text-white">{title}</h3>
-        <p className="mt-1 text-gray-400 text-sm sm:text-[15px]">{description}</p>
+const join = (...parts: Array<string | undefined>) =>
+  parts.filter(Boolean).join(" ");
+
+const ProjectCard = ({
+  src,
+  title,
+  description,
+  skills = [],
+  imageHeightClass = "h-[140px]",
+  cardWidthClass = "w-[260px]",
+  containerClassName,
+}: Props) => {
+  const images = Array.isArray(src) ? src : [src];
+  const multi = images.length > 1;
+
+  return (
+    <div
+      className={join(
+        `${cardWidthClass} h-auto flex flex-col items-center rounded-2xl border p-4 shadow-lg`,
+        containerClassName
+      )}
+      style={{ borderColor: BLUE, background: "#11131A" }}
+    >
+      {/* Image(s) */}
+      {multi ? (
+        <div className={join("grid grid-cols-2 gap-2 w-full overflow-hidden rounded-lg", imageHeightClass)}>
+          {images.slice(0, 4).map((img, i) => (
+            <div key={`${img}-${i}`} className="relative w-full h-full bg-black/25 rounded-md">
+              <Image src={img} alt={`${title} screenshot ${i + 1}`} fill style={{ objectFit: "contain" }} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className={join("relative w-full overflow-hidden rounded-lg bg-black/10", imageHeightClass)}>
+          <Image src={images[0]} alt={title} fill style={{ objectFit: "contain" }} />
+        </div>
+      )}
+
+      {/* Text */}
+      <div className="w-full text-center mt-3">
+        <h3 className="text-base font-semibold text-white leading-tight line-clamp-2">{title}</h3>
+        <p className="mt-1 text-gray-300 text-xs leading-snug">{description}</p>
+
+        {/* Skill chips */}
+        {skills.length > 0 && (
+          <div className="mt-2 flex flex-wrap justify-center gap-1.5">
+            {skills.map((s) => (
+              <span
+                key={s}
+                className="px-2 py-0.5 text-[10px] rounded-full border"
+                style={{ borderColor: BLUE, background: "#0b0d12", color: "rgba(255,255,255,0.9)" }}
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
