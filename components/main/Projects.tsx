@@ -14,7 +14,7 @@ const Projects = () => {
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* CRM (two images side-by-side) */}
         <ProjectCard
-          src={["/crm-analytics-1.jpeg", "/crm-analytics-2.jpeg"]}
+          src={["/CRM.jpeg", "/CRM2.jpeg"]}
           title="CRM Analytics Dashboard"
           imageHeightClass="h-[300px]"
           description={
