@@ -18,7 +18,8 @@ interface Props {
   containerClassName?: string; // extra classes if needed
 }
 
-const GOLD = "#E4B860";
+// Accent color (Blue)
+const BLUE = "#60A5FA"; // Tailwind sky-400-ish; you can use "#3B82F6" for blue-500
 
 const join = (...parts: Array<string | undefined>) =>
   parts.filter(Boolean).join(" ");
@@ -41,7 +42,7 @@ const ProjectCard = ({
         `${cardWidthClass} h-auto flex flex-col items-center rounded-2xl border p-4 shadow-lg`,
         containerClassName
       )}
-      style={{ borderColor: GOLD, background: "#11131A" }}
+      style={{ borderColor: BLUE, background: "#11131A" }}
     >
       {/* Image(s) */}
       {multi ? (
@@ -70,7 +71,7 @@ const ProjectCard = ({
               <span
                 key={s}
                 className="px-2 py-0.5 text-[10px] rounded-full border"
-                style={{ borderColor: GOLD, background: "#0b0d12", color: "rgba(255,255,255,0.9)" }}
+                style={{ borderColor: BLUE, background: "#0b0d12", color: "rgba(255,255,255,0.9)" }}
               >
                 {s}
               </span>
