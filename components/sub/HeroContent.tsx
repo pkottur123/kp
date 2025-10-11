@@ -24,7 +24,7 @@ const HeroContent = () => {
           variants={slideInFromTop}
           className="Welcome-box py-[6px] px-[5px] border border-[#7042f88b] opacity-[0.9] flex items-center w-fit"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[8px] h-5 w-5" />
+          <SparklesIcon className="text-[#b49bff] mr-[8px] h-3 w-3" />
           <h1 className="Welcome-text text-sm text-white">Business Intelligence Analyst</h1>
         </motion.div>
 
@@ -38,9 +38,9 @@ const HeroContent = () => {
           </h2>
 
           <div className="relative w-fit">
-            <span className="text-[44px] md:text-[60px] text-white block">Business</span>
-            <span className="text-[44px] md:text-[60px] text-white block">Intelligence</span>
-            <span className="text-[44px] md:text-[60px] font-extrabold text-white block tracking-wide">
+            <span className="text-[34px] md:text-[50px] text-white block">Business</span>
+            <span className="text-[34px] md:text-[50px] text-white block">Intelligence</span>
+            <span className="text-[34px] md:text-[50px] font-extrabold text-white block tracking-wide">
               Analyst
             </span>
           </div>
@@ -49,7 +49,7 @@ const HeroContent = () => {
         {/* Description */}
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-sm md:text-lg text-gray-300 max-w-lg mt-4"
+          className="text-sm md:text-lg text-gray-200 max-w-lg mt-4"
         >
           I&apos;m a Business Analyst with experience in data analysis, process optimization, and
           requirement gathering. I specialize in turning complex business needs into actionable
