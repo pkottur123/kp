@@ -1,22 +1,22 @@
-"use client"; 
+"use client";
 
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
 // ---- Design tokens
-const GOLD = "#E4B860"; // matches your tile border gold
+const GOLD = "#E4B860"; // keep as-is; change to blue if you want later
 
 // ---- Reusable ProjectCard
 interface CardProps {
-  src: string;
+  src: string | string[];       // ✅ allow array for side-by-side images
   title: string;
   description: string;
-  href?: string; // optional link to details/demo
-  badge?: string; // optional small badge (e.g., "2025", "In Progress")
-  skills?: string[]; // chips under description
-  github?: string;   // GitHub repo link (used by bottom button only)
-  size?: "sm" | "lg"; // controls tile size
+  href?: string;                // optional link to details/demo
+  badge?: string;               // optional small badge (e.g., "2025", "In Progress")
+  skills?: string[];            // chips under description
+  github?: string;              // GitHub repo link (used by bottom button only)
+  size?: "sm" | "lg";           // controls tile size
 }
 
 const SkillChips: React.FC<{ skills?: string[] }> = ({ skills }) => {
@@ -49,7 +49,7 @@ const SkillChips: React.FC<{ skills?: string[] }> = ({ skills }) => {
   );
 };
 
-// Size presets (only affects Projects when size="lg")
+// Size presets
 const CARD_SIZES = {
   sm: {
     cardHeight: "h-[320px]",
@@ -75,6 +75,8 @@ const ProjectCard: React.FC<CardProps> = ({
   size = "sm",
 }) => {
   const S = CARD_SIZES[size];
+  const images = Array.isArray(src) ? src : [src];
+  const multi = images.length > 1;
 
   const CardBody = (
     <motion.div
@@ -83,18 +85,34 @@ const ProjectCard: React.FC<CardProps> = ({
       className={`group w-[300px] ${S.cardHeight} flex flex-col items-center rounded-2xl shadow-lg border`}
       style={{ borderColor: GOLD, background: "#11131A" }}
     >
-      {/* Image */}
-      <div
-        className={`relative w-full ${S.imgHeight} overflow-hidden rounded-t-2xl bg-gradient-to-b from-black/10 to-black/0`}
-      >
-        <Image
-          src={src}
-          alt={title}
-          fill
-          className={`object-contain ${S.imgPadding} transition-transform duration-300 group-hover:scale-[1.04] pointer-events-none`}
-          sizes="(max-width: 768px) 300px, 300px"
-          priority={false}
-        />
+      {/* Image / Image grid */}
+      <div className={`relative w-full ${S.imgHeight} overflow-hidden rounded-t-2xl bg-gradient-to-b from-black/10 to-black/0`}>
+        {multi ? (
+          <div className={`grid grid-cols-2 gap-2 w-full h-full ${S.imgPadding}`}>
+            {images.slice(0, 4).map((img, i) => (
+              <div key={`${img}-${i}`} className="relative w-full h-full rounded-md bg-black/20">
+                <Image
+                  src={img}
+                  alt={`${title} screenshot ${i + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 300px, 300px"
+                  priority={i === 0}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Image
+            src={images[0]}
+            alt={title}
+            fill
+            className={`object-contain ${S.imgPadding} transition-transform duration-300 group-hover:scale-[1.04] pointer-events-none`}
+            sizes="(max-width: 768px) 300px, 300px"
+            priority={false}
+          />
+        )}
+
         {badge && (
           <span
             className="absolute top-2 left-2 rounded-full border px-2 py-0.5 text-[10px] tracking-wide"
@@ -115,12 +133,7 @@ const ProjectCard: React.FC<CardProps> = ({
   );
 
   return href ? (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer noopener"
-      aria-label={`${title} (opens in new tab)`}
-    >
+    <a href={href} target="_blank" rel="noreferrer noopener" aria-label={`${title} (opens in new tab)`}>
       {CardBody}
     </a>
   ) : (
@@ -137,11 +150,7 @@ const sectionVariants = {
     transition: { staggerChildren: 0.06, delayChildren: 0.08 },
   },
 };
-
-const item = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0 },
-};
+const item = { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } };
 
 const SectionTitle: React.FC<{ children: React.ReactNode; size?: "lg" | "xl" }> = ({
   children,
@@ -196,10 +205,9 @@ const Projects: React.FC = () => {
     },
   ];
 
-  // ---- SIX projects (keep wording unchanged)
   const projects = [
     {
-      src: ["/CRM.jpeg", "/CRM2.jpeg"] as string[] | string,
+      src: ["/CRM.jpeg", "/CRM2.jpeg"] as string[] | string, // two images side-by-side
       title: "CRM Analytics Dashboard",
       description:
         "Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved.",
@@ -230,7 +238,6 @@ const Projects: React.FC = () => {
 
   return (
     <div id="projects" className="w-full">
-      {/* PAGE CONTAINER (centers + adds side padding) */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center py-20">
         {/* Education */}
         <SectionTitle>Education</SectionTitle>
@@ -288,29 +295,3 @@ const Projects: React.FC = () => {
                       window.open(p.github as string, "_blank", "noopener,noreferrer");
                     } catch {}
                   }}
-                  className="pointer-events-auto relative z-20 mt-3 inline-flex items-center
-                             rounded-full border px-4 py-2 text-sm font-medium
-                             text-white/90 hover:text-white transition hover:scale-[1.03]"
-                  style={{ background: "#0b0d12", borderColor: GOLD }}
-                >
-                  Github
-                </a>
-              )}
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* subtle divider */}
-        <div
-          className="mt-16 h-px w-2/3"
-          style={{
-            background: `linear-gradient(90deg, transparent, ${GOLD}, transparent)`,
-          }}
-        />
-      </div>
-    </div>
-  );
-};
-
-export default Projects;
-
