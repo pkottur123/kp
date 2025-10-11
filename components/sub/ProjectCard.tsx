@@ -74,7 +74,7 @@ const ProjectCard: React.FC<CardProps> = ({
   const Body = (
     <div
       className={`group w-[300px] ${S.cardHeight} flex flex-col items-center rounded-2xl shadow-lg border`}
-      style={{ borderColor: GOLD, background: "#11131A" }}
+      style={{ borderColor: #03001417, background: "#11131A" }}
     >
       {/* Image */}
       <div className={`relative w-full ${S.imgHeight} overflow-hidden rounded-t-2xl`}>
@@ -88,7 +88,7 @@ const ProjectCard: React.FC<CardProps> = ({
         {badge && (
           <span
             className="absolute top-2 left-2 rounded-full border px-2 py-0.5 text-[10px] tracking-wide"
-            style={{ borderColor: GOLD, color: GOLD, background: "#0b0d12" }}
+            style={{ borderColor: #03001417, color: #03001417, background: "#03001417" }}
           >
             {badge}
           </span>
