@@ -4,7 +4,7 @@
 import Image from "next/image";
 import React from "react";
 
-
+const GOLD = "#E4B860";
 
 interface CardProps {
   src: string;
@@ -36,7 +36,7 @@ const SkillChips: React.FC<{ skills?: string[] }> = ({ skills }) => {
       {extra > 0 && (
         <span
           className="rounded-full border px-2 py-1 text-[10px] leading-none tracking-wide text-white/70"
-          style={{ borderColor: BLUE, background: "#0b0d12" }}
+          style={{ borderColor: GOLD, background: "#0b0d12" }}
           aria-label={`and ${extra} more skills`}
         >
           +{extra}
