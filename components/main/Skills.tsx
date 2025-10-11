@@ -35,7 +35,7 @@ const skillGroups = [
       { name: "GraphQL", level: "Intermediate" },
     ],
   },
-    {
+  {
     title: "Data Visualization",
     color: "from-fuchsia-500 to-pink-600",
     skills: [
@@ -82,7 +82,6 @@ const skillGroups = [
       { name: "Hadoop", level: "Advanced" },
     ],
   },
-  // 🔁 REPLACED "DevOps & Tools" WITH THIS
 ];
 
 const levelColors: Record<string, string> = {
@@ -100,6 +99,16 @@ const Skills = () => {
         className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-10"
         style={{ transform: "scale(0.9)" }}
       >
+        {/* ─── White gradient line above title ───────────────────────────── */}
+        <div
+          className="w-full h-px mb-8"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.75), rgba(255,255,255,0))",
+          }}
+        />
+        {/* ──────────────────────────────────────────────────────────────── */}
+
         <SkillText />
 
         {[Skill_data, Frontend_skill, Backend_skill, Full_stack, Other_skill].map(
