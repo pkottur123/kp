@@ -32,16 +32,16 @@ const SectionTitle: React.FC<{ children: React.ReactNode; size?: "lg" | "xl" }> 
 const Projects: React.FC = () => {
   const education = [
     {
-      src: "/uta2.png",
-      title: "Master&apos;s in Computer Science",
+      src: "/uta.png",
+      title: "Master's in Business Analytics",
       description: "University of Texas at Arlington (Jan 2023 – Dec 2024)",
-      skills: ["Database Systems", "AI/ML", "Data Mining", "Cloud & Big Data"],
+      skills: ["Data Mining", "Data Warehouse","Data Science","Python","Web Data Analytics", "Cloud & Big Data"],
     },
     {
-      src: "/JNTUH.jpeg",
-      title: "Bachelor&apos;s in Computer Science",
+      src: "/sppu.jpg",
+      title: "Bachelor's in Computer Science",
       description:
-        "Jawaharlal Nehru Technological University Hyderabad (Aug 2016 – Sep 2020)",
+        "Pune University (Aug 2018 – Sep 2022)",
       skills: ["Python", "Data Warehouse", "Web Data Mgmt", "Software Engg"],
     },
   ];
@@ -55,76 +55,53 @@ const Projects: React.FC = () => {
       skills: ["Python", "SQL", "Airflow", "AWS", "CI/CD", "Docker", "ETL", "Redshift"],
     },
     {
-      src: "/tom.jpg",
+      src: "/open.jpg",
       title: "Business Intelligence Analyst",
-      description: "Tomorrow&apos;s AI (Sep 2024 – Dec 2024)",
+      description: "OpenQQuantify AI (Sep 2024 – Dec 2024)",
       skills: ["Power BI", "A/B Testing", "Python", "ETL", "KPI Design"],
     },
     {
-      src: "/uta2.png",
-      title: "Data Reporting Analyst",
-      description: "University of Texas at Arlington (Aug 2023 – Dec 2024)",
-      skills: ["SQL", "Excel", "Dashboards", "Stakeholder Reports", "Power BI"],
-    },
-    {
-      src: "/infosys.png",
-      title: "SAP Data & Systems Analyst",
-      description: "Infosys (Mar 2021 – Nov 2022)",
-      skills: ["SAP S/4HANA", "SAP Fiori", "CDS Views", "HP ALM", "ABAP"],
+      src: "/tripai.jpg",
+      title: "Business Intelligence Analyst",
+      description: "TripAI Technologies (Aug 2023 – Dec 2024)",
+      skills: ["SQL", "Excel", "Dashboards", "Stakeholder Reports", "Power BI","Chatboats"],
     },
   ];
 
   const projects = [
     {
-      src: "/Palantir.jpeg",
+      src: "/CRM.jpeg",
       title: "CRM Analytics Dashboard",
       description:
-        "Built a Palantir Foundry CRM dashboard: cleaned Companies/People, modeled objects, and shipped a filterable CRUD UI.",
+       " Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved.",
       skills: ["Palantir Foundry", "SQL", "Python", "ETL", "Redshift"],
-      href: "https://github.com/praneetha0909/CRM-Dashboard",
+      
     },
     {
-      src: "/Job_comp.jpeg",
-      title: "Job Compatibility Checker",
+      src: "/Netflix_Dashboard.png",
+      title: "Netflix Content Analysis",
       description:
-        "Resume compatibility tool that analyzes JDs, scores matches, and suggests AI-driven improvements.",
+        "Analyzes Netflix&apos;s content distribution, ratings, genres, and regional availability to uncover streaming trends.",
       skills: ["React", "Next.js", "Python", "NLP", "OpenAI", "Tailwind"],
-      href: "https://github.com/praneetha0909/job-compatibility-checker",
+      
     },
     {
-      src: "/dashboard.jpeg",
-      title: "US Employment Trends",
+      src: "/Samsung_dash.jpeg"",
+      title: "Samsung 5G Market Analysis",
       description:
-        "Tableau dashboard analyzing 50+ state-level labor metrics; improved trend identification speed by 30%.",
+        "This Samsung 5G Market Analysis dashboard provides insights into sales, revenue, market share, and regional 5G.",
       skills: ["Tableau", "SQL", "BigQuery", "Data Analysis"],
-      href:
-        "https://github.com/praneetha0909/U.S.-Employment-Unemployment-Trends-A-Tableau-Dashboard",
+     
     },
     {
-      src: "/SQL4.jpeg",
-      title: "IMDb Genre & Talent Ratings Analytics (SQL)",
+      src: "/Tesla_dashboard.jpeg",
+      title: "Tesla Sales Analysis",
       description:
-        "YoY genre averages and top lead actors per year from IMDb datasets using joins, aggregation, and filters.",
-      skills: ["Advanced SQL", "Data Modeling", "Query Optimization"],
-      href: "https://github.com/praneetha0909/IMDB-database",
+        "Provides insights into Tesla&apos;s sales, revenue, and profitability across models, versions, and global markets.",
+      skills: ["Tableau","Advanced SQL", "Data Modeling", "Query Optimization"],
+     
     },
-    {
-      src: "/Port2.jpeg",
-      title: "Query Genie",
-      description:
-        "Python chatbot (PandasAI) over 250k+ rows with ~95% precision on factual queries.",
-      skills: ["Python", "Pandas", "PandasAI", "Evaluation"],
-      href:
-        "https://github.com/praneetha0909/Data-Mining/blob/main/Mukkamala_2894_Mulkalapally_8345_Munduru_6693_python.ipynb",
-    },
-    {
-      src: "/Port3.jpeg",
-      title: "Voice-Based Chatbot",
-      description:
-        "Voice feedback analysis with ChatGPT integration and streaming responses.",
-      skills: ["Web Speech API", "Node/Flask", "LLM", "Streaming", "OpenAI API"],
-      href: "https://github.com/praneetha0909/ConversAI-VoiceBot-Assistant",
-    },
+   
   ];
 
   return (
