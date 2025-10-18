@@ -109,6 +109,13 @@ const Projects: React.FC = () => {
         "Breakdown of sales, revenue, and profitability across models, trims, and markets with executive KPIs.",
       skills: ["Tableau", "SQL", "Joins & Aggregations", "KPIs", "Filters"],
     },
+    {
+      src: "/AmazonDash.jpeg",
+      title: "Amazon Sales Performance Dashboard – 2025",
+      description:
+        "Interactive Power BI dashboard showcasing Amazon’s sales, customer spending, and category insights across locations and payment methods",
+      skills: ["Power BI", "SQL", "Joins & Aggregations", "KPIs", "Filters"],
+    },
   ];
 
   return (
