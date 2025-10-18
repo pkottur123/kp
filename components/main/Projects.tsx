@@ -86,7 +86,7 @@ const Projects: React.FC = () => {
       title: "CRM Analytics Dashboard",
       description:
         "Designed CRM dashboard integrating 100 companies and 500+ employer records; dynamic filtering improved.",
-      skills: ["Power BI", "SQL", "DAX", "Data Modeling", "ETL"],
+      skills: ["Palantir Foundry", "SQL", "DAX", "Data Modeling", "ETL"],
     },
     {
       src: "/Netflix_Dashboard.png",
