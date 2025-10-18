@@ -24,7 +24,7 @@ const HeroContent = () => {
           variants={slideInFromTop}
           className="Welcome-box py-[6px] px-[5px] border border-[#7042f88b] opacity-[0.9] flex items-center w-fit"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[8px] h-3 w-3" />
+          <SparklesIcon className="text-[#ffffff] mr-[8px] h-3 w-3" />
           <h1 className="Welcome-text text-sm text-white">Business Intelligence Analyst</h1>
         </motion.div>
 
