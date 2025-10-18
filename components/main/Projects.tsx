@@ -114,7 +114,7 @@ const Projects: React.FC = () => {
       title: "Amazon Sales Performance Dashboard – 2025",
       description:
         "Interactive Power BI dashboard showcasing Amazon’s sales, customer spending, and category insights across locations and payment methods",
-      skills: ["Power BI", "SQL", "Joins & Aggregations", "KPIs", "Filters"],
+      skills: ["Power BI", "SQL","Power Query", "ETL", "KPIs", "Filters","DAX"],
     },
   ];
 
