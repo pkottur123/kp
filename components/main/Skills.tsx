@@ -21,7 +21,7 @@ const skillGroups = [
       { name: "Python", level: "Advanced" },
       { name: "SQL", level: "Advanced" },
       { name: "JavaScript", level: "Advanced" },
-      { name: "TypeScript", level: "Advanced" },
+      
       { name: "C", level: "Intermediate" },
       { name: "R", level: "Advanced" },
       { name: "HTML5", level: "Advanced" },
@@ -32,7 +32,7 @@ const skillGroups = [
       { name: "React.js", level: "Advanced" },
       { name: "Next.js", level: "Intermediate" },
       { name: "Tailwind CSS", level: "Advanced" },
-      { name: "GraphQL", level: "Intermediate" },
+      
     ],
   },
   {
@@ -42,10 +42,10 @@ const skillGroups = [
       { name: "AWS QuickSight", level: "Advanced" },
       { name: "Palantir Foundry", level: "Advanced" },
       { name: "Power BI", level: "Advanced" },
-      { name: "Power BI", level: "Advanced" },
+      
       { name: "Tableau", level: "Advanced" },
       { name: "Looker Studio", level: "Intermediate" },
-      { name: "AWS QuickSight", level: "Advanced" },
+
       { name: "Matplotlib", level: "Advanced" },
       { name: "Plotly", level: "Advanced" },
       { name: "ggplot2", level: "Intermediate" },
@@ -64,7 +64,7 @@ const skillGroups = [
       { name: "MySQL", level: "Advanced" },
       { name: "NoSQL", level: "Intermediate" },
       { name: "MongoDB", level: "Intermediate" },
-      { name: "Google Cloud Platform (GCP)", level: "Intermediate" },
+      
       { name: "Amazon Web Services (AWS)", level: "Advanced" },
       { name: "Amazon Redshift", level: "Advanced" },
       { name: "Firebase", level: "Advanced" },
