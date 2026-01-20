@@ -29,12 +29,7 @@ export const Skill_data = [
       width: 80,
       height: 80,
     },
-    {
-      skill_name: "Redux",
-      Image: "/openai.jpg",
-      width: 80,
-      height: 80,
-    },
+    
     {
       skill_name: "React Query",
       Image: "/reactquery.png",
@@ -47,18 +42,8 @@ export const Skill_data = [
       width: 80,
       height: 80,
     },
-    {
-      skill_name: "Next js 13",
-      Image: "/next.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "Framer Motion",
-      Image: "/framer.png",
-      width: 80,
-      height: 80,
-    },
+   
+    
     {
       skill_name: "Stripe Payment",
       Image: "/AWS.webp",
@@ -122,30 +107,15 @@ export const Skill_data = [
       width: 80,
       height: 80,
     },
-    {
-      skill_name: "Material UI",
-      Image: "/C.jpeg",
-      width: 80,
-      height: 80,
-    },
+    
     {
       skill_name: "React",
       Image: "/R.png",
       width: 80,
       height: 80,
     },
-    {
-      skill_name: "Redux",
-      Image: "/json.png",
-      width: 80,
-      height: 80,
-    },
-    {
-      skill_name: "React Query",
-      Image: "/restapi2.png",
-      width: 80,
-      height: 80,
-    },
+    
+    
     {
       skill_name: "Type Script",
       Image: "/ts.png",
@@ -197,18 +167,8 @@ export const Skill_data = [
       width: 70,
       height: 70,
     },
-    {
-      skill_name: "Prisma",
-      Image: "/Tab.png",
-      width: 70,
-      height: 70,
-    },
-    {
-      skill_name: "Graphql",
-      Image: "/graphql.png",
-      width: 80,
-      height: 80,
-    },
+    
+    
   ];
   
   export const Full_stack = [
@@ -218,12 +178,7 @@ export const Skill_data = [
       width: 70,
       height: 70,
     },
-    {
-      skill_name: "Tauri",
-      Image: "/tauri.svg",
-      width: 70,
-      height: 70,
-    },
+    
     {
       skill_name: "Docker",
       Image: "/docker.webp",
