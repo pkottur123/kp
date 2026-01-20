@@ -28,17 +28,17 @@ const Footer = () => {
                     </p>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
                       
-                        <span className="text-[15px] ml-[6px]">(682)392-0536</span>    
+                        <span className="text-[15px] ml-[6px]">(+91) 7249871338</span>    
                     </p>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
                   
-                        <span className="text-[15px] ml-[6px]">Florida,USA</span>    
+                        <span className="text-[15px] ml-[6px]">Pune,India</span>    
                     </p>
                 </div>
             </div>
 
             <div className="mb-[20px] text-[15px] text-center">
-                &copy; 2025 Prasanna Kottur. All rights reserved
+                &copy; 2026 Prasanna Kottur. All rights reserved
             </div>
         </div>
     </div>
